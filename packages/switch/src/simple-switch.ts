@@ -2,6 +2,12 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
+import './simple-switch-element';
+
+import { Component, HTMLOverlayElement } from '@hatiolab/things-scene';
+
+import { SimpleSwitchElement } from './simple-switch-element';
+
 const NATURE = {
   mutable: false,
   resizable: true,
@@ -36,12 +42,6 @@ const NATURE = {
   'value-property': 'data',
   help: 'scene/component/simple-switch'
 }
-
-import './simple-switch-element'
-
-import { Component, HTMLOverlayElement, error } from '@hatiolab/things-scene'
-
-import { SimpleSwitchElement } from './simple-switch-element'
 
 export default class SimpleSwitch extends HTMLOverlayElement {
   static get nature() {
@@ -104,4 +104,4 @@ export default class SimpleSwitch extends HTMLOverlayElement {
   }
 }
 
-Component.register('simple-switch-x', SimpleSwitch)
+Component.register('simple-switch', SimpleSwitch)

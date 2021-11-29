@@ -24,10 +24,9 @@
     "lit": "^2.0.2"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.4.17",
     "@hatiolab/prettier-config": "^1.0.0",
     "@hatiolab/things-scene": "^2.7.12",
-    "@operato/board": "^0.2.26",
+    "@operato/board": "^0.2.27",
     "@things-factory/builder": "^4.0.5",
     "@things-factory/operato-board": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
@@ -53,6 +52,5 @@
       "eslint --fix",
       "prettier --write"
     ]
-  },
-  "customElements": "custom-elements.json"
+  }
 }
