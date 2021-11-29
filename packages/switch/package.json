@@ -7,9 +7,6 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "things-scene": true,
-  "exports": {
-    ".": "./dist/src/index.js"
-  },
   "scripts": {
     "serve": "tsc && things-factory-dev",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
