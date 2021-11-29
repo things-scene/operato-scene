@@ -2,11 +2,11 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import './simple-switch-element';
+import './simple-switch-element'
 
-import { Component, HTMLOverlayElement } from '@hatiolab/things-scene';
+import { Component, HTMLOverlayElement } from '@hatiolab/things-scene'
 
-import { SimpleSwitchElement } from './simple-switch-element';
+import { SimpleSwitchElement } from './simple-switch-element'
 
 const NATURE = {
   mutable: false,
