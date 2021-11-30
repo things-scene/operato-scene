@@ -1,7 +1,7 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, Model, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, Container, Model, RectPath, Shape } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -44,7 +44,7 @@ const NATURE = {
   help: 'scene/component/clone'
 }
 
-function clone(cloner: Component, target: Component, targetRetention: number) {
+function clone(cloner: Component, target: string, targetRetention: number) {
   var targetComponent = cloner.root.findById(target)
   if (!targetComponent) return
 
@@ -66,7 +66,7 @@ export default class Clone extends RectPath(Shape) {
   private _started: boolean = false
   private _timeout?: NodeJS.Timeout
 
-  added(parent) {
+  added(parent: Container) {
     this.started = false
     setTimeout(() => {
       if (this.get('autostart')) this.started = true
@@ -78,7 +78,7 @@ export default class Clone extends RectPath(Shape) {
     super.dispose()
   }
 
-  _draw(ctx) {
+  _draw(ctx: CanvasRenderingContext2D) {
     var { left, top, width, height } = this.bounds
 
     ctx.beginPath()
