@@ -9,7 +9,7 @@
   "things-scene": true,
   "publishConfig": {
     "access": "public",
-    "@things-factory:registry": "https://registry.npmjs.org"
+    "@oprato:registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -32,8 +32,8 @@
     "@hatiolab/prettier-config": "^1.0.0",
     "@hatiolab/things-scene": "^2.7.14",
     "@operato/board": "^0.2.27",
-    "@things-factory/builder": "^4.0.5",
-    "@things-factory/operato-board": "^4.0.5",
+    "@things-factory/builder": "^4.0.6",
+    "@things-factory/operato-board": "^4.0.6",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",
