@@ -142,3 +142,13 @@ export default class Random extends RectPath(Shape) {
 }
 
 Component.register('random', Random)
+
+type Constructor<T = {}> = new (...args: any[]) => T
+
+function Timestamped<TBase extends Constructor>(Base: TBase) {
+  return class extends Base {
+    timestamp = Date.now()
+  }
+}
+
+export const X = Timestamped(Random)
