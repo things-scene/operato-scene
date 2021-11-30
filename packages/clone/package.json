@@ -1,6 +1,6 @@
 {
-  "name": "@operato/scene-switch",
-  "description": "switch component for operato-scene",
+  "name": "@operato/scene-clone",
+  "description": "Thing Scene component instance auto cloner.",
   "license": "MIT",
   "author": "heartyoh",
   "version": "0.0.3",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hatiolab/things-factory.git",
-    "directory": "packages/scene-switch"
+    "directory": "packages/scene-clone"
   },
   "scripts": {
     "serve": "tsc && things-factory-dev",
