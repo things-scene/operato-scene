@@ -10,10 +10,10 @@ multiple language editor element
 
 Example:
 
-  <editor-i18n value=${map}>
-  </editor-i18n>
+  <ox-editor-i18n value=${map}>
+  </ox-editor-i18n>
 */
-@customElement('editor-i18n')
+@customElement('ox-editor-i18n')
 export default class EditorI18n extends LitElement {
   static styles = [
     css`
