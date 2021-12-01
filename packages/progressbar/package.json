@@ -3,7 +3,7 @@
   "description": "Progressbar component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "things-scene": true,
