@@ -5,12 +5,12 @@
 import 'chartjs-plugin-datalabels'
 import 'chartjs-plugin-style'
 
-import { Chart } from 'chart.js'
-import { html, LitElement, PropertyValues } from 'lit'
+import { LitElement, PropertyValues, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import { convertConfigure, OxChartConfig } from './config-converter'
+import { Chart } from 'chart.js'
 import DataBinderPlugin from './plugins/chartjs-plugin-data-binder'
+import { convertConfigure } from './config-converter'
 
 Chart.plugins.register(DataBinderPlugin)
 
@@ -18,8 +18,8 @@ Chart.plugins.register(DataBinderPlugin)
 export class OxChart extends LitElement {
   @property({ type: Number }) width!: number
   @property({ type: Number }) height!: number
-  @property({ type: Object }) options!: Chart.ChartConfiguration
-  @property({ type: Object }) data!: Chart.ChartData
+  @property({ type: Object }) options!: SceneChart.ChartConfig
+  @property({ type: Object }) data!: SceneChart.ChartData
 
   private _initialized?: boolean
   private _chart?: Chart
@@ -54,7 +54,7 @@ export class OxChart extends LitElement {
     options!.maintainAspectRatio = false
 
     this.attachPluginOptions(options)
-    convertConfigure(this.options as OxChartConfig)
+    convertConfigure(this.options as SceneChart.ChartConfig)
 
     this._chart = new Chart(this._canvas, {
       type,
@@ -96,7 +96,7 @@ export class OxChart extends LitElement {
     options!.maintainAspectRatio = false
 
     this.attachPluginOptions(options)
-    convertConfigure(this.options as OxChartConfig)
+    convertConfigure(this.options as SceneChart.ChartConfig)
 
     this._chart.type = type
     this._chart.data = data
@@ -105,12 +105,12 @@ export class OxChart extends LitElement {
     this._chart.update(0)
   }
 
-  attachPluginOptions(options: Chart.ChartOptions = {}) {
+  attachPluginOptions(options: SceneChart.ChartOptions) {
     var pluginOptions = (options.plugins = options.plugins || {})
     this.attachDatalabelPluginOptions(pluginOptions)
   }
 
-  attachDatalabelPluginOptions(pluginOptions: Chart.ChartPluginsOptions = {}) {
+  attachDatalabelPluginOptions(pluginOptions: SceneChart.ChartPluginsOptions) {
     var datalabelsOption = (pluginOptions.datalabels = pluginOptions.datalabels || {})
     datalabelsOption['display'] = function (context) {
       return !!context.dataset.displayValue

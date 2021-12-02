@@ -1,110 +1,18 @@
-import Chart from 'chart.js'
-
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
+
 import { TinyColor } from '@ctrl/tinycolor'
 
-// type Ticks = {
-//   fontColor?: string
-//   fontSize?: number
-//   fontFamily?: string
-//   backgroundColor?: string
-//   backdropColor?: string
-//   beginAtZero?: boolean
-//   min?: number
-//   max?: number
-//   autoMin?: boolean
-//   autoMax?: boolean
-//   callback?: (value: any, index: number, values: any[]) => any
-// }
-
-// type Axe = {
-//   id?: string
-//   axisTitle?: string
-//   position?: 'right' | 'left' | string
-//   display?: {} | boolean
-//   gridLines?: {
-//     display?: {} | boolean
-//     zeroLineColor?: string
-//     color?: string
-//   }
-//   ticks?: Ticks
-//   barSpacing?: number
-//   categorySpacing?: number
-//   stacked?: boolean
-//   scaleLabel?: {
-//     labelString?: string
-//     display?: boolean
-//   }
-//   pointLabels?: {
-//     fontColor?: string
-//     fontFamily?: string
-//     fontSize?: number
-//   }
-// }
-
-type DataSet = {
-  type: string
-  label: string
-  stack: string
-  yAxisID: string
-  categoryPercentage: number
-  barPercentage: number
-  dataKey: string
-  color: string
-  backgroundColor: string
-  borderColor: string
-  borderWidth: number
-  pointRadius: number
-  pointBackgroundColor: string
-  pointBorderColor: string
-  pointBorderWidth: number
-  pointHoverRadius: number
-  fill: boolean
-  data: any[]
-  valuePrefix?: string
-  valueSuffix?: string
-}
-
-type Theme = 'light' | 'dark'
-
-export interface OxChartData {
-  datasets?: DataSet[]
-  labels?: string[]
-}
-
-interface OxChartOptions {
-  scales: Chart.ChartScales
-  scale: Chart.ChartXAxe
-  legend: Chart.ChartLegendOptions
-  tooltips: Chart.ChartTooltipOptions
-  multiAxis: boolean
-  defaultFontSize: number | string
-  defaultFontFamily: string
-  defaultFontColor: string
-  theme: Theme
-  stacked?: boolean
-  xGridLine: string
-  fillStyle: string
-  maintainAspectRatio: boolean
-}
-
-export interface OxChartConfig {
-  type: string
-  data: OxChartData
-  options: OxChartOptions
-}
-
-export function convertConfigure(chart: OxChartConfig) {
+export function convertConfigure(chart: SceneChart.ChartConfig) {
   if (!chart) return
 
   var data = chart.data || {}
   var datasets = data.datasets || []
   var options = chart.options || {}
   var scales = options.scales || {}
-  var xAxes: Array<Chart.ChartXAxe>
-  var yAxes: Array<Chart.ChartXAxe>
+  var xAxes: Array<SceneChart.ChartXAxe>
+  var yAxes: Array<SceneChart.ChartYAxe>
   var scale
   var legend = options.legend || {}
   var tooltips = (options.tooltips = options.tooltips || {})
@@ -261,7 +169,7 @@ export function convertConfigure(chart: OxChartConfig) {
   _setTooltipCallback(tooltips)
 }
 
-function _configureBackwardsCompatible(type: string, options: OxChartOptions) {
+function _configureBackwardsCompatible(type: string, options: SceneChart.ChartOptions) {
   switch (type) {
     case 'horizontalBar':
       if (!options.scales) options.scales = {}
@@ -316,31 +224,38 @@ function _configureBackwardsCompatible(type: string, options: OxChartOptions) {
   }
 }
 
-function _setStacked(axis: Chart.ChartXAxe, stacked: boolean) {
+function _setStacked(axis: SceneChart.ChartXAxe, stacked: boolean) {
   axis.stacked = stacked
 }
 
-function _setMultiAxis(axis: Chart.ChartXAxe, multiAxis: boolean) {
+function _setMultiAxis(axis: SceneChart.ChartXAxe, multiAxis: boolean) {
   axis.display = multiAxis
 }
 
-function _setAxisTitle(axis: Chart.ChartXAxe) {
+function _setAxisTitle(axis: SceneChart.ChartXAxe) {
   if (!axis.scaleLabel) axis.scaleLabel = {}
   axis.scaleLabel.labelString = axis.axisTitle
   axis.scaleLabel.display = axis.axisTitle ? true : false
 }
 
-function _setScalesFont(axis: Chart.ChartXAxe, { fontSize, fontFamily }: { fontSize: number; fontFamily: string }) {
+function _setScalesFont(
+  axis: SceneChart.ChartXAxe | SceneChart.RadialLinearScale,
+  { fontSize, fontFamily }: { fontSize: number; fontFamily: string }
+) {
   axis.ticks = axis.ticks ? axis.ticks : {}
   axis.ticks.fontSize = fontSize
-  if (fontFamily) axis.ticks.fontFamily = fontFamily
 
-  axis.pointLabels = axis.pointLabels || {}
-  axis.pointLabels.fontSize = fontSize
-  if (fontFamily) axis.pointLabels.fontFamily = fontFamily
+  if (fontFamily) {
+    axis.ticks.fontFamily = fontFamily
+  }
+
+  ;(axis as SceneChart.RadialLinearScale).pointLabels = {
+    fontSize,
+    fontFamily
+  }
 }
 
-function _setScalesAutoMinMax(axis: Chart.ChartXAxe) {
+function _setScalesAutoMinMax(axis: SceneChart.ChartXAxe) {
   axis.ticks = axis.ticks ? axis.ticks : {}
 
   let autoMin = axis.ticks.autoMin
@@ -354,12 +269,12 @@ function _setScalesAutoMinMax(axis: Chart.ChartXAxe) {
   }
 }
 
-function _setScalesTickRotation(axis: Chart.ChartXAxe) {
+function _setScalesTickRotation(axis: SceneChart.ChartXAxe) {
   axis.ticks = axis.ticks ? axis.ticks : {}
   // axis.ticks.maxRotation = 0
 }
 
-function _setScalesTheme(axis: Chart.ChartXAxe, theme: Theme, fontColor: string) {
+function _setScalesTheme(axis: SceneChart.ChartXAxe, theme: SceneChart.Theme, fontColor: string) {
   var baseColor = _getBaseColorFromTheme(theme)
 
   axis.gridLines = axis.gridLines ? axis.gridLines : {}
@@ -373,7 +288,7 @@ function _setScalesTheme(axis: Chart.ChartXAxe, theme: Theme, fontColor: string)
 }
 
 function _setLegendFont(
-  legend: Chart.ChartLegendOptions,
+  legend: SceneChart.ChartLegendOptions,
   { fontFamily, fontSize }: { fontFamily: string; fontSize: number }
 ) {
   legend.labels = legend.labels ? legend.labels : {}
@@ -381,14 +296,14 @@ function _setLegendFont(
   if (fontFamily) legend.labels.fontFamily = fontFamily
 }
 
-function _setLegendTheme(legend: Chart.ChartLegendOptions, theme: Theme, fontColor: string) {
+function _setLegendTheme(legend: SceneChart.ChartLegendOptions, theme: SceneChart.Theme, fontColor: string) {
   var baseColor = _getBaseColorFromTheme(theme)
 
   legend.labels = legend.labels ? legend.labels : {}
   legend.labels.fontColor = fontColor ? fontColor : baseColor.clone().setAlpha(0.5).toString()
 }
 
-function _getBaseColorFromTheme(theme: Theme) {
+function _getBaseColorFromTheme(theme: SceneChart.Theme) {
   let darkColor = '#000'
   let lightColor = '#fff'
 
@@ -409,7 +324,7 @@ function _getBaseColorFromTheme(theme: Theme) {
   return baseColor
 }
 
-function _setSeriesConfigures(series: DataSet, chart: OxChartConfig) {
+function _setSeriesConfigures(series: SceneChart.ChartDataSets, chart: SceneChart.ChartConfig) {
   var type = series.type || chart.type
   var stackGroup = `${type} ${series.yAxisID} ${series.stack || series.dataKey}`
   var color = series.color ? series.color : series.backgroundColor
@@ -424,7 +339,7 @@ function _setSeriesConfigures(series: DataSet, chart: OxChartConfig) {
     case 'radar':
       color = series.color ? series.color : series.borderColor
       series.pointBackgroundColor = series.pointBorderColor = series.borderColor = series.backgroundColor = color
-      series.pointBorderWidth = series.borderWidth * 0.5
+      series.pointBorderWidth = (series.borderWidth as number) * 0.5
       series.pointHoverRadius = series.pointRadius
       if (series.fill == undefined) series.fill = false
       break
@@ -437,7 +352,7 @@ function _setSeriesConfigures(series: DataSet, chart: OxChartConfig) {
   series.stack = stackGroup
 }
 
-function _appendTickCallback(ticks: Chart.TickOptions) {
+function _appendTickCallback(ticks: SceneChart.TickOptions | undefined) {
   if (!ticks) {
     return
   }
@@ -455,21 +370,21 @@ function _appendTickCallback(ticks: Chart.TickOptions) {
 }
 
 function _setTooltipFont(
-  tooltips: Chart.ChartTooltipOptions,
+  tooltips: SceneChart.ChartTooltipOptions,
   { fontSize, fontFamily }: { fontSize: number; fontFamily: string }
 ) {
   tooltips.titleFontSize = tooltips.bodyFontSize = tooltips.footerFontSize = fontSize
   if (fontFamily) tooltips.titleFontFamily = tooltips.bodyFontFamily = tooltips.footerFontFamily = fontFamily
 }
 
-function _setTooltipCallback(tooltips: Chart.ChartTooltipOptions) {
+function _setTooltipCallback(tooltips: SceneChart.ChartTooltipOptions) {
   tooltips.callbacks = tooltips.callbacks || {}
 
   tooltips.intersect = false
   tooltips.mode = 'index'
 
-  tooltips.callbacks.label = function (tooltipItem: Chart.ChartTooltipItem, data: OxChartData) {
-    var value = data.datasets?.[tooltipItem.datasetIndex || 0].data[tooltipItem.index || 0]
+  tooltips.callbacks.label = function (tooltipItem: SceneChart.ChartTooltipItem, data: SceneChart.ChartData) {
+    var value = data.datasets?.[tooltipItem.datasetIndex || 0].data?.[tooltipItem.index || 0]
     var datasetLabel = data.datasets?.[tooltipItem.datasetIndex || 0].label
     var label = datasetLabel || data.labels?.[tooltipItem.index || 0]
     var toNumValue = Number(value)
@@ -478,12 +393,9 @@ function _setTooltipCallback(tooltips: Chart.ChartTooltipOptions) {
       value = toNumValue
     }
 
-    if (value) {
-      value = value.toLocaleString()
-    }
     var prefix = data.datasets?.[tooltipItem.datasetIndex || 0].valuePrefix || ''
     var suffix = data.datasets?.[tooltipItem.datasetIndex || 0].valueSuffix || ''
 
-    return `${label}: ${prefix + value + suffix}`
+    return `${label}: ${prefix + value?.toLocaleString() + suffix}`
   }
 }
