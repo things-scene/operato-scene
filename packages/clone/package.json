@@ -13,8 +13,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hatiolab/things-factory.git",
-    "directory": "packages/scene-clone"
+    "url": "git+https://github.com/things-scene/operato-scene.git",
+    "directory": "packages/clone"
   },
   "scripts": {
     "serve": "tsc && things-factory-dev",
