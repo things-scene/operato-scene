@@ -1,6 +1,6 @@
 {
-  "name": "@operato/scene-integration",
-  "description": "Things factory integration component for things-scene",
+  "name": "@operato/scene-chartjs",
+  "description": "Things Scene ChartJS Component",
   "version": "0.0.0",
   "license": "MIT",
   "author": "heartyoh",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/things-scene/operato-scene.git",
-    "directory": "packages/integration"
+    "directory": "packages/chartjs"
   },
   "scripts": {
     "serve": "tsc && things-factory-dev",
@@ -26,16 +26,30 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.17",
-    "graphql-tag": "^2.12.6",
-    "subscriptions-transport-ws": "^0.11.0"
+    "@ctrl/tinycolor": "^3.1.6",
+    "@hatiolab/things-scene": "^2.7.15",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/paper-button": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.2",
+    "@polymer/paper-tabs": "^3.1.0",
+    "@webcomponents/template": "^1.5.0",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "chart.js": "^2.9.4",
+    "chartjs-plugin-colorschemes": "^0.4.0",
+    "chartjs-plugin-crosshair": "^1.1.6",
+    "chartjs-plugin-datalabels": "^0.7.0",
+    "chartjs-plugin-style": "^0.5.0",
+    "core-js": "^3.16.0",
+    "lit": "^2.0.2",
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@hatiolab/things-scene": "^2.7.15",
     "@operato/board": "^0.2.27",
     "@things-factory/builder": "^4.0.6",
     "@things-factory/operato-board": "^4.0.6",
+    "@types/chart.js": "2.9.4",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",
