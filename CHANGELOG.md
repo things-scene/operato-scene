@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.8](https://github.com/hatiolab/operato/compare/v0.0.7...v0.0.8) (2021-12-03)
+
+
+### :bug: Bug Fix
+
+* change event from chart editor is not catched ([c81c4f3](https://github.com/hatiolab/operato/commit/c81c4f38ddfe3d689ac6a1ffb78515ac33266315))
+* scene-module template ([bdd1372](https://github.com/hatiolab/operato/commit/bdd1372d17d88015cb3149c871e6ba09b981f411))
+
+
+
 ### [0.0.7](https://github.com/hatiolab/operato/compare/v0.0.6...v0.0.7) (2021-12-03)
 
 

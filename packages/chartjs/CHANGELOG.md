@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.8](https://github.com/things-scene/operato-scene/compare/v0.0.7...v0.0.8) (2021-12-03)
+
+
+### :bug: Bug Fix
+
+* change event from chart editor is not catched ([c81c4f3](https://github.com/things-scene/operato-scene/commit/c81c4f38ddfe3d689ac6a1ffb78515ac33266315))
+
+
+
 ### [0.0.7](https://github.com/things-scene/operato-scene/compare/v0.0.6...v0.0.7) (2021-12-03)
 
 **Note:** Version bump only for package @operato/scene-chartjs
