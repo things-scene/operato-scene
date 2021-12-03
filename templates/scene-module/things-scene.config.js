@@ -1,7 +1,7 @@
-// import editors from './src/editors'
-import templates from './templates'
+// import editors from './dist/editors'
+import templates from "./templates";
 
 export default {
-  templates
+  templates,
   // editors
-}
+};
