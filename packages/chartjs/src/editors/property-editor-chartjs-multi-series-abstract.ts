@@ -103,6 +103,8 @@ export default class PropertyEditorChartJSMultiSeriesAbstract extends PropertyEd
   }
 
   firstUpdated() {
+    super.firstUpdated()
+
     this.tabContainer?.addEventListener('scroll', e => {
       this._onTabScroll(e)
     })
