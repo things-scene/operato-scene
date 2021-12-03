@@ -5,6 +5,7 @@
  */
 
 import { Component, Properties, RectPath, ValueHolder } from '@hatiolab/things-scene'
+import { GristData, GristRecord, SorterConfig } from '@operato/data-grist/src/types.js'
 
 import { DataGrist } from '@operato/data-grist'
 import SceneGrist from './grist'
