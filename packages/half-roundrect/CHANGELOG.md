@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.6](https://github.com/things-scene/operato-scene/compare/v0.0.5...v0.0.6) (2021-12-03)
+
+
+### :bug: Bug Fix
+
+* tsconfig ([a5ce449](https://github.com/things-scene/operato-scene/commit/a5ce449078e0b5371323984b78f1fb32526489bd))
+
+
+
 ### [0.0.5](https://github.com/things-scene/operato-scene/compare/v0.0.4...v0.0.5) (2021-12-03)
 
 
