@@ -1,13 +1,8 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
-import gql from 'graphql-tag'
-
 import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
+import { getClient, subscribe } from './origin-client'
 
 import COMPONENT_IMAGE from '../assets/symbol-scenario-instance-subscription.png'
-import { getClient, subscribe } from './origin-client'
+import gql from 'graphql-tag'
 
 const NATURE = {
   mutable: false,

@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 import { TinyColor } from '@ctrl/tinycolor'
 
 export function convertConfigure(chart: SceneChart.ChartConfig) {

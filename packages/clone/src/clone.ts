@@ -1,6 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import { Component, Container, Model, RectPath, Shape } from '@hatiolab/things-scene'
 
 const NATURE = {

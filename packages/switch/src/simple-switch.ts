@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 import './simple-switch-element'
 
 import { Component, HTMLOverlayElement } from '@hatiolab/things-scene'

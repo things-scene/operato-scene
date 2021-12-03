@@ -1,6 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import barChart from './bar-chart'
 import doughnutChart from './doughnut-chart'
 import horizontalBarChart from './horizontal-bar-chart'

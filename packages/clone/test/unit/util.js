@@ -1,21 +1,18 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 var noop = () => {}
 
-global.Canvas = require('canvas');
+global.Canvas = require('canvas')
 
-Canvas.prototype.setAttribute = noop;
-Canvas.prototype.style = {};
+Canvas.prototype.setAttribute = noop
+Canvas.prototype.style = {}
 
-global.Image = Canvas.Image;
+global.Image = Canvas.Image
 global.screen = {
   width: 1280,
   height: 800
-};
+}
 
-global.window = global;
+global.window = global
 
-global.addEventListener = noop;
-global.location = {};
-global.getComputedStyle = noop;
+global.addEventListener = noop
+global.location = {}
+global.getComputedStyle = noop

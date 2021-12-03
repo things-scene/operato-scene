@@ -1,9 +1,6 @@
 import { ApolloClient, HttpLink, InMemoryCache, from } from '@apollo/client/core'
 import { ErrorResponse, onError } from '@apollo/client/link/error'
 
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import { DefaultOptions } from '@apollo/client'
 import { SubscriptionClient } from 'subscriptions-transport-ws'
 

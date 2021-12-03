@@ -1,10 +1,6 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-import { html } from 'lit'
-import { customElement } from 'lit/decorators.js'
-
 import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
+import { customElement } from 'lit/decorators.js'
+import { html } from 'lit'
 
 @customElement('property-editor-chartjs-pie')
 export default class PropertyEditorChartJSPie extends PropertyEditorChartJSAbstract {

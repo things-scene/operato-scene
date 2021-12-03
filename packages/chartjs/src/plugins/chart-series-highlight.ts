@@ -1,8 +1,5 @@
 import Chart from 'chart.js'
 
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 function seriesHighlight(chartInstance: SceneChart, seriesData: SceneChart.DataSeries) {
   chartInstance.data.datasets?.forEach(dataset => {
     let highlight = dataset.highlight

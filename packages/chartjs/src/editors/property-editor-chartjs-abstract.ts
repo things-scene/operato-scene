@@ -1,13 +1,8 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
-import { html, LitElement } from 'lit'
-import { property } from 'lit/decorators.js'
-
-import { random as randomColor, TinyColor } from '@ctrl/tinycolor'
+import { LitElement, html } from 'lit'
+import { TinyColor, random as randomColor } from '@ctrl/tinycolor'
 
 import { PropertyEditorChartJSStyles } from './property-editor-chartjs-styles'
+import { property } from 'lit/decorators.js'
 
 export default class PropertyEditorChartJSAbstract extends LitElement {
   static styles = [PropertyEditorChartJSStyles]

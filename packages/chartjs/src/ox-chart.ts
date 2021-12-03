@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 import 'chartjs-plugin-datalabels'
 import 'chartjs-plugin-style'
 

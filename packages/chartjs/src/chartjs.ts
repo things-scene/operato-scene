@@ -1,8 +1,5 @@
 import './ox-chart'
 
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import { Component, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
 
 import { OxChart } from './ox-chart'

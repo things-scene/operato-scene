@@ -1,12 +1,8 @@
-import gql from 'graphql-tag'
-
 import { Component, RectPath, Shape } from '@hatiolab/things-scene'
 
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import COMPONENT_IMAGE from '../assets/symbol-connection-control.png'
 import { getClient } from './origin-client'
+import gql from 'graphql-tag'
 
 const NATURE = {
   mutable: false,

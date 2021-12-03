@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 function convertObject(
   dataArray: string | SceneChart.DataSeries | Object,
   chartInstance: SceneChart

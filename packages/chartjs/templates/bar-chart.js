@@ -1,6 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import icon from '../assets/bar-chart.png'
 
 export default {

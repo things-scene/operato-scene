@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-pages/iron-pages'
 import '@polymer/paper-button/paper-button'
@@ -9,11 +5,10 @@ import '@polymer/paper-icon-button/paper-icon-button'
 import '@polymer/paper-tabs/paper-tabs'
 
 import { css, html } from 'lit'
-import { query } from 'lit/decorators.js'
 
 import { PaperIconButtonElement } from '@polymer/paper-icon-button/paper-icon-button'
-
 import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
+import { query } from 'lit/decorators.js'
 
 export default class PropertyEditorChartJSMultiSeriesAbstract extends PropertyEditorChartJSAbstract {
   static styles = [

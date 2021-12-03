@@ -1,6 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import icon from '../assets/pie-chart.png'
 
 export default {

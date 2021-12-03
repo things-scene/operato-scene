@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 import { Component, Ellipse, ValueHolder } from '@hatiolab/things-scene'
 
 const NATURE = {

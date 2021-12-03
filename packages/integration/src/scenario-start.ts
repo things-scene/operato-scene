@@ -1,8 +1,5 @@
 import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import COMPONENT_IMAGE from '../assets/symbol-scenario-start.png'
 import { getClient } from './origin-client'
 import gql from 'graphql-tag'

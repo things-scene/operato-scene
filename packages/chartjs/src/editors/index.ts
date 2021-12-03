@@ -1,6 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
 import ChartJSEditor from './property-editor-chartjs'
 
 export default [

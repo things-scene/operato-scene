@@ -1,7 +1,3 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
 import { Component, ControlHandler, Rect } from '@hatiolab/things-scene'
 
 var controlHandler: ControlHandler = {

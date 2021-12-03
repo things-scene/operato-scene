@@ -1,8 +1,4 @@
-/*
- * Copyright © HatioLab Inc. All rights reserved.
- */
-
-import { Component, error, RectPath, ScriptLoader, Shape } from '@hatiolab/things-scene'
+import { Component, RectPath, ScriptLoader, Shape, error } from '@hatiolab/things-scene'
 
 const formats = [
   'bool,character,floating,integer,letter,natural,string',

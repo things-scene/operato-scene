@@ -17,7 +17,7 @@
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
-    "clean": "rimraf ./{services,packages,webcomponents,apps}/*/dist ./{services,packages,webcomponents,apps}/dist/*/*.{d.ts,js,esnext,mjs} .sewing-kit",
+    "clean": "rimraf ./{services,packages,webcomponents,apps}/*/dist ./{services,packages,webcomponents,apps}/*/*.tsbuildinfo .sewing-kit",
     "lint": "eslint '**/*.{ts,tsx}'",
     "generate": "plop",
     "check": "lerna run check",
