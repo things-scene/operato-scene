@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.7](https://github.com/things-scene/operato-scene/compare/v0.0.6...v0.0.7) (2021-12-03)
+
+
+### :bug: Bug Fix
+
+* integration editors ([abb6968](https://github.com/things-scene/operato-scene/commit/abb696884ba751b1379477e7f9f7a4010c98eba1))
+
+
+
 ### [0.0.6](https://github.com/things-scene/operato-scene/compare/v0.0.5...v0.0.6) (2021-12-03)
 
 
