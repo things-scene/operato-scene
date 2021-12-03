@@ -1,0 +1,13 @@
+{
+  "keyword": "keyword",
+  "label.grist-mode": "mode",
+  "label.target-grist": "target grist",
+  "label.config": "config",
+  "label.action": "action",
+  "label.content-scale": "content scale",
+  "label.run-at-startup": "run at startup",
+  "label.record-adder-format": "default when adding row",
+  "label.appendable": "appendable",
+  "label.paginatable": "paginatable",
+  "label.bound-data": "bound data"
+}

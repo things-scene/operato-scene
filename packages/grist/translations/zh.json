@@ -1,0 +1,13 @@
+{
+  "keyword": "关键词",
+  "label.grist-mode": "模式",
+  "label.target-grist": "目标grist",
+  "label.config": "配置",
+  "label.action": "动作",
+  "label.content-scale": "比例",
+  "label.run-at-startup": "在启动时运行",
+  "label.record-adder-format": "添加新行时的默认值",
+  "label.appendable": "可增加新行",
+  "label.paginatable": "可分页",
+  "label.bound-data": "绑定数据"
+}
