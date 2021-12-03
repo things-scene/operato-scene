@@ -13,9 +13,10 @@
     "outDir": "dist",
     "sourceMap": true,
     "inlineSources": true,
-    "rootDir": "./",
+    "rootDir": "./src",
     "declaration": true,
     "incremental": true,
+    "typeRoots": ["./node_modules", "@types"],
     "types": ["node"]
   },
   "include": ["**/*.ts", "*.d.ts"]

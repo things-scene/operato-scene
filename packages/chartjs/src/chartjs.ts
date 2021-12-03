@@ -1,13 +1,12 @@
 import './ox-chart'
 
-import cloneDeep from 'lodash/cloneDeep'
-
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+import { Component, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
 
 import { OxChart } from './ox-chart'
+import cloneDeep from 'lodash/cloneDeep'
 
 const NATURE = {
   mutable: false,

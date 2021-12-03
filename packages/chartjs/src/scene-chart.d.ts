@@ -1,5 +1,12 @@
+declare class SceneChart extends Chart {
+  type: Chart.ChartType | string
+  data: SceneChart.ChartData
+}
+
 declare namespace SceneChart {
   type Theme = 'light' | 'dark'
+  type Data = { [key: string]: any }
+  type DataSeries = Array<Data>
 
   interface TickOptions extends Chart.TickOptions {
     autoMax?: boolean
@@ -22,11 +29,21 @@ declare namespace SceneChart {
     dataKey: string
     valuePrefix: string
     valueSuffix: string
+    displayValue: string
+    dataLabelAnchor: string
+    defaultFontColor: string
+    defaultFontSize: number
+    highlight: {
+      color: string
+      condition: string
+    }
   }
+
   interface ChartData {
     labels?: Array<string | string[]>
     datasets?: ChartDataSets[]
     rawData?: any
+    labelDataKey?: string
   }
 
   interface ChartXAxe extends Chart.ChartXAxe {
@@ -43,6 +60,9 @@ declare namespace SceneChart {
   interface ChartTooltipItem extends Chart.ChartTooltipItem {}
   interface RadialLinearScale extends Chart.RadialLinearScale {}
   interface ChartPluginsOptions extends Chart.ChartPluginsOptions {}
+  // datalabels?: DataLabelsPluginOptions
+  // [plugin: string]: any
+  // }
 
   // interface ChartOptions {
   //   responsive?: boolean
@@ -72,7 +92,20 @@ declare namespace SceneChart {
   //   plugins?: ChartPluginsOptions
   // }
 
-  interface ChartOptions {
+  interface Context {
+    dataset: ChartDataSets
+  }
+
+  interface DataLabelsPluginOptions {
+    display: (context: Context) => true | false | 'auto'
+    anchor: (context: Context) => 'center' | 'start' | 'end' | string
+    color: (context: Context) => string
+    font: (context: Context) => { size: number }
+    clamp: boolean
+    formatter: (value: any, context: Context) => string
+  }
+
+  interface ChartOptions extends Chart.ChartOptions {
     scales: ChartScales
     scale: RadialLinearScale
     legend: ChartLegendOptions
@@ -85,10 +118,33 @@ declare namespace SceneChart {
     stacked?: boolean
     xGridLine: boolean
     fillStyle: string
-    maintainAspectRatio: boolean
+    maintainAspectRatio?: boolean
+    // plugins: ChartPluginsOptions
+
+    // responsive?: boolean
+    // responsiveAnimationDuration?: number
+    // aspectRatio?: number
+    // events?: string[]
+    // legendCallback?(chart: Chart): string
+    // onHover?(this: Chart, event: MouseEvent, activeElements: Array<{}>): any
+    // onClick?(event?: MouseEvent, activeElements?: Array<{}>): any
+    // onResize?(this: Chart, newSize: ChartSize): void
+    // title?: ChartTitleOptions
+    // hover?: ChartHoverOptions
+    // animation?: ChartAnimationOptions
+    // elements?: ChartElementsOptions
+    // layout?: ChartLayoutOptions
+    // // scale?: RadialLinearScale
+    // // scales?: ChartScales | LinearScale | LogarithmicScale | TimeScale
+    // showLines?: boolean
+    // spanGaps?: boolean
+    // cutoutPercentage?: number
+    // circumference?: number
+    // rotation?: number
+    // devicePixelRatio?: number
   }
 
-  export interface ChartConfig {
+  interface ChartConfig {
     type: string
     data: ChartData
     options: ChartOptions

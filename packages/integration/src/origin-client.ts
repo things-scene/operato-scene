@@ -1,12 +1,13 @@
-import { SubscriptionClient } from 'subscriptions-transport-ws'
+import { ApolloClient, HttpLink, InMemoryCache, from } from '@apollo/client/core'
+import { ErrorResponse, onError } from '@apollo/client/link/error'
 
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { ApolloClient, from, HttpLink, InMemoryCache } from '@apollo/client/core'
-import { onError } from '@apollo/client/link/error'
+import { DefaultOptions } from '@apollo/client'
+import { SubscriptionClient } from 'subscriptions-transport-ws'
 
-const defaultOptions = {
+const defaultOptions: DefaultOptions = {
   watchQuery: {
     fetchPolicy: 'no-cache',
     errorPolicy: 'ignore'
@@ -20,7 +21,7 @@ const defaultOptions = {
   }
 }
 
-const ERROR_HANDLER = ({ graphQLErrors, networkError }) => {
+const ERROR_HANDLER = ({ graphQLErrors, networkError }: ErrorResponse) => {
   if (graphQLErrors) {
     document.dispatchEvent(
       new CustomEvent('notify', {
@@ -34,11 +35,14 @@ const ERROR_HANDLER = ({ graphQLErrors, networkError }) => {
   }
 
   if (networkError) {
+    const code = (networkError as any).statusCode || ''
+    const message = `[Response-${code}]: ${networkError.message}`
+
     document.dispatchEvent(
       new CustomEvent('notify', {
         detail: {
           level: 'error',
-          message: `[Response-${networkError.statusCode || ''}]: ${networkError.message}`,
+          message,
           ex: networkError
         }
       })
@@ -46,7 +50,7 @@ const ERROR_HANDLER = ({ graphQLErrors, networkError }) => {
   }
 }
 
-var client: ApolloClient<NormalizedCacheObject>
+var client: ApolloClient<any>
 
 export function getClient() {
   if (!client) {
@@ -68,7 +72,7 @@ export function getClient() {
 }
 
 /* SubscriptionClient */
-var subscriptionClient
+var subscriptionClient: Promise<SubscriptionClient> | null
 
 const getSubscriptionClient = async () => {
   if (!subscriptionClient) {
@@ -93,7 +97,8 @@ const getSubscriptionClient = async () => {
       client.onError(err => {
         //readyState === 3 인 경우 url을 잘 못 입력했거나, 서버에 문제가 있는 경우이므로 reconnect = false로 변경한다.
         if (client.status === 3) {
-          client.reconnect = false
+          // client.reconnect = false // reconnect is private property
+          client.close(true)
         }
         reject(err)
       })
@@ -107,9 +112,9 @@ const getSubscriptionClient = async () => {
   return await subscriptionClient
 }
 
-var subscriptions = []
+var subscriptions: (() => void)[] = []
 
-export const subscribe = async (request, subscribe) => {
+export const subscribe = async (request: any, subscribe: any) => {
   var client = await getSubscriptionClient()
   var { unsubscribe } = client.request(request).subscribe(subscribe)
 

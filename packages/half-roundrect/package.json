@@ -4,8 +4,8 @@
   "description": "Half roundrect component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "things-scene": true,
   "publishConfig": {
     "access": "public",
@@ -28,7 +28,7 @@
   "dependencies": {},
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@hatiolab/things-scene": "^2.7.15",
+    "@hatiolab/things-scene": "^2.7.16",
     "@operato/board": "^0.2.27",
     "@things-factory/builder": "^4.0.6",
     "@things-factory/operato-board": "^4.0.6",

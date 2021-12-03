@@ -1,5 +1,3 @@
-import gql from 'graphql-tag'
-
 import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
 /*
@@ -7,6 +5,7 @@ import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/th
  */
 import COMPONENT_IMAGE from '../assets/symbol-scenario-run.png'
 import { getClient } from './origin-client'
+import gql from 'graphql-tag'
 
 const NATURE = {
   mutable: false,

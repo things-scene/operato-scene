@@ -22,7 +22,7 @@ export class OxChart extends LitElement {
   @property({ type: Object }) data!: SceneChart.ChartData
 
   private _initialized?: boolean
-  private _chart?: Chart
+  private _chart?: SceneChart
 
   @query('canvas') _canvas!: HTMLCanvasElement
 
@@ -45,7 +45,7 @@ export class OxChart extends LitElement {
 
     if (changes.has('data')) {
       this._chart!.data.rawData = this.data
-      this._chart!.update(0)
+      this._chart!.update()
     }
   }
 
@@ -60,7 +60,7 @@ export class OxChart extends LitElement {
       type,
       data,
       options
-    })
+    }) as SceneChart
 
     this.updateChartSize()
 
@@ -102,43 +102,49 @@ export class OxChart extends LitElement {
     this._chart.data = data
     this._chart.options = options
     this._chart.data.rawData = this.data
-    this._chart.update(0)
+    this._chart.update()
   }
 
   attachPluginOptions(options: SceneChart.ChartOptions) {
-    var pluginOptions = (options.plugins = options.plugins || {})
-    this.attachDatalabelPluginOptions(pluginOptions)
+    if (!options.plugins) {
+      options.plugins = {}
+    }
+
+    this.attachDatalabelPluginOptions(options.plugins)
   }
 
   attachDatalabelPluginOptions(pluginOptions: SceneChart.ChartPluginsOptions) {
-    var datalabelsOption = (pluginOptions.datalabels = pluginOptions.datalabels || {})
-    datalabelsOption['display'] = function (context) {
-      return !!context.dataset.displayValue
-    }
+    pluginOptions.datalabels = {
+      ...pluginOptions.datalabels,
+      display: function (context) {
+        //@ts-ignore
+        return !!context.dataset.displayValue
+      },
+      anchor: function (context) {
+        //@ts-ignore
+        return context.dataset.dataLabelAnchor || 'center'
+      },
+      color: function (context) {
+        //@ts-ignore
+        return context.dataset.defaultFontColor || '#000'
+      },
+      font: function (context) {
+        return {
+          //@ts-ignore
+          size: context.dataset.defaultFontSize
+        }
+      },
+      clamp: true,
+      formatter: function (value, context) {
+        //@ts-ignore
+        var prefix = context.dataset.valuePrefix || ''
+        //@ts-ignore
+        var suffix = context.dataset.valueSuffix || ''
+        if (value == undefined) return value
 
-    datalabelsOption['anchor'] = function (context) {
-      return context.dataset.dataLabelAnchor || 'center'
-    }
-
-    datalabelsOption['color'] = function (context) {
-      return context.dataset.defaultFontColor || '#000'
-    }
-
-    datalabelsOption['font'] = function (context) {
-      return {
-        size: context.dataset.defaultFontSize
+        var stringValue = String(value)
+        return prefix + stringValue.toLocaleString() + suffix
       }
-    }
-
-    datalabelsOption['clamp'] = true
-
-    datalabelsOption['formatter'] = function (value, context) {
-      var prefix = context.dataset.valuePrefix || ''
-      var suffix = context.dataset.valueSuffix || ''
-      if (value == undefined) return value
-
-      var stringValue = String(value)
-      return prefix + stringValue.toLocaleString() + suffix
     }
   }
 }
