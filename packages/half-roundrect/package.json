@@ -1,6 +1,6 @@
 {
   "name": "@operato/scene-half-roundrect",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Half roundrect component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
@@ -25,7 +25,6 @@
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "migration": "things-factory-migration"
   },
-  "dependencies": {},
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
     "@hatiolab/things-scene": "^2.7.16",

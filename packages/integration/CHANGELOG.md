@@ -8,24 +8,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### :rocket: New Features
 
+* add chartjs ([6b3b67b](https://github.com/things-scene/operato-scene/commit/6b3b67be882eda21a702f4f13ed5e0c4606ac934))
 * added scene-half-roundrect and integration ([91092e6](https://github.com/things-scene/operato-scene/commit/91092e664dd0d962e981f4acae70252f4c2ac6da))
 
 
 ### :bug: Bug Fix
 
 * add chartjs, integration module ([24cd106](https://github.com/things-scene/operato-scene/commit/24cd1065d13314e7ca3927a0306fed766531b851))
-* scene-i18n CustomElement tagname ([b17a3e0](https://github.com/things-scene/operato-scene/commit/b17a3e00d407a02b723ccb9671c1cdff74899b2c))
-
-
-
-### [0.0.4](https://github.com/hatiolab/things-factory/compare/v0.0.3...v0.0.4) (2021-12-01)
-
-
-### :rocket: New Features
-
-* add @operato/scene-i18n ([92d14ff](https://github.com/hatiolab/things-factory/commit/92d14ff4bcacfb920e39470cf7537ab7560844f1))
-
-
-### :bug: Bug Fix
-
-* things-scene upgrade ([9e2c0b8](https://github.com/hatiolab/things-factory/commit/9e2c0b85b1aacb0a4ef656866259879a20cd5de4))
