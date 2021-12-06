@@ -1,5 +1,5 @@
 import editors from './dist/editors'
-import templates from './templates'
+import templates from './dist/templates'
 
 export default {
   templates,
