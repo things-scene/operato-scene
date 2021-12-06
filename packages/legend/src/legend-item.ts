@@ -1,7 +1,7 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Model, Component, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, Model, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -11,16 +11,10 @@ const NATURE = {
 }
 
 export default class LegendItem extends RectPath(Shape) {
+  render(context: CanvasRenderingContext2D) {
+    var { left, top, height, color } = this.model
 
-  render(context) {
-    var {
-      left,
-      top,
-      height,
-      color
-    } = this.model
-
-    context.beginPath();
+    context.beginPath()
 
     var c = height / 2
     var r = c / 2
@@ -29,22 +23,21 @@ export default class LegendItem extends RectPath(Shape) {
 
     context.fillStyle = color
     context.ellipse(left + c, top + c, r, r, 0, 0, Math.PI * 2, true)
-    context.shadowColor = 'rgba(0,0,0,0.15)';
-    context.shadowBlur = 2;
-    context.shadowOffsetX = 1;
-    context.shadowOffsetY = 2;
+    context.shadowColor = 'rgba(0,0,0,0.15)'
+    context.shadowBlur = 2
+    context.shadowOffsetX = 1
+    context.shadowOffsetY = 2
     context.fill()
 
     context.restore()
   }
 
-  onchange(after) {
-    if (after.hasOwnProperty('height'))
-      this.set('paddingLeft', after.height)
+  onchange(after: Properties) {
+    if (after.hasOwnProperty('height')) this.set('paddingLeft', after.height)
   }
 
   get stuck() {
-    return true;
+    return true
   }
 
   get capturable() {
@@ -52,8 +45,8 @@ export default class LegendItem extends RectPath(Shape) {
   }
 
   get nature() {
-    return NATURE;
+    return NATURE
   }
 }
 
-Component.register('legend-item', LegendItem);
+Component.register('legend-item', LegendItem)

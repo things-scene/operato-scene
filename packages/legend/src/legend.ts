@@ -1,7 +1,7 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, Container, Model, Properties, TableLayout } from '@hatiolab/things-scene'
+import { Component, Container, Model, POSITION, Properties, TableLayout } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -50,7 +50,7 @@ const NATURE = {
 }
 
 var controlHandler = {
-  ondragmove: function (point, index, component) {
+  ondragmove: function (point: POSITION, index: number, component: Component) {
     var { left, top, width, height } = component.model
     /*
      * point의 좌표는 부모 레이어 기준의 x, y 값이다.
@@ -67,7 +67,7 @@ var controlHandler = {
   }
 }
 
-function roundSet(round, width, height) {
+function roundSet(round: number, width: number, height: number) {
   var max = width > height ? (height / width) * 100 : 100
 
   if (round >= max) round = max
@@ -85,7 +85,7 @@ export default class Legend extends Container {
     return false
   }
 
-  render(context) {
+  render(context: CanvasRenderingContext2D) {
     var { round = 0 } = this.model
 
     var { left, top, width, height } = this.bounds
@@ -144,7 +144,9 @@ export default class Legend extends Container {
   }
 
   rebuildLegendItems() {
-    if (this.components.length) this.components.slice().forEach(m => m.dispose())
+    if (this.components.length) {
+      this.components.slice().forEach(m => m.dispose())
+    }
 
     var {
       left,
@@ -167,7 +169,12 @@ export default class Legend extends Container {
       status = {}
     } = this.model
 
-    let statusRanges = status.ranges || []
+    let statusRanges: {
+      min: string
+      max: string
+      description: string
+      color: string
+    }[] = status.ranges || []
 
     var count = statusRanges.length
 

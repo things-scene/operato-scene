@@ -1,6 +1,7 @@
 import './editor-legend-status'
 
 import { OxPropertyEditor } from '@operato/property-editor'
+import { Properties } from '@hatiolab/things-scene'
 import { html } from 'lit-element'
 
 export class PropertyEditorLegendStatus extends OxPropertyEditor {
@@ -8,7 +9,7 @@ export class PropertyEditorLegendStatus extends OxPropertyEditor {
     return 'property-editor-legend-status'
   }
 
-  editorTemplate(props) {
+  editorTemplate(props: Properties) {
     return html` <editor-legend-status .value=${props.value} fullwidth></editor-legend-status> `
   }
 }

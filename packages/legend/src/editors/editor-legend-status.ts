@@ -2,7 +2,7 @@
  * @license Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { LitElement, css, html } from 'lit'
+import { LitElement, PropertyValues, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 @customElement('editor-legend-status')
@@ -115,8 +115,8 @@ class EditorLegendStatus extends LitElement {
       <input
         type="text"
         .value=${this._statusField || ''}
-        @change=${e => {
-          this._statusField = e.target.value
+        @change=${(e: Event) => {
+          this._statusField = (e.target as HTMLInputElement).value
         }}
       />
       <label class="default-color">
@@ -126,8 +126,8 @@ class EditorLegendStatus extends LitElement {
         name="default-color"
         .value=${this._defaultColor || ''}
         placeholder="default color"
-        @change=${e => {
-          this._defaultColor = e.target.value
+        @change=${(e: Event) => {
+          this._defaultColor = (e.target as HTMLInputElement).value
         }}
       ></things-editor-color>
 
@@ -156,7 +156,7 @@ class EditorLegendStatus extends LitElement {
                 <input type="text" data-description .value="${item.description || ''}" placeholder="display text" />
               </td>
               <td>
-                <button class="record-action" @tap=${e => this._delete(e)} tabindex="-1">-</button>
+                <button class="record-action" @tap=${(e: TouchEvent) => this._delete(e)} tabindex="-1">-</button>
               </td>
             </tr>
           `
@@ -194,7 +194,7 @@ class EditorLegendStatus extends LitElement {
     this.renderRoot.removeEventListener('change', this.boundOnChange)
   }
 
-  _valueChanged(value) {
+  _valueChanged(value: any) {
     var val = value || this._getDefaultValue()
     this._statusField = val.field
     this._defaultColor = val.defaultColor
@@ -203,11 +203,11 @@ class EditorLegendStatus extends LitElement {
     this.requestUpdate()
   }
 
-  _onChange(e) {
+  _onChange(e: Event) {
     e.stopPropagation()
     this._changingNow = true
 
-    var input = e.target
+    var input = e.target as HTMLInputElement
     var value = input.value
 
     var tr = input.closest('tr')
@@ -260,8 +260,8 @@ class EditorLegendStatus extends LitElement {
     }
 
     newRanges.sort(function (range1, range2) {
-      var min1 = range1.min
-      var min2 = range2.min
+      var min1 = Number(range1.min)
+      var min2 = Number(range2.min)
 
       var result = min1 - min2
 
@@ -294,11 +294,12 @@ class EditorLegendStatus extends LitElement {
     }
   }
 
-  _delete(e) {
-    var record = e.target.closest('tr[data-record]')
-    record.querySelector('[data-min]').value = ''
-    record.querySelector('[data-max]').value = ''
-    record.querySelector('[data-color]').value = ''
+  _delete(e: Event) {
+    var record = (e.target as Element).closest('tr[data-record]')
+
+    ;(record!.querySelector('[data-min]') as HTMLInputElement).value = ''
+    ;(record!.querySelector('[data-max]') as HTMLInputElement).value = ''
+    ;(record!.querySelector('[data-color]') as HTMLInputElement).value = ''
 
     this._build(false)
 
@@ -332,7 +333,7 @@ class EditorLegendStatus extends LitElement {
     inputs[0].focus()
   }
 
-  updated(changes) {
+  updated(changes: PropertyValues<this>) {
     if (changes.has('value')) this._valueChanged(this.value)
   }
 }
