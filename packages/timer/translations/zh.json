@@ -1,0 +1,11 @@
+{
+  "keyword": "关键词",
+  "label.background-color": "背景颜色",
+  "label.days": "天",
+  "label.due": "截止时间",
+  "label.hours": "小时",
+  "label.minutes": "分钟",
+  "label.seconds": "秒钟",
+  "label.format-run": "时间格式",
+  "label.format-stop": "停止格式"
+}

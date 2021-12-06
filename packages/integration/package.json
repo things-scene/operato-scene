@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@hatiolab/things-scene": "^2.7.21",
+    "@hatiolab/things-scene": "^2.7.22",
     "@operato/board": "^0.2.35",
     "@things-factory/builder": "^4.0.10",
     "@things-factory/operato-board": "^4.0.10",

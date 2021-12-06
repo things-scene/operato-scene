@@ -1,0 +1,11 @@
+{
+  "keyword": "keyword",
+  "label.background-color": "background color",
+  "label.days": "days",
+  "label.due": "due",
+  "label.hours": "hours",
+  "label.minutes": "minutes",
+  "label.seconds": "seconds",
+  "label.format-run": "time format",
+  "label.format-stop": "stopped"
+}
