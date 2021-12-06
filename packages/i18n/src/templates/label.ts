@@ -1,4 +1,4 @@
-import icon from './scene-label.png'
+import icon from '../../assets/scene-label.png'
 
 export default {
   type: 'label',

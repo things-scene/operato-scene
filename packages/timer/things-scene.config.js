@@ -1,4 +1,4 @@
-import templates from './templates'
+import templates from './dist/templates'
 
 export default {
   templates
