@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.10](https://github.com/things-scene/operato-scene/compare/v0.0.9...v0.0.10) (2021-12-06)
+
+
+### :bug: Bug Fix
+
+* module things-factory for test upgraded ([6a4a853](https://github.com/things-scene/operato-scene/commit/6a4a853f6beb80403c29bd8f423902f6e9ecdd81))
+
+
+### :rocket: New Features
+
+* add @operato/scene-clock ([74da632](https://github.com/things-scene/operato-scene/commit/74da632211643f47f50a886ca7173bced0132b62))
+
+
+
 ### [0.0.9](https://github.com/things-scene/operato-scene/compare/v0.0.8...v0.0.9) (2021-12-03)
 
 
