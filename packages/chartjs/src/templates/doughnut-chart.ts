@@ -1,4 +1,4 @@
-import icon from '../assets/doughnut-chart.png'
+import icon from '../../assets/doughnut-chart.png'
 
 export default {
   type: 'doughnut chart',

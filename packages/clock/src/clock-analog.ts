@@ -61,7 +61,7 @@ const NATURE = {
   help: 'scene/component/analog-clock'
 }
 
-function drawHand(ctx, pos, length, rx, needleRound) {
+function drawHand(ctx: CanvasRenderingContext2D, pos: number, length: number, rx: number, needleRound: boolean) {
   ctx.beginPath()
   ctx.lineWidth = rx
   ctx.lineCap = needleRound ? 'round' : 'square'
@@ -169,11 +169,10 @@ export default class ClockAnalog extends Ellipse {
     ctx.scale(1, rx / ry)
     ctx.translate(-cx, -cy)
 
-    var timeOut
-    timeOut = setTimeout(
+    var timeOut: NodeJS.Timeout = setTimeout(
       function (self) {
         self.invalidate()
-        clearTimeout(timeOut) // 이 함수가 없을 시 Invalidate가 1초에 여러번 그림.
+        clearTimeout(timeOut)
       },
       1000,
       this

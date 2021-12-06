@@ -2,9 +2,16 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import moment from 'moment'
+import 'dayjs/esm/locale/ko'
+import 'dayjs/esm/locale/zh-cn'
+import 'dayjs/esm/locale/ja'
+
+import dayjs from 'dayjs/esm/index'
+import utc from 'dayjs/esm/plugin/utc'
 
 import { Component, Text } from '@hatiolab/things-scene'
+
+dayjs.extend(utc)
 
 const NATURE = {
   mutable: false,
@@ -42,7 +49,7 @@ const NATURE = {
           },
           {
             display: 'Chinese',
-            value: 'zh_cn'
+            value: 'zh-cn'
           },
           {
             display: 'Japanese',
@@ -81,7 +88,7 @@ export default class ClockText extends Text {
   }
 
   _getTimeStamp() {
-    var d = moment()
+    var d = dayjs()
 
     var utc = this.get('utc')
     var formatStr = this.get('timeFormat') || 'YYYY-MM-DD HH:mm:ss'
@@ -90,17 +97,15 @@ export default class ClockText extends Text {
       week_lang = 'en'
     }
     if (this.get('localTime')) {
-      d.local()
+      return d.local().locale(week_lang).format(formatStr)
     } else {
-      d.utc().utcOffset(utc)
+      return d.utc().utcOffset(Number(utc)).locale(week_lang).format(formatStr)
     }
-    var result = d.locale(week_lang).format(formatStr)
-    return result
   }
 
   dispose() {
     super.dispose()
-    cancelAnimationFrame(this._raf)
+    this._raf !== undefined && cancelAnimationFrame(this._raf)
   }
 }
 

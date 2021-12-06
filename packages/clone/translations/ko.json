@@ -3,5 +3,6 @@
   "label.target": "대상",
   "label.repeat": "반복",
   "label.autostart": "자동 시작",
-  "label.targetRetention": "대상 유지기간"
+  "label.targetRetention": "대상 유지기간",
+  "label.week-language": "요일 언어"
 }

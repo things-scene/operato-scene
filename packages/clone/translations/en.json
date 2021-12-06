@@ -3,5 +3,6 @@
   "label.target": "target",
   "label.repeat": "repeat",
   "label.autostart": "auto start",
-  "label.targetRetention": "target retention"
+  "label.targetRetention": "target retention",
+  "label.week-language": "weekday language"
 }
