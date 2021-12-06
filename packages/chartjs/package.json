@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-chartjs",
   "description": "Things Scene ChartJS Component",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "license": "MIT",
   "author": "heartyoh",
   "main": "dist/index.js",

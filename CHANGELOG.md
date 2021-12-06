@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.12](https://github.com/hatiolab/operato/compare/v0.0.11...v0.0.12) (2021-12-06)
+
+
+### :rocket: New Features
+
+* add wheel-sorter, legend, timer and compass ([5b8777a](https://github.com/hatiolab/operato/commit/5b8777a0295e0cd8111284de0161d3fb2d1fe099))
+
+
+
 ### [0.0.11](https://github.com/hatiolab/operato/compare/v0.0.10...v0.0.11) (2021-12-06)
 
 
