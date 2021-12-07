@@ -4,12 +4,13 @@
  * grist 컴포넌트를 보조하여 grist의 각종 동작을 수행하는 컴포넌트.
  */
 
+import uuid from 'uuid'
+
 import { Component, Properties, RectPath, ValueHolder } from '@hatiolab/things-scene'
+import { DataGrist } from '@operato/data-grist'
 import { GristData, GristRecord, SorterConfig } from '@operato/data-grist/src/types.js'
 
-import { DataGrist } from '@operato/data-grist'
 import SceneGrist from './grist'
-import uuid from 'uuid'
 
 export enum ACTIONS {
   GET_ALL_ROWS = 'getAllRows',
@@ -108,7 +109,9 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
   ready() {
     // 뷰어 시작시에도 action 값이 getPageInfo로 되어 있을 경우 fetchHandler를 등록하기 위해 onchange를 호출함
     this.onchange({ action: this.state.action })
-    if (this.state.runAtStartup) this.doAction()
+    if (this.state.runAtStartup) {
+      setTimeout(() => this.doAction(), 100)
+    }
   }
 
   dispose() {
@@ -131,15 +134,19 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
       const gristComponent = this.targetGristComponent
 
       if (gristComponent) {
-        if (after.action == ACTIONS.GET_PAGE_INFO)
-          //@ts-ignore
-          gristComponent.beforeFetchFuncs[this.uuid] = fetchedData => {
-            //@ts-ignore
+        if (after.action == ACTIONS.GET_PAGE_INFO) {
+          gristComponent.beforeFetchFuncs[this.uuid] = (fetchedData: {
+            page: number
+            limit: number
+            total: number
+            records: GristRecord[]
+          }) => {
             this.data = this.getPageInfoFrom(null, fetchedData)
             this.doDataMap()
           }
-        //@ts-ignore
-        else delete gristComponent.beforeFetchFuncs[this.uuid]
+        } else {
+          delete gristComponent.beforeFetchFuncs[this.uuid]
+        }
       }
     }
   }
@@ -206,7 +213,6 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
         {
           var records = grist.dirtyData.records || []
 
-          //@ts-ignore
           records.forEach((record, idx) => {
             if (record['__selected__']) {
               if (record['__dirty__'] == '+') delete records[idx]
@@ -234,8 +240,8 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
     grist = grist || this.targetGristElement
     if (!grist) return
 
-    //@ts-ignore
-    grist.dataProvider.onRecordChange()
+    grist.refresh()
+    // grist.dataProvider.onRecordChange()
     grist.grist.data = { ...grist.dirtyData }
   }
 
@@ -268,9 +274,9 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
   }
 
   // 페이지네이션 정보를 가져옴
-  getPageInfoFrom(grist: DataGrist, fetchedData?: GristData) {
-    //@ts-ignore
-    var { page = 1, limit = 20, sorters = [] } = fetchedData || (grist && grist.dataProvider) || pagination(grist)
+  getPageInfoFrom(grist: DataGrist | null, fetchedData?: GristData) {
+    // @ts-ignore
+    var { page = 1, limit = 20, sorters = [] } = fetchedData || (grist && grist.dataProvider) || pagination(grist!)
 
     sorters = sorters.map((sorter: SorterConfig) => {
       sorter.desc = sorter.desc ? true : false
@@ -349,7 +355,6 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
     return this.targetGristComponent?.grist
   }
 
-  // @ts-ignore
   get data() {
     return this._data
   }

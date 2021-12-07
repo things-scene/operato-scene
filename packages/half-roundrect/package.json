@@ -25,10 +25,12 @@
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "migration": "things-factory-migration"
   },
+  "dependencies": {
+    "@hatiolab/things-scene": "^2.7.24"
+  },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@hatiolab/things-scene": "^2.7.23",
-    "@operato/board": "^0.2.35",
+    "@operato/board": "^0.2.37",
     "@things-factory/builder": "^4.0.10",
     "@things-factory/operato-board": "^4.0.10",
     "@typescript-eslint/eslint-plugin": "^4.33.0",

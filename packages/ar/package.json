@@ -1,20 +1,20 @@
 {
-  "name": "@operato/scene-chartjs",
-  "description": "Things Scene ChartJS Component",
-  "version": "0.0.12",
+  "name": "@operato/scene-ar",
+  "description": "AR Modelviewer component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
+  "version": "0.0.12",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
   "publishConfig": {
     "access": "public",
-    "@operato:registry": "https://registry.npmjs.org"
+    "@oprato:registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/things-scene/operato-scene.git",
-    "directory": "packages/chartjs"
+    "directory": "packages/ar"
   },
   "scripts": {
     "serve": "tsc && things-factory-dev",
@@ -26,30 +26,14 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@ctrl/tinycolor": "^3.1.6",
-    "@hatiolab/things-scene": "^2.7.24",
-    "@polymer/iron-icon": "^3.0.1",
-    "@polymer/iron-pages": "^3.0.1",
-    "@polymer/paper-button": "^3.0.1",
-    "@polymer/paper-icon-button": "^3.0.2",
-    "@polymer/paper-tabs": "^3.1.0",
-    "@webcomponents/template": "^1.5.0",
-    "@webcomponents/webcomponentsjs": "^2.6.0",
-    "chart.js": "^2.9.4",
-    "chartjs-plugin-colorschemes": "^0.4.0",
-    "chartjs-plugin-crosshair": "^1.1.6",
-    "chartjs-plugin-datalabels": "^0.7.0",
-    "chartjs-plugin-style": "^0.5.0",
-    "core-js": "^3.16.0",
-    "lit": "^2.0.2",
-    "regenerator-runtime": "^0.13.3"
+    "@google/model-viewer": "^1.9.2",
+    "@hatiolab/things-scene": "^2.7.24"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
     "@operato/board": "^0.2.37",
     "@things-factory/builder": "^4.0.10",
     "@things-factory/operato-board": "^4.0.10",
-    "@types/chart.js": "2.9.34",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",

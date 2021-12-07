@@ -2,6 +2,12 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
+import '@operato/data-grist'
+
+import { Component, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+import { DataGrist } from '@operato/data-grist'
+import { FetchOption, GristRecord } from '@operato/data-grist/dist/src/types'
+
 const NATURE = {
   mutable: false,
   resizable: true,
@@ -77,12 +83,6 @@ const NATURE = {
   help: 'scene/component/grist'
 }
 
-import '@operato/data-grist'
-
-import { Component, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
-
-import { DataGrist } from '@operato/data-grist'
-
 const isMobileDevice = () => false
 
 export default class SceneGrist extends HTMLOverlayElement {
@@ -90,8 +90,9 @@ export default class SceneGrist extends HTMLOverlayElement {
     return NATURE
   }
 
+  public beforeFetchFuncs: any = {}
+
   private __value: any = {}
-  private beforeFetchFuncs: any = {}
   private _listenTo?: any
   private _listener?: any
 
@@ -121,7 +122,7 @@ export default class SceneGrist extends HTMLOverlayElement {
   createElement() {
     super.createElement()
 
-    this.grist = document.createElement('ox-data-grist') as DataGrist
+    this.grist = document.createElement('ox-grist') as DataGrist
     this.grist.style.setProperty('--grist-padding', '0')
 
     this.element.appendChild(this.grist)
@@ -132,10 +133,20 @@ export default class SceneGrist extends HTMLOverlayElement {
 
     this.setGristConfig(grist)
 
-    //@ts-ignore
-    grist.fetchHandler = ({ page, limit, sorters, options }) => {
+    grist.fetchHandler = ({
+      page,
+      limit,
+      sorters,
+      options
+    }: FetchOption): {
+      page?: number
+      limit?: number
+      total: number
+      records: GristRecord[]
+    } => {
       Object.values(this.beforeFetchFuncs).forEach((func: any) => func({ page, limit, sorters, options }))
       var { total = 0, records = [] } = grist.data || {}
+
       return {
         page,
         limit,

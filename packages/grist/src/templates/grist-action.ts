@@ -1,5 +1,5 @@
+import icon from '../../assets/grist-action.png'
 import { ACTIONS } from '../grist-action'
-import icon from './grist-action.png'
 
 export default {
   type: 'grist-action',

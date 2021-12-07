@@ -26,13 +26,13 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@operato/data-grist": "^0.2.35",
+    "@hatiolab/things-scene": "^2.7.24",
+    "@operato/data-grist": "^0.2.40",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@hatiolab/things-scene": "^2.7.23",
-    "@operato/board": "^0.2.35",
+    "@operato/board": "^0.2.37",
     "@things-factory/builder": "^4.0.10",
     "@things-factory/operato-board": "^4.0.10",
     "@types/chance": "^1.1.3",

@@ -1,4 +1,4 @@
-import icon from './grist.png'
+import icon from '../../assets/grist.png'
 
 export default {
   type: 'grist',
