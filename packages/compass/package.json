@@ -30,8 +30,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@hatiolab/things-scene": "^2.7.24",
-    "@operato/board": "^0.2.37",
+    "@operato/board": "^0.2.42",
     "@things-factory/builder": "^4.0.10",
     "@things-factory/operato-board": "^4.0.10",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
