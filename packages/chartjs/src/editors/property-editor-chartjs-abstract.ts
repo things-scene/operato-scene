@@ -1,8 +1,10 @@
-import { LitElement, html } from 'lit'
-import { TinyColor, random as randomColor } from '@ctrl/tinycolor'
+import { html, LitElement } from 'lit'
+import { property } from 'lit/decorators.js'
+
+import { random as randomColor, TinyColor } from '@ctrl/tinycolor'
+import { Properties } from '@hatiolab/things-scene'
 
 import { PropertyEditorChartJSStyles } from './property-editor-chartjs-styles'
-import { property } from 'lit/decorators.js'
 
 export default class PropertyEditorChartJSAbstract extends LitElement {
   static styles = [PropertyEditorChartJSStyles]
@@ -73,7 +75,7 @@ export default class PropertyEditorChartJSAbstract extends LitElement {
     `
   }
 
-  editorTemplate(props: any) {
+  editorTemplate(props: Properties) {
     return html``
   }
 

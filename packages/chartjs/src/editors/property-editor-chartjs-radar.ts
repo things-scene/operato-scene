@@ -3,9 +3,12 @@ import '@polymer/paper-button/paper-button'
 import '@polymer/paper-icon-button/paper-icon-button'
 import '@polymer/paper-tabs/paper-tabs'
 
-import PropertyEditorChartJSMultiSeriesAbstract from './property-editor-chartjs-multi-series-abstract'
-import { customElement } from 'lit/decorators.js'
 import { html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+
+import { Properties } from '@hatiolab/things-scene'
+
+import PropertyEditorChartJSMultiSeriesAbstract from './property-editor-chartjs-multi-series-abstract'
 
 @customElement('property-editor-chartjs-radar')
 export default class PropertyEditorChartJSRadar extends PropertyEditorChartJSMultiSeriesAbstract {
@@ -24,7 +27,7 @@ export default class PropertyEditorChartJSRadar extends PropertyEditorChartJSMul
     }
   }
 
-  editorTemplate(props: any) {
+  editorTemplate(props: Properties) {
     return html`
       <legend><i18n-msg msgid="label.series">Series</i18n-msg></legend>
 

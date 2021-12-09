@@ -1,8 +1,9 @@
 import './editor-legend-status'
 
-import { OxPropertyEditor } from '@operato/property-editor'
+import { html } from 'lit'
+
 import { Properties } from '@hatiolab/things-scene'
-import { html } from 'lit-element'
+import { OxPropertyEditor } from '@operato/property-editor'
 
 export class PropertyEditorLegendStatus extends OxPropertyEditor {
   static get is() {

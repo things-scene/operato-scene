@@ -9,6 +9,7 @@ import './property-editor-chartjs-radar'
 
 import { css, html } from 'lit'
 
+import { Properties } from '@hatiolab/things-scene'
 import { OxPropertyEditor } from '@operato/property-editor'
 
 export default class ChartJSEditor extends OxPropertyEditor {
@@ -51,7 +52,7 @@ export default class ChartJSEditor extends OxPropertyEditor {
     ]
   }
 
-  editorTemplate(props: any) {
+  editorTemplate(props: Properties) {
     return html`
       ${props.value
         ? html`

@@ -4,9 +4,12 @@ import '@polymer/paper-button/paper-button'
 import '@polymer/paper-icon-button/paper-icon-button'
 import '@polymer/paper-tabs/paper-tabs'
 
-import PropertyEditorChartJSMultiSeriesAbstract from './property-editor-chartjs-multi-series-abstract'
-import { customElement } from 'lit/decorators.js'
 import { html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+
+import { Properties } from '@hatiolab/things-scene'
+
+import PropertyEditorChartJSMultiSeriesAbstract from './property-editor-chartjs-multi-series-abstract'
 
 @customElement('property-editor-chartjs-mixed')
 export default class PropertyEditorChartJSMixed extends PropertyEditorChartJSMultiSeriesAbstract {
@@ -69,7 +72,7 @@ export default class PropertyEditorChartJSMixed extends PropertyEditorChartJSMul
     this.value.options.multiAxis = multiAxis
   }
 
-  editorTemplate(props: any) {
+  editorTemplate(props: Properties) {
     return html`
       <input type="checkbox" value-key="multiAxis" .checked=${this.multiAxis} />
       <label> <i18n-msg msgid="label.multi-axis">Multi Axis</i18n-msg> </label>

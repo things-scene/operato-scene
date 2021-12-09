@@ -5,10 +5,12 @@ import '@polymer/paper-icon-button/paper-icon-button'
 import '@polymer/paper-tabs/paper-tabs'
 
 import { css, html } from 'lit'
-
-import { PaperIconButtonElement } from '@polymer/paper-icon-button/paper-icon-button'
-import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
 import { query } from 'lit/decorators.js'
+
+import { Properties } from '@hatiolab/things-scene'
+import { PaperIconButtonElement } from '@polymer/paper-icon-button/paper-icon-button'
+
+import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
 
 export default class PropertyEditorChartJSMultiSeriesAbstract extends PropertyEditorChartJSAbstract {
   static styles = [
@@ -110,7 +112,7 @@ export default class PropertyEditorChartJSMultiSeriesAbstract extends PropertyEd
     })
   }
 
-  editorTemplate(props: any) {
+  editorTemplate(props: Properties) {
     return html`
       <input type="checkbox" value-key="multiAxis" .checked=${this.multiAxis} />
       <label> <i18n-msg msgid="label.multi-axis">Multi Axis</i18n-msg> </label>

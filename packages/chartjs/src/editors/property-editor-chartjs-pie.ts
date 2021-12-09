@@ -1,6 +1,9 @@
-import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
-import { customElement } from 'lit/decorators.js'
 import { html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+
+import { Properties } from '@hatiolab/things-scene'
+
+import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
 
 @customElement('property-editor-chartjs-pie')
 export default class PropertyEditorChartJSPie extends PropertyEditorChartJSAbstract {
@@ -54,7 +57,7 @@ export default class PropertyEditorChartJSPie extends PropertyEditorChartJSAbstr
     this.series.displayValue = displayValue
   }
 
-  editorTemplate(props: any) {
+  editorTemplate(props: Properties) {
     return html`
       <legend><i18n-msg msgid="label.series">Series</i18n-msg></legend>
 

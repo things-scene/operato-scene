@@ -26,7 +26,7 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^2.7.24",
+    "@hatiolab/things-scene": "^2.7.25",
     "@operato/data-grist": "^0.2.43",
     "uuid": "^3.4.0"
   },

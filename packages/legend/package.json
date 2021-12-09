@@ -26,7 +26,7 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^2.7.24",
+    "@hatiolab/things-scene": "^2.7.25",
     "lit": "^2.0.2"
   },
   "devDependencies": {

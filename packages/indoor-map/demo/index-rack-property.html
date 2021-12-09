@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+@license
+Copyright © HatioLab Inc. All rights reserved.
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>things-scene-rack-properties Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../things-scene-viewer/things-scene-viewer.html">
+    <link rel="import" href="../../things-scene-viewer/things-scene-layer.html">
+    <link rel="import" href="../../things-scene-viewer/things-scene-handler.html">
+
+    <link rel="import" href="../../things-designer-elements/things-editor-properties.html">
+    <link rel="import" href="../../things-designer-elements/things-editor-property.html">
+
+    <link rel="import" href="./things-scene-indoor-map.html">
+
+  </head>
+  <body unresolved>
+
+    <template is="dom-bind" id="app">
+      <style is="custom-style">
+      textarea {
+          width: 600px;
+          height: 300px;
+      }
+
+      #target {
+        width: 300px;
+        height: 300px;
+        background: var(--theme-color, red);
+      }
+      </style>
+
+      <p>An example of <code>&lt;things-scene-rack-properties&gt;</code>:</p>
+      <div>
+        <textarea spellcheck="false">[[propertyValueText]]</textarea>
+      </div>
+
+      <things-editor-properties id="properties"
+                                target="{{value}}"
+                                props="{{props}}">
+      </things-editor-properties>
+
+    </template>
+
+    <script>
+      window.addEventListener('WebComponentsReady', function(e) {
+        var app = document.querySelector('#app')
+
+        app.props = scene.Component.register('rack').nature.props
+
+        app.value = {
+          depth: 100,
+          shelves: 4
+        }
+
+        app.$.properties.addEventListener('change', function(e) {
+          app.propertyValueText = JSON.stringify(app.value, "null", "\t");
+        })
+
+        app.$.properties.fire('change');
+
+        setInterval(function() {
+          app.set("value.depth", app.value.depth + 1);
+          app.propertyValueText = JSON.stringify(app.value, "null", "\t");
+        }, 1000)
+      })
+    </script>
+
+  </body>
+</html>
