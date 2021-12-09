@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.16](https://github.com/hatiolab/operato/compare/v0.0.15...v0.0.16) (2021-12-09)
+
+
+### :rocket: New Features
+
+* add indoor-map and gauge component ([35d8a75](https://github.com/hatiolab/operato/commit/35d8a75f7d691dd23ea299fd772b79d19eec5d2f))
+
+
+### :bug: Bug Fix
+
+* operato dependencies ([4309938](https://github.com/hatiolab/operato/commit/4309938e154e6638c22c4edd66b756ca2c0e6587))
+* upgrade [@operato](https://github.com/operato) dependencies ([92985c7](https://github.com/hatiolab/operato/commit/92985c76d2b7e6d3941c2c809a85b3676a579b0e))
+
+
+
 ### [0.0.15](https://github.com/hatiolab/operato/compare/v0.0.14...v0.0.15) (2021-12-08)
 
 
