@@ -45,10 +45,6 @@ const NATURE = {
 
 export default class DataList extends Container {
   postrender(context: CanvasRenderingContext2D) {
-    // 컨테이너의 범위 내에서만 그린다.
-    // container의 기본 기능으로 추가되면 좋겠다.
-    context.clip()
-
     super.postrender(context)
 
     // child component들을 다 그린 후에 scrollbar를 표현한다.
@@ -141,9 +137,9 @@ export default class DataList extends Container {
     })
   }
 
-  private __START_OFFSET?: {x: number; y: number}
+  private __START_OFFSET?: { x: number; y: number }
   private __START_Y?: number
-  
+
   _ontouchstart(e: DragEvent) {
     this.__START_OFFSET = this.state.offset || {
       x: 0,
@@ -197,7 +193,11 @@ export default class DataList extends Container {
 
   get widths_sum(): number {
     var widths = this.widths
-    return widths ? widths.filter((width: number, i: number) => i < this.columns).reduce((sum: number, width: number) => sum + width, 0) : this.columns
+    return widths
+      ? widths
+          .filter((width: number, i: number) => i < this.columns)
+          .reduce((sum: number, width: number) => sum + width, 0)
+      : this.columns
   }
 
   get heights_sum(): number {
@@ -243,7 +243,7 @@ export default class DataList extends Container {
     return NATURE
   }
 
-  get controls() : Control[] {
+  get controls(): Control[] {
     var widths = this.widths
     var heights = this.heights
     var inside = this.textBounds
@@ -515,7 +515,7 @@ export default class DataList extends Container {
   deleteColumns(cells: Component[]) {
     // 만약 선택한 셀이 병합된 셀이라면 삭제하지 않는다.
     // if (cells[0].merged == true) return false
-    
+
     // 먼저 cells 위치의 열을 구한다.
     let columns: number[] = []
     cells.forEach(cell => {
