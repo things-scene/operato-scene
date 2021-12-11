@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^3.1.6",
-    "@hatiolab/things-scene": "^2.7.25",
+    "@hatiolab/things-scene": "^2.7.26",
     "@polymer/iron-icon": "^3.0.1",
     "@polymer/iron-pages": "^3.0.1",
     "@polymer/paper-button": "^3.0.1",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^0.2.44",
+    "@operato/board": "^0.2.45",
     "@things-factory/builder": "^4.0.12",
     "@things-factory/operato-board": "^4.0.12",
     "@types/chart.js": "2.9.34",

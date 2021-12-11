@@ -26,12 +26,12 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^2.7.25",
+    "@hatiolab/things-scene": "^2.7.26",
     "lit": "^2.0.2"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^0.2.44",
+    "@operato/board": "^0.2.45",
     "@things-factory/builder": "^4.0.12",
     "@things-factory/operato-board": "^4.0.12",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
