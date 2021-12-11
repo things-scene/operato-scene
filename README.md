@@ -24,7 +24,6 @@ Service developers that will be a component of Operato Platform should refer to 
 
 | Package | Version | Description |
 | ------- | ------- | ----------- |
-
 | [scene-ar](packages/scene-ar) | <a href="https://badge.fury.io/js/%40operato%2Fscene-ar"><img src="https://badge.fury.io/js/%40operato%2Fscene-ar.svg" width="200px" /></a> | AR Modelviewer component for things-scene |
 | [scene-chartjs](packages/scene-chartjs) | <a href="https://badge.fury.io/js/%40operato%2Fscene-chartjs"><img src="https://badge.fury.io/js/%40operato%2Fscene-chartjs.svg" width="200px" /></a> | Things Scene ChartJS Component |
 | [scene-clock](packages/scene-clock) | <a href="https://badge.fury.io/js/%40operato%2Fscene-clock"><img src="https://badge.fury.io/js/%40operato%2Fscene-clock.svg" width="200px" /></a> | Clock component for things-scene |

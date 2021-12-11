@@ -26,7 +26,6 @@ Service developers that will be a component of Operato Platform should refer to 
 
 | Package | Version | Description |
 | ------- | ------- | ----------- |
-
 {{#each packages}}
 | [{{name}}](packages/{{name}}) | <a href="https://badge.fury.io/js/%40operato%2F{{name}}"><img src="https://badge.fury.io/js/%40operato%2F{{name}}.svg" width="200px" /></a> | {{{description}}} |
 {{/each}}
