@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.18](https://github.com/hatiolab/operato/compare/v0.0.17...v0.0.18) (2021-12-11)
+
+
+### :bug: Bug Fix
+
+* indoor-map and table editor interaction pattern ([5447b9b](https://github.com/hatiolab/operato/commit/5447b9b36bab108db6845ccd6c82a5c6ece7ffbf))
+* README template ([aee0608](https://github.com/hatiolab/operato/commit/aee0608e8d84a9b0d06aadc0fadab4a0f0e74a40))
+* upgrade things-factory version ([e7fc142](https://github.com/hatiolab/operato/commit/e7fc142a70d3d54b61fdd076522dede8a5908dcd))
+
+
+
 ### [0.0.17](https://github.com/hatiolab/operato/compare/v0.0.16...v0.0.17) (2021-12-11)
 
 
