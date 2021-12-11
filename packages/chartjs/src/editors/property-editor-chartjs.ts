@@ -9,48 +9,44 @@ import './property-editor-chartjs-radar'
 
 import { css, html } from 'lit'
 
-import { Properties } from '@hatiolab/things-scene'
 import { OxPropertyEditor } from '@operato/property-editor'
+import { Properties } from '@hatiolab/things-scene'
+import { customElement } from 'lit/decorators'
 
+@customElement('property-editor-chartjs')
 export default class ChartJSEditor extends OxPropertyEditor {
-  static get is() {
-    return 'property-editor-chartjs'
-  }
+  static styles = [
+    css`
+      :host {
+        display: block;
+        padding: 5px;
+      }
 
-  static get styles() {
-    return [
-      css`
-        :host {
-          display: block;
-          padding: 5px;
-        }
+      #chart-type {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 5px;
+      }
 
-        #chart-type {
-          display: grid;
-          grid-template-columns: repeat(10, 1fr);
-          grid-gap: 5px;
-        }
+      #chart-type > label {
+        box-sizing: border-box;
+        grid-column: span 3;
 
-        #chart-type > label {
-          box-sizing: border-box;
-          grid-column: span 3;
+        text-align: right;
 
-          text-align: right;
+        color: var(--primary-text-color);
+        font-size: 0.8em;
+        line-height: 2;
+        text-transform: capitalize;
+      }
 
-          color: var(--primary-text-color);
-          font-size: 0.8em;
-          line-height: 2;
-          text-transform: capitalize;
-        }
-
-        #chart-type > input {
-          box-sizing: border-box;
-          grid-column: span 7;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-        }
-      `
-    ]
-  }
+      #chart-type > input {
+        box-sizing: border-box;
+        grid-column: span 7;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    `
+  ]
 
   editorTemplate(props: Properties) {
     return html`
@@ -82,5 +78,3 @@ export default class ChartJSEditor extends OxPropertyEditor {
     `
   }
 }
-
-customElements.define(ChartJSEditor.is, ChartJSEditor)

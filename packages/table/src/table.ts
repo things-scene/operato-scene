@@ -22,7 +22,7 @@ import {
 } from './helper-functions'
 import { Component, ComponentNature, Container, Control, Layout, Model, State, Style } from '@hatiolab/things-scene'
 
-import { TableCell } from '.'
+import TableCell from './table-cell'
 
 const NATURE = {
   mutable: false,
@@ -54,9 +54,7 @@ const NATURE = {
   help: 'scene/component/table'
 }
 
-
 export default class Table extends Container {
- 
   created() {
     var tobeSize = this.rows * this.columns
     var gap = this.size() - tobeSize
@@ -118,7 +116,7 @@ export default class Table extends Container {
 
   buildCells(newrows: number, newcolumns: number, oldrows: number, oldcolumns: number) {
     if (newrows < oldrows) {
-      let removals: TableCell[] = [] = this.components.slice(oldcolumns * newrows) as TableCell[]
+      let removals: TableCell[] = ([] = this.components.slice(oldcolumns * newrows) as TableCell[])
 
       // 지우려는 셀중에 병합된 셀을 찾는다.
       let mergedCells: TableCell[] = []
@@ -147,7 +145,7 @@ export default class Table extends Container {
               let spRowStart = Math.floor(this.components.indexOf(component) / oldcolumns)
               let spRowEnd = Math.floor(this.components.indexOf(component) / oldcolumns) + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -209,7 +207,7 @@ export default class Table extends Container {
               let spRowStart = Math.floor(this.components.indexOf(component) / oldcolumns)
               let spRowEnd = Math.floor(this.components.indexOf(component) / oldcolumns) + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -381,12 +379,12 @@ export default class Table extends Container {
       var dataKey = cell.model.dataKey
       var dataIndex = cell.model.dataIndex
       if (dataKey && dataIndex >= 0) {
-        (cell as any)[spreadTo] = (data[dataIndex] || {})[dataKey]
+        ;(cell as any)[spreadTo] = (data[dataIndex] || {})[dataKey]
       }
     })
   }
 
-  getRowColumn(cell: TableCell): {column: number, row: number} {
+  getRowColumn(cell: TableCell): { column: number; row: number } {
     var idx = this.components.indexOf(cell)
 
     return {
@@ -558,7 +556,7 @@ export default class Table extends Container {
               let spRowStart = this.getRowColumn(component).row
               let spRowEnd = this.getRowColumn(component).row + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -635,7 +633,7 @@ export default class Table extends Container {
               let spRowStart = this.getRowColumn(component).row
               let spRowEnd = this.getRowColumn(component).row + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -651,11 +649,7 @@ export default class Table extends Container {
           let bCell: TableCell = this.components[index] as TableCell
           // 지우려는 열이 슈퍼셀을 포함한 경우이면서 슈퍼셀이 마지막 열의 셀이 아닌 경우
           // 그리고 슈퍼셀의 colspan이 1보다 큰 경우
-          if (
-            column === superCellColumn &&
-            superCellColumn !== this.columns - 1 &&
-            bCell.colspan > 1
-          ) {
+          if (column === superCellColumn && superCellColumn !== this.columns - 1 && bCell.colspan > 1) {
             aCell.rowspan = bCell.rowspan
             aCell.colspan = bCell.colspan - 1
             aCell.merged = false
@@ -735,7 +729,7 @@ export default class Table extends Container {
               let spRowStart = this.getRowColumn(component).row
               let spRowEnd = this.getRowColumn(component).row + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -749,14 +743,14 @@ export default class Table extends Container {
           if (superCellIndexes.length >= 2) return false
           let superCellRow = Math.floor(index / this.columns)
           let cell: TableCell = this.components[index] as TableCell
-          
+
           let superCellObj = {
             rowspan: cell.rowspan,
             colspan: cell.colspan,
             text: cell.get('text'),
             merged: cell.merged
           }
-          
+
           // 추가하려는 행이 슈퍼셀을 포함한 경우
           if (superCellRow === row) {
             for (let i = 0; i < this.columns; i++) newbieCells.push(buildNewCell('table-cell', this.app))
@@ -766,7 +760,7 @@ export default class Table extends Container {
               this.insertComponentAt(cell, insertionRowPosition * this.columns)
             })
             let addedCell = this.components[index + this.columns] as TableCell
-            
+
             addedCell.rowspan = superCellObj.rowspan
             addedCell.colspan = superCellObj.colspan
             addedCell.set('text', superCellObj.text)
@@ -804,7 +798,7 @@ export default class Table extends Container {
       return a - b
     })
     rows.reverse()
-    
+
     // 행 2개 이상은 추가 안함. 임시로 막아놓음
     if (rows.length >= 2) return false
     let insertionRowPosition = rows[rows.length - 1] + 1
@@ -855,7 +849,7 @@ export default class Table extends Container {
               let spRowStart = this.getRowColumn(component).row
               let spRowEnd = this.getRowColumn(component).row + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -911,7 +905,7 @@ export default class Table extends Container {
             })
             cell.rowspan += 1
           }
-          
+
           let heights = this.heights.slice()
           heights.splice(insertionRowPosition, 0, ...newbieRowHeights)
           this.set('heights', heights)
@@ -989,7 +983,7 @@ export default class Table extends Container {
               let spRowStart = this.getRowColumn(component).row
               let spRowEnd = this.getRowColumn(component).row + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -1120,7 +1114,7 @@ export default class Table extends Container {
               let spRowStart = this.getRowColumn(component).row
               let spRowEnd = this.getRowColumn(component).row + component.rowspan
               // 슈퍼셀 영역 안에 자식 셀이 있으면 superCells에 부모셀을 추가
-              if (col >= spColStart && col < spColEnd && (row >= spRowStart && row < spRowEnd)) {
+              if (col >= spColStart && col < spColEnd && row >= spRowStart && row < spRowEnd) {
                 if (-1 == superCellIndexes.indexOf(index)) {
                   superCellIndexes.push(index)
                   superCells.push(component)
@@ -1135,7 +1129,7 @@ export default class Table extends Container {
           let superCellRow = Math.floor(index / this.columns)
           let superCellColumn = index % this.columns
           let cell = this.components[index] as TableCell
-          
+
           let superCellObj = {
             rowspan: cell.rowspan,
             colspan: cell.colspan,
@@ -1261,7 +1255,7 @@ export default class Table extends Container {
       return array
     }
 
-    let indexKeyMap: {[key: string]: any} = {}
+    let indexKeyMap: { [key: string]: any } = {}
     let value = []
 
     for (let key in array[0]) {
@@ -1269,7 +1263,7 @@ export default class Table extends Container {
     }
 
     for (var i = 1; i < array.length; i++) {
-      let object: {[key: string]: any} = {}
+      let object: { [key: string]: any } = {}
       let thisObject = array[i]
       for (let key in indexKeyMap) {
         let k = indexKeyMap[key]
@@ -1319,12 +1313,20 @@ export default class Table extends Container {
 
   get widths_sum(): number {
     var widths = this.widths
-    return widths ? widths.filter((width: number, i: number) => i < this.columns).reduce((sum: number, width: number) => sum + width, 0) : this.columns
+    return widths
+      ? widths
+          .filter((width: number, i: number) => i < this.columns)
+          .reduce((sum: number, width: number) => sum + width, 0)
+      : this.columns
   }
 
   get heights_sum(): number {
     var heights = this.heights
-    return heights ? heights.filter((height: number, i: number) => i < this.rows).reduce((sum: number, height: number) => sum + height, 0) : this.rows
+    return heights
+      ? heights
+          .filter((height: number, i: number) => i < this.rows)
+          .reduce((sum: number, height: number) => sum + height, 0)
+      : this.rows
   }
 
   get nature(): ComponentNature {

@@ -1,9 +1,9 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, Container } from '@hatiolab/things-scene';
+import { Component, Container } from '@hatiolab/things-scene'
 
-import IndoorMap from './indoor-map';
+import IndoorMap from './indoor-map'
 
 const NATURE = {
   mutable: false,
@@ -16,11 +16,10 @@ const NATURE = {
       name: 'remove',
       property: {
         icon: 'remove-circle',
-        action: function(floor: Floor) {
+        action: function (floor: Floor) {
           let indoor = floor.parent as IndoorMap
           indoor.removeComponent(floor)
-          indoor.activeIndex = 0
-          indoor.invalidate()
+          indoor.set('activeIndex', 0)
         }
       }
     }

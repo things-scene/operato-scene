@@ -1,15 +1,9 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import {
-  CardLayout,
-  Component,
-  Container,
-  Model,
-  POINT,
-} from '@hatiolab/things-scene';
+import { CardLayout, Component, Container, Model, POINT, State } from '@hatiolab/things-scene'
 
-import Floor from './floor';
+import Floor from './floor'
 
 const LABEL_WIDTH = 25
 const LABEL_HEIGHT = 25
@@ -33,6 +27,11 @@ const NATURE = {
           indoorMap.addFloor()
         }
       }
+    },
+    {
+      type: 'number',
+      label: 'active index',
+      name: 'activeIndex'
     }
   ],
   'value-property': 'activeIndex',
@@ -49,17 +48,6 @@ export default class IndoorMap extends Container {
 
   get layout() {
     return CardLayout
-  }
-
-  get activeIndex() {
-    var config = Object.assign({}, this.layoutConfig)
-    return config.activeIndex
-  }
-
-  set activeIndex(index) {
-    var config = Object.assign({}, this.layoutConfig)
-    config.activeIndex = index
-    this.layoutConfig = config
   }
 
   get layoutConfig() {
@@ -81,46 +69,36 @@ export default class IndoorMap extends Container {
   }
 
   postrender(context: CanvasRenderingContext2D) {
-    super.postrender(context)
+    if (!this.app.isViewMode && this._focused) {
+      var { left, top, width, fillStyle } = this.model
 
-    if (this.app.isViewMode) return
+      // floor 선택 탭 그리기
+      for (let i = 0; i < this.components.length; i++) {
+        context.beginPath()
 
-    if (!this._focused) return
+        context.rect(left - LABEL_WIDTH, top + i * LABEL_HEIGHT, LABEL_WIDTH, LABEL_HEIGHT)
 
-    var { left, top, width, fillStyle } = this.model
+        let color = 255 - ((20 * (i + 1)) % 255)
+        context.fillStyle = rgba(color, color, color, 1)
+        context.fill()
 
-    // floor 선택 탭 그리기
-    for (let i = 0; i < this.components.length; i++) {
+        context.closePath()
+      }
+
       context.beginPath()
 
-      context.rect(
-        left - LABEL_WIDTH,
-        top + i * LABEL_HEIGHT,
-        LABEL_WIDTH,
-        LABEL_HEIGHT
-      )
+      context.moveTo(left, top)
+      context.lineTo(left - LABEL_WIDTH, top)
+      context.lineTo(left - LABEL_WIDTH, top + this.components.length * LABEL_HEIGHT)
+      context.lineTo(left, top + this.components.length * LABEL_HEIGHT)
 
-      let color = 255 - ((20 * (i + 1)) % 255)
-      context.fillStyle = rgba(color, color, color, 1)
-      context.fill()
+      context.strokeStyle = '#ccc'
+      context.stroke()
 
       context.closePath()
     }
 
-    context.beginPath()
-
-    context.moveTo(left, top)
-    context.lineTo(left - LABEL_WIDTH, top)
-    context.lineTo(
-      left - LABEL_WIDTH,
-      top + this.components.length * LABEL_HEIGHT
-    )
-    context.lineTo(left, top + this.components.length * LABEL_HEIGHT)
-
-    context.strokeStyle = '#ccc'
-    context.stroke()
-
-    context.closePath()
+    super.postrender(context)
   }
 
   contains(x: number, y: number) {
@@ -144,6 +122,15 @@ export default class IndoorMap extends Container {
 
     this.invalidate()
     return contains
+  }
+
+  onchange(after: State) {
+    if ('activeIndex' in after) {
+      this.layoutConfig = {
+        ...this.layoutConfig,
+        activeIndex: after.activeIndex
+      }
+    }
   }
 
   onmouseup(e: MouseEvent) {
@@ -178,7 +165,7 @@ export default class IndoorMap extends Container {
     //     height: 100
     //   }))
     // }
-    this.activeIndex = y
+    this.set('activeIndex', y)
   }
 
   onmousedown(e: MouseEvent) {
@@ -199,13 +186,8 @@ export default class IndoorMap extends Container {
     })
 
     this.addComponent(floor)
-    this.activeIndex = this.components.length - 1
+    this.set('activeIndex', this.components.length - 1)
   }
-
-  // drawLocationMarkers(locations) {
-  //   let floor = this.activeFloor
-  //   floor.drawLocationMarkers(locations)
-  // }
 }
 
 Component.register('indoor-map', IndoorMap)

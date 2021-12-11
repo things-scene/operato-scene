@@ -1,8 +1,8 @@
-import ChartJSEditor from './property-editor-chartjs'
+import './property-editor-chartjs'
 
 export default [
   {
     type: 'chartjs',
-    element: ChartJSEditor.is
+    element: 'property-editor-chartjs'
   }
 ]
