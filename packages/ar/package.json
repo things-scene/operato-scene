@@ -27,11 +27,11 @@
   },
   "dependencies": {
     "@google/model-viewer": "^1.9.2",
-    "@hatiolab/things-scene": "^2.7.26"
+    "@hatiolab/things-scene": "^2.7.27"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^0.2.45",
+    "@operato/board": "^0.2.46",
     "@things-factory/builder": "^4.0.13",
     "@things-factory/operato-board": "^4.0.13",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
