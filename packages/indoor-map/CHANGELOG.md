@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.19](https://github.com/things-scene/operato-scene/compare/v0.0.18...v0.0.19) (2021-12-12)
+
+
+### :bug: Bug Fix
+
+* upgrade @hatiolab/things-scene, @operato/board,property-editor,data-grist ([e6743bd](https://github.com/things-scene/operato-scene/commit/e6743bda29852fdae779b893a1e825a1cb73f0f9))
+
+
+
 ### [0.0.18](https://github.com/things-scene/operato-scene/compare/v0.0.17...v0.0.18) (2021-12-11)
 
 
