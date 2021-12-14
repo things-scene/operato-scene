@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.22](https://github.com/things-scene/operato-scene/compare/v0.0.21...v0.0.22) (2021-12-14)
+
+
+### :bug: Bug Fix
+
+* @hatiolab/things-scene upgrade ([7841684](https://github.com/things-scene/operato-scene/commit/78416849b0a336c55450e15f09d3cb58cc5e8e51))
+
+
+
 ### [0.0.21](https://github.com/things-scene/operato-scene/compare/v0.0.20...v0.0.21) (2021-12-14)
 
 
