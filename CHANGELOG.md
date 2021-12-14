@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.21](https://github.com/hatiolab/operato/compare/v0.0.20...v0.0.21) (2021-12-14)
+
+
+### :bug: Bug Fix
+
+* @things-factory/operato-board@^4.0.17 ([713a319](https://github.com/hatiolab/operato/commit/713a319b55a9d27fca98a1b577898863cf89a765))
+
+
+
 ### [0.0.20](https://github.com/hatiolab/operato/compare/v0.0.19...v0.0.20) (2021-12-13)
 
 
