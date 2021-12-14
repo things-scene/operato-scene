@@ -1,0 +1,252 @@
+<!doctype html>
+<!--
+@license
+Copyright © HatioLab Inc. All rights reserved.
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>things-scene-tab Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../things-scene-viewer/things-scene-viewer.html">
+    <link rel="import" href="../../things-scene-indoor-map/things-scene-indoor-map.html">
+    <link rel="import" href="../../things-scene-modeler/things-scene-properties.html">
+
+    <script src="../things-scene-tab.js"></script>
+
+    <style is="custom-style">
+
+    @font-face {
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("fonts/VeraSeBd.ttf");
+    }
+
+    things-scene-viewer {
+      display: block;
+      width: 100%;
+      height: 560px;
+    }
+    </style>
+  </head>
+  <body unresolved>
+
+    <template is="dom-bind" id="app">
+      <p>An example of <code>&lt;things-scene-tab&gt;</code>:</p>
+
+      <things-scene-viewer id='scene'
+                           scene='{{scene}}'
+                           selected='{{selected}}'
+                           model='[[model]]'
+                           mode="1">
+        <things-scene-layer type="selection-layer"></things-scene-layer>
+        <things-scene-layer type="modeling-layer"></things-scene-layer>
+        <things-scene-handler type="text-editor"></things-scene-handler>
+        <things-scene-handler type="move-handler"></things-scene-handler>
+      </things-scene-viewer>
+
+      <things-scene-properties scene="[[scene]]"
+                               selected="[[selected]]"
+                               model="{{target}}"
+                               bounds="{{bounds}}">
+        <fieldset class="same-width">
+          <legend>Stack style</legend>
+
+          <label>Active Floor</label>
+          <input type="number" value-as-number="{{target.layoutConfig.activeIndex::change}}" min="0" max="100" step="1" numberonly="true" />
+
+          <label>reference</label>
+          <input type="text" value="{{target.reference::change}}" />
+
+        </fieldset>
+      </things-scene-properties>
+
+    </template>
+
+    <script>
+      window.addEventListener('WebComponentsReady', function(e) {
+        var app = document.querySelector('#app')
+
+        app.model = {
+          width: 500,
+          height: 500,
+          components: [{
+            type: 'tab',
+            reference: 'indoor-map',
+            left: 100,
+            top: 100,
+            width: 100,
+            height: 400,
+            lineWidth: 10,
+            // lineWidth: 0,
+            fillStyle: 'navy',
+            strokeStyle: 'red',
+            activeFillStyle: 'red',
+            fontColor: 'black',
+            activeFontColor: 'white',
+            activeIndex: 2
+          }, {
+            type: 'indoor-map',
+            id: 'indoor-map',
+            left: 250,
+            top: 100,
+            width: 600,
+            height: 400,
+            fontSize: 80,
+            fontColor: '#000000',
+            lineWidth: 10,
+            strokeStyle: 'red',
+            active: 0,
+            components: [{
+              type: 'floor',
+              fillStyle: 'orange',
+              width: 100,
+              height: 100,
+              text: 'first',
+              components: [{
+                type: 'rect',
+                left: 100,
+                top: 220,
+                width: 100,
+                height: 100,
+                fillStyle: 'red',
+                lineWidth: 4
+              }, {
+                type: 'ellipse',
+                cx: 400,
+                cy: 200,
+                rx: 100,
+                ry: 100,
+                fillStyle: 'blue',
+                lineWidth: 4
+              }, {
+                type: 'polygon',
+                path: [{
+                  x: 100,
+                  y: 100
+                }, {
+                  x: 200,
+                  y: 150
+                }, {
+                  x: 150,
+                  y: 200
+                }],
+                fillStyle: 'blue',
+                lineWidth: 4
+              }]
+            }, {
+              type: 'floor',
+              fillStyle: 'navy',
+              width: 100,
+              height: 100,
+              components: [{
+                type: 'rect',
+                left: 100,
+                top: 220,
+                width: 100,
+                height: 100,
+                fillStyle: 'red',
+                lineWidth: 4
+              }, {
+                type: 'ellipse',
+                cx: 400,
+                cy: 200,
+                rx: 100,
+                ry: 100,
+                fillStyle: 'blue',
+                lineWidth: 4
+              }, {
+                type: 'polygon',
+                path: [{
+                  x: 100,
+                  y: 100
+                }, {
+                  x: 200,
+                  y: 150
+                }, {
+                  x: 150,
+                  y: 200
+                }],
+                fillStyle: 'blue',
+                lineWidth: 4
+              }]
+            }, {
+              type: 'floor',
+              fillStyle: 'black',
+              width: 100,
+              height: 100,
+              components: [{
+                type: 'rect',
+                left: 100,
+                top: 220,
+                width: 100,
+                height: 100,
+                fillStyle: 'red',
+                lineWidth: 4
+              }, {
+                type: 'ellipse',
+                cx: 400,
+                cy: 200,
+                rx: 100,
+                ry: 100,
+                fillStyle: 'blue',
+                lineWidth: 4
+              }, {
+                type: 'polygon',
+                path: [{
+                  x: 100,
+                  y: 100
+                }, {
+                  x: 200,
+                  y: 150
+                }, {
+                  x: 150,
+                  y: 200
+                }],
+                fillStyle: 'blue',
+                lineWidth: 4
+              }]
+            }, {
+              type: 'floor',
+              fillStyle: 'green',
+              width: 100,
+              height: 100,
+              components: [{
+                type: 'rect',
+                left: 100,
+                top: 220,
+                width: 100,
+                height: 100,
+                fillStyle: 'red',
+                lineWidth: 4
+              }, {
+                type: 'ellipse',
+                cx: 400,
+                cy: 200,
+                rx: 100,
+                ry: 100,
+                fillStyle: 'blue',
+                lineWidth: 4
+              }, {
+                type: 'polygon',
+                path: [{
+                  x: 100,
+                  y: 100
+                }, {
+                  x: 200,
+                  y: 150
+                }, {
+                  x: 150,
+                  y: 200
+                }],
+                fillStyle: 'blue',
+                lineWidth: 4
+              }]
+            }]
+          }]
+        }
+      });
+    </script>
+  </body>
+</html>
