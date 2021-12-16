@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-table",
   "description": "Things Scene Table Component.",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "MIT",
   "author": "heartyoh",
   "main": "dist/index.js",
