@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.24](https://github.com/hatiolab/operato/compare/v0.0.23...v0.0.24) (2021-12-21)
+
+
+### :bug: Bug Fix
+
+* upgrade [@operato](https://github.com/operato) dependencies ([19adafd](https://github.com/hatiolab/operato/commit/19adafde63c6a819c905c8b325b8fca6a3ff9e70))
+
+
+
 ### [0.0.23](https://github.com/hatiolab/operato/compare/v0.0.22...v0.0.23) (2021-12-16)
 
 
