@@ -11,7 +11,7 @@ import { css, html } from 'lit'
 
 import { OxPropertyEditor } from '@operato/property-editor'
 import { Properties } from '@hatiolab/things-scene'
-import { customElement } from 'lit/decorators'
+import { customElement } from 'lit/decorators.js'
 
 @customElement('property-editor-chartjs')
 export default class ChartJSEditor extends OxPropertyEditor {
