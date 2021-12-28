@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.0.25](https://github.com/hatiolab/operato/compare/v0.0.24...v0.0.25) (2021-12-28)
+
+
+### :bug: Bug Fix
+
+* 'lit/decorators/js' ([ffb908f](https://github.com/hatiolab/operato/commit/ffb908f4dcbe204c11d67a6741b3331272ff9ef7))
+* @hatiolab/things-scene@2.7.31 ([b0d1706](https://github.com/hatiolab/operato/commit/b0d17064bb42ed4a60008a15d48700a328711ab8))
+* upgrade [@things-factory](https://github.com/things-factory) dependencies ([0deff8d](https://github.com/hatiolab/operato/commit/0deff8dcaba7a7e81061246298b889f6165091d7))
+
+
+
 ### [0.0.24](https://github.com/hatiolab/operato/compare/v0.0.23...v0.0.24) (2021-12-21)
 
 
