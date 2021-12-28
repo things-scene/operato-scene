@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@google/model-viewer": "^1.9.2",
-    "@hatiolab/things-scene": "^2.7.30"
+    "@hatiolab/things-scene": "^2.7.31"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
