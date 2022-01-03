@@ -3,7 +3,7 @@
   "description": "switch component for operato-scene",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "0.0.26",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,

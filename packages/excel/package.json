@@ -2,7 +2,7 @@
   "name": "@operato/scene-excel",
   "description": "Excel integration component for things-scene",
   "license": "MIT",
-  "version": "0.0.26",
+  "version": "0.1.0",
   "author": "heartyoh",
   "main": "dist/index.js",
   "module": "dist/index.js",

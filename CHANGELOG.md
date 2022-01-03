@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.0](https://github.com/hatiolab/operato/compare/v0.0.26...v0.1.0) (2022-01-03)
+
+
+### :rocket: New Features
+
+* applied import.meta.url for native web support ([fe65672](https://github.com/hatiolab/operato/commit/fe65672550b15276bd9fa79ab7ac886a8502f8b0))
+
+
+
 ### [0.0.26](https://github.com/hatiolab/operato/compare/v0.0.25...v0.0.26) (2022-01-01)
 
 
