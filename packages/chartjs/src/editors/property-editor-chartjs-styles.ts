@@ -132,7 +132,6 @@ export const PropertyEditorChartJSStyles = css`
 
   select {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background: url(/images/bg-input-select.png) 100% 50% no-repeat #fff;
   }
   input[type='text'] {
     border: 1px solid rgba(0, 0, 0, 0.2);
