@@ -1,4 +1,4 @@
-import icon from '../../assets/mixed-chart.png'
+const icon = new URL('../../icons/mixed-chart.png', import.meta.url).href
 
 export default {
   type: 'mixed chart',

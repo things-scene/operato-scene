@@ -1,4 +1,4 @@
-import icon from '../../assets/icon-scenario-queue-subscription.png'
+const icon = new URL('../../icons/icon-scenario-queue-subscription.png', import.meta.url).href
 
 export default {
   type: 'scenario-queue-subscription',

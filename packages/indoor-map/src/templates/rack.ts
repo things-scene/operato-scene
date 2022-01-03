@@ -1,9 +1,9 @@
-import icon from '../../assets/rack.png';
+const icon = new URL('../../icons/rack.png', import.meta.url).href
 
 export default {
   type: 'rack',
   description: 'rack in warehouse',
-  group: 'warehouse', /* line|shape|textAndMedia|chartAndGauge|table|container|dataSource|IoT|3D|warehouse|form|etc */
+  group: 'warehouse' /* line|shape|textAndMedia|chartAndGauge|table|container|dataSource|IoT|3D|warehouse|form|etc */,
   icon,
   model: {
     type: 'rack',

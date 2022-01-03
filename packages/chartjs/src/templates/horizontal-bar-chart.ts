@@ -1,4 +1,4 @@
-import icon from '../../assets/horizontal-bar-chart.png'
+const icon = new URL('../../icons/horizontal-bar-chart.png', import.meta.url).href
 
 export default {
   type: 'horizontal bar chart',

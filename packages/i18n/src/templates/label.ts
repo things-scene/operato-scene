@@ -1,4 +1,4 @@
-import icon from '../../assets/scene-label.png'
+const icon = new URL('../../icons/scene-label.png', import.meta.url).href
 
 export default {
   type: 'label',

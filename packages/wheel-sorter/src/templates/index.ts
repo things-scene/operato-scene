@@ -1,9 +1,9 @@
-import conveyor from '../../assets/conveyor.png'
-import conveyorBelt from '../../assets/conveyor-belt.png'
-import conveyorJoin from '../../assets/conveyor-join.png'
-import conveyorJoinTrapezoid from '../../assets/conveyor-join-trapezoid.png'
-import scanner from '../../assets/scanner.png'
-import wheelSorter from '../../assets/wheel-sorter.png'
+const conveyor = new URL('../../icons/conveyor.png', import.meta.url).href
+const conveyorBelt = new URL('../../icons/conveyor-belt.png', import.meta.url).href
+const conveyorJoin = new URL('../../icons/conveyor-join.png', import.meta.url).href
+const conveyorJoinTrapezoid = new URL('../../icons/conveyor-join-trapezoid.png', import.meta.url).href
+const scanner = new URL('../../icons/scanner.png', import.meta.url).href
+const wheelSorter = new URL('../../icons/wheel-sorter.png', import.meta.url).href
 
 export default [
   {

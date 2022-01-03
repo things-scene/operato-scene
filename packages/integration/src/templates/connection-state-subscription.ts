@@ -1,4 +1,4 @@
-import icon from '../../assets/icon-connection-state-subscription.png'
+const icon = new URL('../../icons/icon-connection-state-subscription.png', import.meta.url).href
 
 export default {
   type: 'connection-state-subscription',

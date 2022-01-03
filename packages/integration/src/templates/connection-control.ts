@@ -1,4 +1,4 @@
-import icon from '../../assets/icon-connection-control.png'
+const icon = new URL('../../icons/icon-connection-control.png', import.meta.url).href
 
 export default {
   type: 'connection-control',

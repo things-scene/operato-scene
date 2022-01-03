@@ -1,8 +1,8 @@
-import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
-import { getClient, subscribe } from './origin-client'
-
-import COMPONENT_IMAGE from '../assets/symbol-scenario-instance-subscription.png'
 import gql from 'graphql-tag'
+
+import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
+
+import { getClient, subscribe } from './origin-client'
 
 const NATURE = {
   mutable: false,
@@ -49,7 +49,10 @@ export default class ScenarioInstanceSubscription extends DataSource(RectPath(Sh
   static get image() {
     if (!ScenarioInstanceSubscription._image) {
       ScenarioInstanceSubscription._image = new Image()
-      ScenarioInstanceSubscription._image.src = COMPONENT_IMAGE
+      ScenarioInstanceSubscription._image.src = new URL(
+        '../icons/symbol-scenario-instance-subscription.png',
+        import.meta.url
+      ).href
     }
 
     return ScenarioInstanceSubscription._image

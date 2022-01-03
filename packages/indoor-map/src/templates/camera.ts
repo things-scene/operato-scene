@@ -1,9 +1,9 @@
-import icon from '../../assets/no-image.png';
+const icon = new URL('../../icons/no-image.png', import.meta.url).href
 
 export default {
   type: 'camera',
   description: 'camera',
-  group: 'IoT', /* line|shape|textAndMedia|chartAndGauge|table|container|dataSource|IoT|3D|warehouse|form|etc */
+  group: 'IoT' /* line|shape|textAndMedia|chartAndGauge|table|container|dataSource|IoT|3D|warehouse|form|etc */,
   icon,
   model: {
     type: 'camera',

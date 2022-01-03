@@ -1,4 +1,4 @@
-import icon from '../../assets/duetimer.png'
+const icon = new URL('../../icons/duetimer.png', import.meta.url).href
 
 export default {
   type: 'duetimer',

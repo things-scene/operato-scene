@@ -1,6 +1,6 @@
-import circle from './assets/gauge-circle.png'
-import vertical from './assets/gauge-vertical.png'
-import horizontal from './assets/gauge-horizontal.png'
+const circle = new URL('./icons/gauge-circle.png', import.meta.url).href
+const vertical = new URL('./icons/gauge-vertical.png', import.meta.url).href
+const horizontal = new URL('./icons/gauge-horizontal.png', import.meta.url).href
 
 var templates = [
   {

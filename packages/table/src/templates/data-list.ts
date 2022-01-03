@@ -1,4 +1,4 @@
-import icon from '../../assets/icon-data-list.png'
+const icon = new URL('../../icons/icon-data-list.png', import.meta.url).href
 
 export default {
   type: 'data-list',

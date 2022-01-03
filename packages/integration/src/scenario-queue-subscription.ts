@@ -1,7 +1,7 @@
+import gql from 'graphql-tag'
+
 import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
 
-import COMPONENT_IMAGE from '../assets/symbol-scenario-queue-subscription.png'
-import gql from 'graphql-tag'
 import { subscribe } from './origin-client'
 
 const NATURE = {
@@ -18,7 +18,10 @@ export default class ScenarioQueueSubscription extends DataSource(RectPath(Shape
   static get image() {
     if (!ScenarioQueueSubscription._image) {
       ScenarioQueueSubscription._image = new Image()
-      ScenarioQueueSubscription._image.src = COMPONENT_IMAGE
+      ScenarioQueueSubscription._image.src = new URL(
+        '../icons/symbol-scenario-queue-subscription.png',
+        import.meta.url
+      ).href
     }
 
     return ScenarioQueueSubscription._image

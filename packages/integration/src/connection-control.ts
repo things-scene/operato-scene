@@ -1,8 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Component, RectPath, Shape } from '@hatiolab/things-scene'
 
-import COMPONENT_IMAGE from '../assets/symbol-connection-control.png'
 import { getClient } from './origin-client'
-import gql from 'graphql-tag'
 
 const NATURE = {
   mutable: false,
@@ -66,7 +66,7 @@ export default class ConnectionControl extends RectPath(Shape) {
   static get image() {
     if (!ConnectionControl._image) {
       ConnectionControl._image = new Image()
-      ConnectionControl._image.src = COMPONENT_IMAGE
+      ConnectionControl._image.src = new URL('../icons/symbol-connection-control.png', import.meta.url).href
     }
     return ConnectionControl._image
   }

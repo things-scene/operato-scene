@@ -1,10 +1,9 @@
-import icon from '../../assets/indoor-map.png';
+const icon = new URL('../../icons/indoor-map.png', import.meta.url).href
 
 export default {
   type: 'indoor map',
   description: 'indoor map',
-  group:
-    'container' /* line|shape|textAndMedia|chartAndGauge|table|container|dataSource|IoT|3D|warehouse|form|etc */,
+  group: 'container' /* line|shape|textAndMedia|chartAndGauge|table|container|dataSource|IoT|3D|warehouse|form|etc */,
   icon,
   model: {
     type: 'indoor-map',

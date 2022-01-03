@@ -1,4 +1,4 @@
-import icon from '../../assets/pie-chart.png'
+const icon = new URL('../../icons/pie-chart.png', import.meta.url).href
 
 export default {
   type: 'pie chart',

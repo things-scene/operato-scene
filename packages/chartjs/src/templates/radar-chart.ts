@@ -1,4 +1,4 @@
-import icon from '../../assets/radar-chart.png'
+const icon = new URL('../../icons/radar-chart.png', import.meta.url).href
 
 export default {
   type: 'radar chart',

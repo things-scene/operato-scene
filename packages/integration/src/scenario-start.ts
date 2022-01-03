@@ -1,8 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
-import COMPONENT_IMAGE from '../assets/symbol-scenario-start.png'
 import { getClient } from './origin-client'
-import gql from 'graphql-tag'
 
 const NATURE = {
   mutable: false,
@@ -55,7 +55,7 @@ export default class ScenarioStart extends DataSource(RectPath(Shape)) {
   static get image() {
     if (!ScenarioStart._image) {
       ScenarioStart._image = new Image()
-      ScenarioStart._image.src = COMPONENT_IMAGE
+      ScenarioStart._image.src = new URL('../icons/symbol-scenario-start.png', import.meta.url).href
     }
     return ScenarioStart._image
   }

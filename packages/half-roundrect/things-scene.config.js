@@ -1,4 +1,4 @@
-import icon from './assets/half-round-rect.png'
+const icon = new URL('./icons/half-round-rect.png', import.meta.url).href
 
 var templates = [
   {

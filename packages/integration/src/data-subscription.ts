@@ -1,7 +1,7 @@
+import gql from 'graphql-tag'
+
 import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
 
-import COMPONENT_IMAGE from '../assets/symbol-data-subscription.png'
-import gql from 'graphql-tag'
 import { subscribe } from './origin-client'
 
 const NATURE = {
@@ -24,7 +24,7 @@ export default class DataSubscription extends DataSource(RectPath(Shape)) {
   static get image() {
     if (!DataSubscription._image) {
       DataSubscription._image = new Image()
-      DataSubscription._image.src = COMPONENT_IMAGE
+      DataSubscription._image.src = new URL('../icons/symbol-data-subscription.png', import.meta.url).href
     }
 
     return DataSubscription._image

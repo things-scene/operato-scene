@@ -1,4 +1,4 @@
-import icon from '../../assets/icon-excel.png'
+const icon = new URL('../../assets/icon-excel.png', import.meta.url).href
 
 export default {
   type: 'excel',

@@ -2,8 +2,6 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import COMPONENT_IMAGE from './{{ name }}.png';
-
 const NATURE = {
   mutable: false,
   resizable: true,
@@ -36,7 +34,7 @@ export default class {{ pascalCase name }}  extends RectPath(Shape) {
   static get image() {
     if (!{{ pascalCase name }}._image) {
       {{ pascalCase name }}._image = new Image()
-      {{ pascalCase name }}._image.src = COMPONENT_IMAGE
+      {{ pascalCase name }}._image.src = new URL('./{{ name }}.png', import.meta.url).href
     }
 
     return {{ pascalCase name }}._image

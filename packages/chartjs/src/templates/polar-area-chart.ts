@@ -1,4 +1,4 @@
-import icon from '../../assets/polar-area-chart.png'
+const icon = new URL('../../icons/polar-area-chart.png', import.meta.url).href
 
 export default {
   type: 'polar area chart',

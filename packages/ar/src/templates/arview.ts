@@ -1,4 +1,4 @@
-import icon from '../../assets/scene-arview.png';
+const icon = new URL('../../icons/scene-arview.png', import.meta.url).href
 
 export default {
   type: 'arview',

@@ -2,11 +2,10 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
-
-import COMPONENT_IMAGE from '../assets/symbol-excel.png'
 // @ts-ignore
 import XLSX from '!xlsx'
+
+import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -67,7 +66,7 @@ export default class Excel extends DataSource(RectPath(Shape)) {
   static get image() {
     if (!Excel._image) {
       Excel._image = new Image()
-      Excel._image.src = COMPONENT_IMAGE
+      Excel._image.src = new URL('../icons/symbol-excel.png', import.meta.url).href
     }
 
     return Excel._image

@@ -1,8 +1,8 @@
-import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
-import { getClient, subscribe } from './origin-client'
-
-import COMPONENT_IMAGE from '../assets/symbol-connection-state-subscription.png'
 import gql from 'graphql-tag'
+
+import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
+
+import { getClient, subscribe } from './origin-client'
 
 const NATURE = {
   mutable: false,
@@ -43,7 +43,10 @@ export default class ConnectionStateSubscription extends DataSource(RectPath(Sha
   static get image() {
     if (!ConnectionStateSubscription._image) {
       ConnectionStateSubscription._image = new Image()
-      ConnectionStateSubscription._image.src = COMPONENT_IMAGE
+      ConnectionStateSubscription._image.src = new URL(
+        '../icons/symbol-connection-state-subscription.png',
+        import.meta.url
+      ).href
     }
 
     return ConnectionStateSubscription._image

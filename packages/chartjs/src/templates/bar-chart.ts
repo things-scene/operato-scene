@@ -1,4 +1,4 @@
-import icon from '../../assets/bar-chart.png'
+const icon = new URL('../../icons/bar-chart.png', import.meta.url).href
 
 export default {
   type: 'bar chart',

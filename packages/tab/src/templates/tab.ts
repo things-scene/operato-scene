@@ -1,4 +1,4 @@
-import icon from '../../assets/tab.png'
+const icon = new URL('../../icons/tab.png', import.meta.url).href
 
 export default {
   type: 'tab',

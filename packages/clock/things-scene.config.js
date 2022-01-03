@@ -1,5 +1,5 @@
-import analog from './assets/clock-analog.png'
-import digital from './assets/clock-digital.png'
+const analog = new URL('./icons/clock-analog.png', import.meta.url).href
+const digital = new URL('./icons/clock-digital.png', import.meta.url).href
 
 var templates = [
   {

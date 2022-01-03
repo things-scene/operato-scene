@@ -1,4 +1,4 @@
-import icon from '../../assets/timer.png'
+const icon = new URL('../../icons/timer.png', import.meta.url).href
 
 export default {
   type: 'timer',

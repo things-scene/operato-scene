@@ -1,5 +1,6 @@
-import icon from '../../assets/grist-action.png'
 import { ACTIONS } from '../grist-action'
+
+const icon = new URL('../../icons/grist-action.png', import.meta.url).href
 
 export default {
   type: 'grist-action',
