@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.1.1](https://github.com/hatiolab/operato/compare/v0.1.0...v0.1.1) (2022-01-03)
+
+
+### :bug: Bug Fix
+
+* [@things-factory](https://github.com/things-factory) 4.0.27 for webpack 5 ([c1b8ce2](https://github.com/hatiolab/operato/commit/c1b8ce2a4f069a77b75c82ef8abe2b52974fa5a2))
+* @operato/board@0.3.4 ([9f7a868](https://github.com/hatiolab/operato/commit/9f7a86820280d24b08dabfd9c9b0f46b4c74feed))
+* icon url for excel template ([b288393](https://github.com/hatiolab/operato/commit/b28839372718e115a2ff6e567e2979f35266dcb3))
+* remove error missing image ([a5b97cb](https://github.com/hatiolab/operato/commit/a5b97cbcb85fc60cbbe9982c57bc697a254d1916))
+
+
+
 ## [0.1.0](https://github.com/hatiolab/operato/compare/v0.0.26...v0.1.0) (2022-01-03)
 
 
