@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.1.2](https://github.com/things-scene/operato-scene/compare/v0.1.1...v0.1.2) (2022-01-13)
+
+
+### :bug: Bug Fix
+
+* @operato/board upgrade to 0.3.7 ([4c5d232](https://github.com/things-scene/operato-scene/commit/4c5d232d185642624501a369449df21b322384ae))
+
+
+
 ### [0.1.1](https://github.com/things-scene/operato-scene/compare/v0.1.0...v0.1.1) (2022-01-03)
 
 
