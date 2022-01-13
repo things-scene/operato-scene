@@ -2,6 +2,7 @@ import gql from 'graphql-tag'
 
 import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
+import { scenarios } from './client-api'
 import { getClient } from './origin-client'
 
 const NATURE = {
@@ -14,24 +15,7 @@ const NATURE = {
       label: 'scenario-name',
       name: 'scenarioName',
       property: {
-        options: async () => {
-          var response = await getClient().query({
-            query: gql`
-              query {
-                scenarios {
-                  items {
-                    name
-                  }
-                }
-              }
-            `
-          })
-          if (response.errors) {
-            return ['']
-          }
-
-          return [''].concat(response.data.scenarios.items.map((item: any) => item.name))
-        }
+        options: scenarios
       }
     },
     {
