@@ -28,7 +28,7 @@
     <script type="module">
       import { html, render } from 'lit'
       import { ReferenceMap, create, error } from '@hatiolab/things-scene'
-      import '@operato/board/ox-board-viewer.js'
+      import '@operato/board/ox-board-modeller.js'
       import '../dist/simple-switch.js'
 
       const colors = ['red', 'blue', 'orange', 'yellow', 'magenta', 'violet', 'navy', 'green', 'cyan', 'lime']
@@ -101,7 +101,10 @@
       )
 
       render(
-        html` <ox-board-viewer .board=${boards[0]} .provider=${provider}></ox-board-viewer> `,
+        html`
+          <ox-board-modeller .model=${this.model} .scene=${this.scene} .board=${boards[0]} .provider=${provider}>
+          </ox-board-modeller>
+        `,
         document.querySelector('#demo')
       )
     </script>
