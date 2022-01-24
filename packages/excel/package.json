@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^0.3.7",
-    "@things-factory/builder": "^4.0.27",
-    "@things-factory/operato-board": "^4.0.27",
+    "@operato/board": "^0.3.18",
+    "@things-factory/builder": "^4.0.38",
+    "@things-factory/operato-board": "^4.0.38",
     "@types/xlsx": "^0.0.36",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
