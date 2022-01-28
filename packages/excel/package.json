@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^0.3.19",
+    "@operato/board": "^0.3.20",
     "@things-factory/builder": "^4.0.38",
     "@things-factory/operato-board": "^4.0.38",
     "@types/xlsx": "^0.0.36",
