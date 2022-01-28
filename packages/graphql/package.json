@@ -1,0 +1,64 @@
+{
+  "name": "@operato/scene-graphql",
+  "description": "Graphql datasource component for things-scene",
+  "version": "0.1.2",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "author": "heartyoh",
+  "things-scene": true,
+  "publishConfig": {
+    "access": "public",
+    "@operato:registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/things-scene/operato-scene.git",
+    "directory": "packages/graphql"
+  },
+  "scripts": {
+    "serve": "tsc && things-factory-dev",
+    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "build": "tsc",
+    "prepublish": "tsc",
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "migration": "things-factory-migration"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@hatiolab/things-scene": "^2.7.33",
+    "@operato/graphql": "^0.3.19",
+    "jsonwebtoken": "^8.5.1",
+    "subscriptions-transport-ws": "^0.11.0"
+  },
+  "devDependencies": {
+    "@hatiolab/prettier-config": "^1.0.0",
+    "@operato/board": "^0.3.19",
+    "@things-factory/builder": "^4.0.38",
+    "@things-factory/operato-board": "^4.0.38",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@web/dev-server": "^0.1.28",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.4.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  },
+  "prettier": "@hatiolab/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

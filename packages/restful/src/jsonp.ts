@@ -39,8 +39,8 @@ export default function jsonp(
   var timeout = null != opts.timeout ? opts.timeout : 60000
   var enc = encodeURIComponent
   var target = document.getElementsByTagName('script')[0] || document.head
-  var script: any
-  var timer: any
+  var script: HTMLScriptElement
+  var timer: NodeJS.Timer
 
   if (timeout) {
     timer = setTimeout(function () {

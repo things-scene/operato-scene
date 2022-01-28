@@ -96,7 +96,6 @@ export default class Restful extends DataSource(RectPath(Shape)) {
   _repeatTimer!: NodeJS.Timeout
   _httpRequest?: any
   _isStarted = false
-  _convertDataFormat?: any
 
   get repeatTimer() {
     return this._repeatTimer
