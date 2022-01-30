@@ -22,10 +22,12 @@ export class USBPrinter {
   }
 
   async setup() {
+    //@ts-ignore
     if (!navigator.usb) {
       throw new Error('Browser could not access USB device. You can print only https or localhost origin.')
     }
 
+    //@ts-ignore
     var selectedDevice = await navigator.usb.requestDevice({
       filters: this.filters
     })

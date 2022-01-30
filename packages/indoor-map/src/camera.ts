@@ -7,9 +7,7 @@ import Quaternion from './quaternion'
 
 type VEC = { x: number; y: number; z: number }
 
-const NATURE: ComponentNature = {
-  props: []
-}
+const NATURE: ComponentNature = {}
 
 const points = [
   { x: 0, y: 0, z: 0 },

@@ -3,7 +3,7 @@
  */
 
 import { Component, ComponentNature, HTMLOverlayElement } from '@hatiolab/things-scene'
-import { OxInputBarcode } from '@operato/input/ox-input-barcode.js'
+import { OxInputBarcode } from '@operato/input' // TODO make '@operato/input/ox-input-barcode.js' work.
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -48,7 +48,7 @@ export default class BarcodeScanner extends HTMLOverlayElement {
 
     // 스캔 시 컴포넌트 데이터 세팅
     var scan = scanInput.scan
-    scanInput.scan = (e: Event) =>
+    scanInput.scan = (e: MouseEvent) =>
       scan.call(scanInput, e).then(() => {
         if (scanInput.input) this.data = scanInput.input.value
       })
