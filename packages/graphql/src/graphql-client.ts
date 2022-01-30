@@ -13,7 +13,7 @@ import {
   NormalizedCacheObject
 } from '@apollo/client/core'
 import { ErrorLink, onError } from '@apollo/client/link/error'
-import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
 
 const defaultOptions: DefaultOptions = {
   watchQuery: {
@@ -89,7 +89,7 @@ const ERROR_HANDLER: ErrorLink.ErrorHandler = ({ operation, graphQLErrors, netwo
   }
 }
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

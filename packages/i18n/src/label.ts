@@ -1,4 +1,8 @@
-const NATURE = {
+import i18next from 'i18next'
+
+import { Component, ComponentNature, RectPath } from '@hatiolab/things-scene'
+
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,
@@ -22,10 +26,6 @@ const NATURE = {
   'value-property': 'key',
   help: 'scene/component/label'
 }
-
-import { Component, RectPath } from '@hatiolab/things-scene'
-
-import i18next from 'i18next'
 
 export default class Label extends RectPath(Component) {
   static get nature() {

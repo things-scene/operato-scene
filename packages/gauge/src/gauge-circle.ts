@@ -2,11 +2,11 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, Donut, ValueHolder } from '@hatiolab/things-scene';
+import { Component, ComponentNature, Donut, ValueHolder } from '@hatiolab/things-scene'
 
-import { PROPERTIES } from './gauge-properties';
+import { PROPERTIES } from './gauge-properties'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,
@@ -149,26 +149,9 @@ export default class GaugeCircle extends ValueHolder(Donut) {
     ////  메인 게이지 원 그리기  ////
     context.beginPath()
 
-    context.ellipse(
-      0,
-      0,
-      Math.abs(rx),
-      Math.abs(ry),
-      0,
-      startAngle * Math.PI,
-      endAngle * Math.PI
-    )
+    context.ellipse(0, 0, Math.abs(rx), Math.abs(ry), 0, startAngle * Math.PI, endAngle * Math.PI)
     this.drawStroke(context)
-    context.ellipse(
-      0,
-      0,
-      Math.abs(rxRatio),
-      Math.abs(ryRatio),
-      0,
-      endAngle * Math.PI,
-      startAngle * Math.PI,
-      true
-    ) // 반대로 그리며 원을 지움.
+    context.ellipse(0, 0, Math.abs(rxRatio), Math.abs(ryRatio), 0, endAngle * Math.PI, startAngle * Math.PI, true) // 반대로 그리며 원을 지움.
     // this.drawFill(context)
 
     context.closePath()
@@ -179,7 +162,11 @@ export default class GaugeCircle extends ValueHolder(Donut) {
       let endStepAngle = 0
       context.moveTo(0, 0)
 
-      colorStops.forEach(function (v: {position: number; color: string;}, idx: number, arr: {position: number; color: string;}[]) {
+      colorStops.forEach(function (
+        v: { position: number; color: string },
+        idx: number,
+        arr: { position: number; color: string }[]
+      ) {
         context.beginPath()
 
         let value = Math.max(Math.min(v.position - startValue, totalValue), 0) // v.position 범위의 최소값은 0, 최대값은 totalValue가 되야함.

@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
-    "@hatiolab/things-scene": "^2.7.33",
+    "@hatiolab/things-scene": "^2.7.34",
     "@operato/graphql": "^0.3.20",
     "jsonwebtoken": "^8.5.1",
     "subscriptions-transport-ws": "^0.11.0"

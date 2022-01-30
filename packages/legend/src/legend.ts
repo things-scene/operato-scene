@@ -1,9 +1,9 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, Container, Model, POSITION, Properties, TableLayout } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Container, Model, POSITION, Properties, TableLayout } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

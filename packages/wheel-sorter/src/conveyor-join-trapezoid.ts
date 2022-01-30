@@ -1,11 +1,11 @@
-import { Component, Polygon } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Polygon } from '@hatiolab/things-scene'
 
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
 import MixinRoller from './mixin-conveyor'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

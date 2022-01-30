@@ -2,16 +2,11 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import {
-  Component,
-  RectPath,
-  Shape,
-  ValueHolder,
-} from '@hatiolab/things-scene';
+import { Component, ComponentNature, RectPath, Shape, ValueHolder } from '@hatiolab/things-scene'
 
-import { PROPERTIES } from './gauge-properties';
+import { PROPERTIES } from './gauge-properties'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,
@@ -85,7 +80,11 @@ export default class GaugeVertical extends ValueHolder(RectPath(Shape)) {
     ////  스텝별 색 칠하기  ////
     if (colorStops) {
       let beforeValue = 0
-      colorStops.forEach(function (v: {position: number; color: string;}, idx: number, arr: {position: number; color: string;}[]) {
+      colorStops.forEach(function (
+        v: { position: number; color: string },
+        idx: number,
+        arr: { position: number; color: string }[]
+      ) {
         context.beginPath()
 
         let value = Math.max(Math.min(v.position - startValue, totalValue), 0) // v.position 범위의 최소값은 0, 최대값은 totalValue가 되야함.

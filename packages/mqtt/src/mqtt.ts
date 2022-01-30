@@ -3,9 +3,9 @@ import mqtt from 'mqtt'
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, ComponentNature, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

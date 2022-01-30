@@ -6,7 +6,7 @@
 
 import uuid from 'uuid'
 
-import { Component, Properties, RectPath, ValueHolder } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Properties, RectPath, ValueHolder } from '@hatiolab/things-scene'
 import { DataGrist } from '@operato/data-grist'
 import { GristData, GristRecord, SorterConfig } from '@operato/data-grist/src/types.js'
 
@@ -22,7 +22,7 @@ export enum ACTIONS {
   GET_PAGE_INFO = 'getPageInfo'
 }
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

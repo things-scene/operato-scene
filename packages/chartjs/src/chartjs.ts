@@ -1,11 +1,12 @@
 import './ox-chart'
 
-import { Component, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
-
-import { OxChart } from './ox-chart'
 import cloneDeep from 'lodash/cloneDeep'
 
-const NATURE = {
+import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+
+import { OxChart } from './ox-chart'
+
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

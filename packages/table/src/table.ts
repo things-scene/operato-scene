@@ -2,9 +2,9 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
+import { Component, ComponentNature, Container, Control, Layout, State, Style } from '@hatiolab/things-scene'
+
 import {
-  CLEAR_STYLE,
-  WHERE,
   above,
   after,
   array,
@@ -12,19 +12,19 @@ import {
   below,
   buildCopiedCell,
   buildNewCell,
+  CLEAR_STYLE,
   columnControlHandler,
   isBottomMost,
   isLeftMost,
   isRightMost,
   isTopMost,
   rowControlHandler,
-  setCellBorder
+  setCellBorder,
+  WHERE
 } from './helper-functions'
-import { Component, ComponentNature, Container, Control, Layout, Model, State, Style } from '@hatiolab/things-scene'
-
 import TableCell from './table-cell'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

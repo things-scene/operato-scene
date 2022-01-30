@@ -1,13 +1,13 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, Container, Layout, RectPath } from '@hatiolab/things-scene'
+import { Component, ComponentNature, RectPath } from '@hatiolab/things-scene'
 
 import Table from './table'
 
 type Style = { [style: string]: any }
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

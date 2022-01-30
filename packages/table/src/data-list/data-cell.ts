@@ -1,11 +1,11 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, RectPath, Style } from '@hatiolab/things-scene'
+import { Component, ComponentNature, RectPath, Style } from '@hatiolab/things-scene'
 
-import { Table } from '..'
+import { Table } from '../'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

@@ -4,9 +4,9 @@
 
 import { SubscriptionClient } from 'subscriptions-transport-ws'
 
-import { Component, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

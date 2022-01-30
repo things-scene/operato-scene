@@ -1,11 +1,11 @@
 import gql from 'graphql-tag'
 
-import { Component, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, ComponentNature, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
 import { scenarios } from './client-api'
 import { getClient } from './origin-client'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

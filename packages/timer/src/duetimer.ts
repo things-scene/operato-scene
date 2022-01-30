@@ -1,11 +1,11 @@
-import { Component, Properties, RectPath, Shape, error } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
 import format from './libs/format'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

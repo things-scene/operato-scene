@@ -9,11 +9,11 @@ import 'dayjs/esm/locale/ja'
 import dayjs from 'dayjs/esm/index'
 import utc from 'dayjs/esm/plugin/utc'
 
-import { Component, Text } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Text } from '@hatiolab/things-scene'
 
 dayjs.extend(utc)
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

@@ -4,11 +4,11 @@
 
 import '@operato/data-grist'
 
-import { Component, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
 import { DataGrist } from '@operato/data-grist'
 import { FetchOption, GristRecord } from '@operato/data-grist/dist/src/types'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

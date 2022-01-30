@@ -1,11 +1,11 @@
-import { Component, RectPath, Shape } from '@hatiolab/things-scene'
+import { Component, ComponentNature, RectPath, Shape } from '@hatiolab/things-scene'
 
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
 import MixinWheelSorter from './mixin-wheel-sorter'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

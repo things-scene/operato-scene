@@ -1,6 +1,6 @@
-import { Component, RectPath, Shape, ValueHolder } from '@hatiolab/things-scene'
+import { Component, ComponentNature, RectPath, Shape, ValueHolder } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

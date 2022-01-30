@@ -1,10 +1,10 @@
 import './simple-switch-element'
 
-import { Component, HTMLOverlayElement } from '@hatiolab/things-scene'
+import { Component, ComponentNature, HTMLOverlayElement } from '@hatiolab/things-scene'
 
 import { SimpleSwitchElement } from './simple-switch-element'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

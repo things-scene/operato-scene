@@ -1,8 +1,8 @@
-import { Component, DataSource, RectPath, Shape, warn } from '@hatiolab/things-scene'
+import { Component, ComponentNature, DataSource, RectPath, Shape, warn } from '@hatiolab/things-scene'
 
 import jsonp from './jsonp'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

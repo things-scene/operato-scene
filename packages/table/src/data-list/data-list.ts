@@ -5,9 +5,9 @@
 import './data-cell'
 import './data-list-layout'
 
+import { Component, ComponentNature, Container, Control, Layout, Model, State, Style } from '@hatiolab/things-scene'
+
 import {
-  CLEAR_STYLE,
-  WHERE,
   above,
   after,
   array,
@@ -15,19 +15,18 @@ import {
   below,
   buildCopiedCell,
   buildNewCell,
+  CLEAR_STYLE,
   columnControlHandler,
   isBottomMost,
   isLeftMost,
   isRightMost,
   isTopMost,
   rowControlHandler,
-  setCellBorder
+  setCellBorder,
+  WHERE
 } from '../helper-functions'
-import { Component, ComponentNature, Container, Control, Layout, Model, State, Style } from '@hatiolab/things-scene'
 
-import DataCell from './data-cell'
-
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

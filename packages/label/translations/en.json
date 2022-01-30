@@ -1,0 +1,9 @@
+{
+  "label.direct-printer": "direct printer",
+  "label.monochrome": "monochrome",
+  "label.symbol": "symbol",
+  "label.paddingwidth": "padding-w",
+  "label.paddingheight": "padding-h",
+  "label.vendor id": "vendor id",
+  "label.board id": "board id"
+}

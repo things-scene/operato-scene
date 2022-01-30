@@ -3,6 +3,7 @@
  */
 import {
   Component,
+  ComponentNature,
   Container,
   LinearHorizontalLayout,
   LinearVerticalLayout,
@@ -18,7 +19,7 @@ function rgba(r: number, g: number, b: number, a: number) {
   return `rgba(${r}, ${g}, ${b}, ${a})`
 }
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

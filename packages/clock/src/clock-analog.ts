@@ -2,9 +2,9 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, Ellipse } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Ellipse } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

@@ -1,4 +1,4 @@
-import { Component, RectPath, ScriptLoader, Shape, error } from '@hatiolab/things-scene'
+import { Component, ComponentNature, error, RectPath, ScriptLoader, Shape } from '@hatiolab/things-scene'
 
 const formats = [
   'bool,character,floating,integer,letter,natural,string',
@@ -14,7 +14,7 @@ const formats = [
   .join(',')
   .split(',')
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

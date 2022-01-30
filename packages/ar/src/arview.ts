@@ -2,11 +2,11 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import '@google/model-viewer';
+import '@google/model-viewer'
 
-import { Component, HTMLOverlayContainer } from '@hatiolab/things-scene';
+import { Component, ComponentNature, HTMLOverlayContainer } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,
@@ -36,9 +36,9 @@ export default class Arview extends HTMLOverlayContainer {
    *
    * ThingsComponent state => HTML element properties
    */
-  setElementProperties(element: HTMLElement & {src: string}) {
+  setElementProperties(element: HTMLElement & { src: string }) {
     var { src, cameraControls } = this.state
- 
+
     // element.style.pointerEvents = 'auto' //'inherit'
 
     element.src = src || ''

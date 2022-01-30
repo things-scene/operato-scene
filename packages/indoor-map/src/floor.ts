@@ -1,11 +1,11 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, Container } from '@hatiolab/things-scene'
+import { Component, ComponentNature, Container } from '@hatiolab/things-scene'
 
 import IndoorMap from './indoor-map'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,

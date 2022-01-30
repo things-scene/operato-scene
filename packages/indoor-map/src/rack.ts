@@ -1,71 +1,68 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-import { Component, RectPath } from '@hatiolab/things-scene';
+import { Component, ComponentNature, RectPath } from '@hatiolab/things-scene'
 
-const NATURE = {
+const NATURE: ComponentNature = {
   mutable: false,
   resizable: true,
   rotatable: true,
-  properties: [{
-    type: 'number',
-    label: 'depth',
-    name: 'depth',
-    property: 'depth'
-  }, {
-    type: 'number',
-    label: 'shelves',
-    name: 'shelves',
-    property: 'shelves'
-  }, {
-    type: 'string',
-    label: 'location-pattern',
-    name: 'locPattern',
-    placeholder: '{z}{s}-{u}-{sh}',
-    property: 'locPattern'
-  }, {
-    type: 'string',
-    label: 'zone',
-    name: 'zone',
-    property: 'zone'
-  }, {
-    type: 'string',
-    label: 'section',
-    name: 'section',
-    property: 'section'
-  }, {
-    type: 'string',
-    label: 'unit',
-    name: 'unit',
-    property: 'unit'
-  }, {
-    type: 'string',
-    label: 'shelf-pattern',
-    name: 'shelfPattern',
-    placeholder: '#',
-    property: 'shelfPattern'
-  }],
+  properties: [
+    {
+      type: 'number',
+      label: 'depth',
+      name: 'depth',
+      property: 'depth'
+    },
+    {
+      type: 'number',
+      label: 'shelves',
+      name: 'shelves',
+      property: 'shelves'
+    },
+    {
+      type: 'string',
+      label: 'location-pattern',
+      name: 'locPattern',
+      placeholder: '{z}{s}-{u}-{sh}',
+      property: 'locPattern'
+    },
+    {
+      type: 'string',
+      label: 'zone',
+      name: 'zone',
+      property: 'zone'
+    },
+    {
+      type: 'string',
+      label: 'section',
+      name: 'section',
+      property: 'section'
+    },
+    {
+      type: 'string',
+      label: 'unit',
+      name: 'unit',
+      property: 'unit'
+    },
+    {
+      type: 'string',
+      label: 'shelf-pattern',
+      name: 'shelfPattern',
+      placeholder: '#',
+      property: 'shelfPattern'
+    }
+  ],
   help: 'scene/component/rack'
 }
 
 export default class Rack extends RectPath(Component) {
-
   is3dish() {
     return true
   }
 
   draw(context: CanvasRenderingContext2D) {
-
-    var {
-      left,
-      top,
-      width,
-      height,
-      strokeStyle,
-      lineWidth,
-      fillStyle,
-      alpha = 1,
-    } = this.model;
+    var { left, top, width, height, strokeStyle, lineWidth, fillStyle, alpha = 1 } = this.model
 
     context.beginPath()
     context.rect(left, top, width, height)
@@ -96,9 +93,8 @@ export default class Rack extends RectPath(Component) {
   }
 
   get hasTextProperty() {
-    return false;
+    return false
   }
-
 }
 
 Component.register('rack', Rack)
