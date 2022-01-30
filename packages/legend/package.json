@@ -3,7 +3,7 @@
   "description": "Legend component for things-scene.",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,

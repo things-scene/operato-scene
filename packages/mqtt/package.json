@@ -1,6 +1,6 @@
 {
   "name": "@operato/scene-mqtt",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "MQTT integration component for things-scene",
   "things-scene": true,
   "browser": "src/index.js",
