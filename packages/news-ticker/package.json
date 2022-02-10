@@ -1,20 +1,20 @@
 {
-  "name": "@operato/scene-excel",
-  "description": "Excel integration component for things-scene",
-  "license": "MIT",
+  "name": "@operato/scene-news-ticker",
   "version": "0.1.4",
-  "author": "heartyoh",
+  "description": "News ticker Component for Things Scene.",
+  "things-scene": true,
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "things-scene": true,
+  "author": "heartyoh",
+  "license": "MIT",
   "publishConfig": {
     "access": "public",
-    "@operato:registry": "https://registry.npmjs.org"
+    "@things-factory:registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/things-scene/operato-scene.git",
-    "directory": "packages/excel"
+    "directory": "packages/news-ticker"
   },
   "scripts": {
     "serve": "tsc && things-factory-dev",
@@ -27,14 +27,14 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^2.7.34",
-    "xlsx": "^0.16.8"
+    "lit": "^2.0.2",
+    "web-animations-js": "^2.3.2"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
     "@operato/board": "^0.3.28",
     "@things-factory/builder": "^4.1.2",
     "@things-factory/operato-board": "^4.1.2",
-    "@types/xlsx": "^0.0.36",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",
