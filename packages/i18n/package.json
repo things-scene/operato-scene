@@ -3,7 +3,7 @@
   "description": "i18n component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
