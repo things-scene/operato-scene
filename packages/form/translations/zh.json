@@ -1,0 +1,15 @@
+{
+  "label.text-field": "文本字段",
+  "label.value-field": "值字段",
+  "label.started": "自动开启",
+  "label.controls": "显示控制器",
+  "label.endpoint": "数据端点",
+  "label.namespace": "命名空间",
+  "label.soap-action": "SOAP操作",
+  "label.content-type": "content type",
+  "label.mime-type": "MIME type",
+  "label.next-input": "下一Focus对象",
+  "label.autofocus": "初始Focus",
+  "label.alltime-focus": "单一Focus",
+  "label.alltime-focus-pending": "单一Focus等待时间"
+}
