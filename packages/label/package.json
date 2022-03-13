@@ -27,12 +27,12 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^2.7.34",
-    "@operato/input": "^1.0.0-alpha.13",
+    "@operato/input": "^1.0.0-alpha.14",
     "bwip-js": "^3.0.4"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-alpha.13",
+    "@operato/board": "^1.0.0-alpha.14",
     "@things-factory/builder": "^5.0.0-alpha.5",
     "@things-factory/operato-board": "^5.0.0-alpha.5",
     "@types/codemirror": "^5.60.5",

@@ -2,7 +2,7 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import './ox-property-editor-action'
+import './ox-property-editor-action.js'
 
 export default [
   {
