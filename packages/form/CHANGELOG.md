@@ -9,12 +9,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### :rocket: New Features
 
 * [@operato](https://github.com/operato) 1.0.0-alpha and [@things-factory](https://github.com/things-factory) 5.0.0-alpha ([5f7f2d4](https://github.com/things-scene/operato-scene/commit/5f7f2d45ccc8300822e712c93948850bcdb43687))
-
-
-
-### [0.1.5](https://github.com/things-scene/operato-scene/compare/v0.1.4...v0.1.5) (2022-02-10)
-
-
-### :rocket: New Features
-
-* move news-ticker to here ([c5e565d](https://github.com/things-scene/operato-scene/commit/c5e565dff6016977766e54b3b74c4f80838f7cd2))
+* migrating scene-form from things-factory ([0756c16](https://github.com/things-scene/operato-scene/commit/0756c168324398c8eac4f0a0b27dd8bc3d622769))
