@@ -27,12 +27,12 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^2.7.34",
-    "@operato/data-grist": "^1.0.0-alpha.15",
+    "@operato/data-grist": "^1.0.0-alpha.17",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-alpha.15",
+    "@operato/board": "^1.0.0-alpha.17",
     "@things-factory/builder": "^5.0.0-alpha.6",
     "@things-factory/operato-board": "^5.0.0-alpha.6",
     "@types/lodash-es": "^4.17.5",
