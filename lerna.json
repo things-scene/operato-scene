@@ -10,7 +10,7 @@
       "conventionalCommits": true
     },
     "version": {
-      "allowBranch": ["main", "feature/*", "*-alpha.*", "*-beta.*"],
+      "allowBranch": ["main", "feature/*", "*-alpha.*", "1.0-*"],
       "conventionalCommits": true,
       "changelogPreset": {
         "name": "conventional-changelog-conventionalcommits",
