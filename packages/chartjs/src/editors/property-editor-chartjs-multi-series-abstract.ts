@@ -5,12 +5,11 @@ import '@polymer/paper-icon-button/paper-icon-button'
 import '@polymer/paper-tabs/paper-tabs'
 
 import { css, html } from 'lit'
-import { query } from 'lit/decorators.js'
 
-import { Properties } from '@hatiolab/things-scene'
 import { PaperIconButtonElement } from '@polymer/paper-icon-button/paper-icon-button'
-
+import { Properties } from '@hatiolab/things-scene'
 import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
+import { query } from 'lit/decorators.js'
 
 export default class PropertyEditorChartJSMultiSeriesAbstract extends PropertyEditorChartJSAbstract {
   static styles = [
@@ -300,7 +299,7 @@ export default class PropertyEditorChartJSMultiSeriesAbstract extends PropertyEd
                   : html``}
 
                 <label> <i18n-msg msgid="label.color">color</i18n-msg> </label>
-                <things-editor-color value-key="color" .value=${this.color}></things-editor-color>
+                <ox-input-color value-key="color" .value=${this.color}></ox-input-color>
 
                 ${this.series.type == 'line'
                   ? html`

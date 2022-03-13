@@ -1,10 +1,9 @@
-import { html, LitElement } from 'lit'
-import { property } from 'lit/decorators.js'
+import { LitElement, html } from 'lit'
+import { TinyColor, random as randomColor } from '@ctrl/tinycolor'
 
-import { random as randomColor, TinyColor } from '@ctrl/tinycolor'
 import { Properties } from '@hatiolab/things-scene'
-
 import { PropertyEditorChartJSStyles } from './property-editor-chartjs-styles'
+import { property } from 'lit/decorators.js'
 
 export default class PropertyEditorChartJSAbstract extends LitElement {
   static styles = [PropertyEditorChartJSStyles]
@@ -58,10 +57,10 @@ export default class PropertyEditorChartJSAbstract extends LitElement {
       ${this.series.displayValue
         ? html`
             <label> <i18n-msg msgid="label.font-color">Font Color</i18n-msg> </label>
-            <things-editor-color
+            <ox-input-color
               value-key="series.defaultFontColor"
               .value=${this.series.defaultFontColor || '#000'}
-            ></things-editor-color>
+            ></ox-input-color>
             <label> <i18n-msg msgid="label.font-size">Font Size</i18n-msg> </label>
             <input type="number" value-key="series.defaultFontSize" .value=${this.series.defaultFontSize || 10} />
             <label> <i18n-msg msgid="label.position">Position</i18n-msg> </label>

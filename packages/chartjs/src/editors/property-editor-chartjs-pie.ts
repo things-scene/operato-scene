@@ -1,9 +1,7 @@
-import { html } from 'lit'
-import { customElement } from 'lit/decorators.js'
-
 import { Properties } from '@hatiolab/things-scene'
-
 import PropertyEditorChartJSAbstract from './property-editor-chartjs-abstract'
+import { customElement } from 'lit/decorators.js'
+import { html } from 'lit'
 
 @customElement('property-editor-chartjs-pie')
 export default class PropertyEditorChartJSPie extends PropertyEditorChartJSAbstract {
@@ -65,7 +63,7 @@ export default class PropertyEditorChartJSPie extends PropertyEditorChartJSAbstr
       <input type="text" value-key="dataKey" .value=${this.series.dataKey} />
 
       <label> <i18n-msg msgid="label.color">color</i18n-msg> </label>
-      <things-editor-multiple-color value-key="color" .values=${this.color}></things-editor-multiple-color>
+      <ox-input-multiple-colors value-key="color" .value=${this.color}></ox-input-multiple-colors>
 
       ${this.displayValueTemplate()}
 

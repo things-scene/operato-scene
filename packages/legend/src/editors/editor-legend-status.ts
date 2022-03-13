@@ -52,7 +52,7 @@ class EditorLegendStatus extends LitElement {
       table td span {
         padding: 5px 0 0 0;
       }
-      table td things-editor-color {
+      table td ox-input-color {
         width: 81px;
         height: 25px;
       }
@@ -77,7 +77,7 @@ class EditorLegendStatus extends LitElement {
         width: 30px;
       }
 
-      table *.things-editor-legend-status {
+      table *.editor-legend-status {
         float: none !important;
       }
       table td {
@@ -122,14 +122,14 @@ class EditorLegendStatus extends LitElement {
       <label class="default-color">
         <i18n-msg msgid="label.default-color">Default Color</i18n-msg>
       </label>
-      <things-editor-color
+      <ox-input-color
         name="default-color"
         .value=${this._defaultColor || ''}
         placeholder="default color"
         @change=${(e: Event) => {
           this._defaultColor = (e.target as HTMLInputElement).value
         }}
-      ></things-editor-color>
+      ></ox-input-color>
 
       <table>
         <tr>
@@ -150,7 +150,7 @@ class EditorLegendStatus extends LitElement {
                 <input type="text" data-max placeholder="max" .value="${item.max}" />
               </td>
               <td>
-                <things-editor-color data-color .value="${item.color}" placeholder="color"></things-editor-color>
+                <ox-input-color data-color .value="${item.color}" placeholder="color"></ox-input-color>
               </td>
               <td>
                 <input type="text" data-description .value="${item.description || ''}" placeholder="display text" />
@@ -169,7 +169,7 @@ class EditorLegendStatus extends LitElement {
             <input type="text" data-max placeholder="max" value="" />
           </td>
           <td>
-            <things-editor-color data-color value="" placeholder="color"></things-editor-color>
+            <ox-input-color data-color value="" placeholder="color"></ox-input-color>
           </td>
           <td>
             <input type="text" data-description value="" placeholder="display text" />

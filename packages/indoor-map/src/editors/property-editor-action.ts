@@ -8,7 +8,7 @@ import { css, html } from 'lit'
 import { OxPropertyEditor } from '@operato/property-editor'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('things-editor-action')
+@customElement('ox-property-editor-action')
 export default class ThingsEditorAction extends OxPropertyEditor {
   static styles = [
     ...OxPropertyEditor.styles,

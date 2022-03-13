@@ -144,7 +144,7 @@ export default class PropertyEditorChartJSHBar extends PropertyEditorChartJSMult
                 <label> <i18n-msg msgid="label.label">Label</i18n-msg> </label>
                 <input type="text" value-key="series.label" .value=${this.series.label} />
                 <label> <i18n-msg msgid="label.color">Color</i18n-msg> </label>
-                <things-editor-color value-key="color" .value=${this.color}></things-editor-color>
+                <ox-input-color value-key="color" .value=${this.color}></ox-input-color>
                 <label> <i18n-msg msgid="label.stack-group">Stack Group</i18n-msg> </label>
                 <input type="text" value-key="series.stack" .value=${this.series.stack || ''} />
 
