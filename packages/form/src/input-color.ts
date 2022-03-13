@@ -2,11 +2,9 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import TinyColor from 'tinycolor2'
-
 import { Component } from '@hatiolab/things-scene'
-
 import Input from './input'
+import { tinycolor } from '@thebespokepixel/es-tinycolor'
 
 const NATURE = {
   mutable: false,
@@ -47,7 +45,7 @@ export default class InputColor extends Input {
   }
 
   setElementProperties(element: HTMLInputElement) {
-    this.value = TinyColor(this.value || '#000000').toHexString()
+    this.value = tinycolor(this.value || '#000000', {}).toHexString(false)
     super.setElementProperties(element)
   }
 }

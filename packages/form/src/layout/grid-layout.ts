@@ -2,16 +2,16 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Layout } from '@hatiolab/things-scene'
+import { Component, Container, Layout } from '@hatiolab/things-scene'
 
 var GridLayout = {
-  reflow: function(container) {
+  reflow: function (container: Container) {
     var layoutConfig = container.get('layoutConfig')
 
     var columns = (layoutConfig && layoutConfig.columns) || container.get('columns')
     var rows = (layoutConfig && layoutConfig.rows) || container.get('rows')
-    var widths = (layoutConfig && layoutConfig.widths) || container.get('widths')
-    var heights = (layoutConfig && layoutConfig.heights) || container.get('heights')
+    var widths: number[] = (layoutConfig && layoutConfig.widths) || container.get('widths')
+    var heights: number[] = (layoutConfig && layoutConfig.heights) || container.get('heights')
 
     var widths_sum = widths ? widths.filter((width, i) => i < columns).reduce((sum, width) => sum + width, 0) : columns
     var heights_sum = heights ? heights.filter((height, i) => i < rows).reduce((sum, height) => sum + height, 0) : rows
@@ -31,10 +31,12 @@ var GridLayout = {
       let w = widths ? widths[idx % columns] : 1
       let h = heights ? heights[Math.floor(idx / columns)] : 1
 
+      //@ts-ignore
       let colspan = component.colspan || 1
       let wspan = 0
       while (--colspan > 0) wspan += widths ? widths[(idx + colspan) % columns] : 1
 
+      //@ts-ignore
       let rowspan = component.rowspan || 1
       let hspan = 0
       while (--rowspan > 0) hspan += heights ? heights[Math.floor(idx / columns) + rowspan] : 1
@@ -56,19 +58,21 @@ var GridLayout = {
     })
   },
 
-  capturables: function(container) {
+  capturables: function (container: Container) {
     return container.components.filter(cell => {
+      //@ts-ignore
       return !cell.merged
     })
   },
 
-  drawables: function(container) {
+  drawables: function (container: Container) {
     return container.components.filter(cell => {
+      //@ts-ignore
       return !cell.merged
     })
   },
 
-  isStuck: function(component) {
+  isStuck: function (component: Component) {
     return true
   },
 
@@ -78,12 +82,13 @@ var GridLayout = {
    * keyNavigate 메쏘드가 정의되어 있지 않으면, 'Tab' 키에 대한 네비게이션만 작동한다.
    * 'Tab'키에 의한 네비게이션은 모든 레이아웃에 공통으로 적용된다.
    */
-  keyNavigate: function(container, component, e) {
+  keyNavigate: function (container: Container, component: Component, e: KeyboardEvent) {
     var layoutConfig = container.get('layoutConfig')
 
     var columns = (layoutConfig && layoutConfig.columns) || container.get('columns')
     var rows = (layoutConfig && layoutConfig.rows) || container.get('rows')
 
+    //@ts-ignore
     var { row, column } = container.getRowColumn(component)
 
     switch (e.code) {

@@ -41,7 +41,7 @@ const NATURE = {
   'value-property': 'text'
 }
 
-import { Component, HTMLOverlayElement } from '@hatiolab/things-scene'
+import { Component, HTMLOverlayElement, error } from '@hatiolab/things-scene'
 
 export default class TextArea extends HTMLOverlayElement {
   get nature() {
@@ -52,27 +52,31 @@ export default class TextArea extends HTMLOverlayElement {
     return 'textarea'
   }
 
+  private value: any
+
   createElement() {
     super.createElement()
 
-    this.element.style.resize = 'none'
+    const element = this.element as HTMLTextAreaElement
+
+    element.style.resize = 'none'
 
     /* element.property => component.property */
-    this.element.onchange = e => {
-      this.value = this.element.value
+    element.onchange = e => {
+      this.value = element.value
     }
   }
 
   /* component.property => element.property */
-  setElementProperties(element) {
+  setElementProperties(element: HTMLTextAreaElement) {
     var { name = '', placeholder = '', disabled, readonly, maxlength } = this.state
 
     try {
       element.name = name
       element.placeholder = placeholder
       element.disabled = disabled
-      element.readonly = readonly
-      element.maxlength = maxlength
+      element.readOnly = readonly
+      element.maxLength = maxlength
       element.value = this.value
     } catch (e) {
       error(e)

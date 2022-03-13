@@ -3,7 +3,6 @@
  */
 
 import { Component } from '@hatiolab/things-scene'
-
 import Input from './input'
 
 const NATURE = {
@@ -74,11 +73,14 @@ export default class CheckBox extends Input {
 
     this.setElementProperties(this.element)
 
+    //@ts-ignore
     if (this.parent.isHTMLElement && this.parent.isHTMLElement()) this.parent.element.appendChild(this.element)
-    else this.root.model_layer.overlay.appendChild(this.element)
+    else this.root.rootModel.overlay.appendChild(this.element)
 
+    //@ts-ignore
     Component.reposition(this)
 
+    //@ts-ignore
     this.oncreate_element && this.oncreate_element(this.element)
   }
 
@@ -97,7 +99,7 @@ export default class CheckBox extends Input {
       eInput.value = value
     }
 
-    super.setElementProperties(eInput)
+    super.setElementProperties(eInput!)
   }
 }
 

@@ -53,22 +53,32 @@ const NATURE = {
   'value-property': 'value'
 }
 
+type Option = {
+  text: string
+  value: string
+  [prop: string]: string
+}
+
 export default class Select extends HTMLOverlayElement {
   get nature() {
     return NATURE
   }
 
-  buildOptions() {
-    var { options = [], textField, valueField, value } = this.state
+  value: any
 
-    if (!(options instanceof Array)) options = []
+  buildOptions() {
+    var { options = [] as Option[], textField, valueField, value } = this.state
+
+    if (!(options instanceof Array)) {
+      options = [] as Option[]
+    }
 
     this.element.textContent = ''
     var defaultValue: any
 
     options.map &&
       options
-        .map((option, index) => {
+        .map((option: Option, index: number) => {
           let text, value
 
           if (!textField) {
@@ -98,7 +108,7 @@ export default class Select extends HTMLOverlayElement {
 
           return { text, value }
         })
-        .forEach(option => {
+        .forEach((option: Option) => {
           var el = document.createElement('option')
           el.value = typeof option.value == 'string' ? option.value : JSON.stringify(option.value)
           el.text = option.text
@@ -109,9 +119,10 @@ export default class Select extends HTMLOverlayElement {
       this.value = JSON.stringify(defaultValue)
     }
 
-    if (this.element.value != this.value) {
-      this.element.value = this.value
-      this.element.dispatchEvent(new Event('change'))
+    const element = this.element as HTMLSelectElement
+    if (element.value != this.value) {
+      element.value = this.value
+      element.dispatchEvent(new Event('change'))
     }
   }
 
@@ -139,8 +150,9 @@ export default class Select extends HTMLOverlayElement {
   onchange(after: Properties, before: Properties) {
     super.onchange(after, before)
 
-    if ('value' in after && this.element) {
-      this.element.value = after.value
+    const element = this.element as HTMLSelectElement
+    if ('value' in after && element) {
+      element.value = after.value
       if (this.get('copyValueToData')) {
         try {
           this.data = JSON.parse(after.value)
@@ -149,8 +161,8 @@ export default class Select extends HTMLOverlayElement {
         }
       }
 
-      if (this.get('submitOnChange') && this.element.form)
-        this.element.form.dispatchEvent(
+      if (this.get('submitOnChange') && element.form)
+        element.form.dispatchEvent(
           new Event('submit', {
             cancelable: true
           })

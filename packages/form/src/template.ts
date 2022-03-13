@@ -33,11 +33,15 @@ export default class Template extends HTMLOverlayContainer {
   createElement() {
     super.createElement()
 
-    this.element.value = this.get('value') || ''
-    this.element.onchange = e => {
-      this.set('value', this.element.value)
+    const element = this.element as HTMLInputElement
+
+    element.value = this.get('value') || ''
+    element.onchange = e => {
+      this.set('value', element.value)
     }
   }
+
+  private targets?: any[]
 
   dispose() {
     super.dispose()
@@ -50,7 +54,7 @@ export default class Template extends HTMLOverlayContainer {
    * 컴포넌트의 생성 또는 속성 변화 시에 호출되며,
    * 그에 따른 html element의 반영이 필요한 부분을 구현한다.
    */
-  setElementProperties(template) {
+  setElementProperties(template: any) {
     template.innerHTML = this.state.template
   }
 

@@ -2,7 +2,7 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, HTMLOverlayContainer } from '@hatiolab/things-scene'
+import { Component, HTMLOverlayContainer, Properties } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -28,7 +28,7 @@ export default class RadioGroup extends HTMLOverlayContainer {
     return NATURE
   }
 
-  containable(component) {
+  containable(component: Component) {
     return component.model.type == 'input-radio'
   }
 
@@ -40,8 +40,10 @@ export default class RadioGroup extends HTMLOverlayContainer {
 
   onchange(after: Properties, before: Properties) {
     super.onchange(after, before)
-    if ('value' in after && this.element) {
-      this.element.value = after.value
+
+    const element = this.element as HTMLInputElement
+    if ('value' in after && element) {
+      element.value = after.value
       if (this.get('copyValueToData')) {
         try {
           this.data = JSON.parse(after.value)
@@ -49,8 +51,8 @@ export default class RadioGroup extends HTMLOverlayContainer {
           this.data = after.value
         }
       }
-      if (this.get('submitOnChange') && this.element.parentElement.tagName == 'FORM')
-        this.element.parentElement.dispatchEvent(
+      if (this.get('submitOnChange') && (element.parentElement as HTMLElement).tagName == 'FORM')
+        (element.parentElement as HTMLElement).dispatchEvent(
           new Event('submit', {
             cancelable: true
           })

@@ -62,6 +62,7 @@ const NATURE = {
 }
 
 import { Component, HTMLOverlayContainer } from '@hatiolab/things-scene'
+
 import { xml2js } from 'xml-js'
 
 export default class SoapClient extends HTMLOverlayContainer {
@@ -74,7 +75,9 @@ export default class SoapClient extends HTMLOverlayContainer {
     return 'form'
   }
 
-  setElementProperties(form) {
+  private _repeatInterval: any
+
+  setElementProperties(form: HTMLFormElement) {
     var { endpoint = '', name = '' } = this.state
 
     form.action = endpoint
@@ -114,8 +117,8 @@ export default class SoapClient extends HTMLOverlayContainer {
     if (this._repeatInterval) clearInterval(this._repeatInterval)
   }
 
-  _onload(e) {
-    var result = e.target.response
+  _onload(e: ProgressEvent) {
+    var result = (e.target as any).response
     try {
       result = xml2js(result, {
         compact: true
@@ -131,10 +134,10 @@ export default class SoapClient extends HTMLOverlayContainer {
     }
   }
 
-  oncreate_element(form) {
+  oncreate_element(form: HTMLFormElement) {
     if (!this.app.isViewMode) return
 
-    var _ = e => {
+    var _ = (e: Event) => {
       e.preventDefault()
 
       var { endpoint, soapAction, method, namespace, debug } = this.state
@@ -142,17 +145,19 @@ export default class SoapClient extends HTMLOverlayContainer {
       var xhr = new XMLHttpRequest()
 
       var params = [].filter
-        .call(form.elements, el => {
-          if (el.type == 'radio' || el.type == 'checkbox') return el.checked
+        .call(form.elements, (el: HTMLInputElement) => {
+          if (el.type == 'radio' || el.type == 'checkbox') {
+            return el.checked
+          }
           return true
         })
-        .filter(el => {
+        .filter((el: HTMLInputElement) => {
           return !!el.name
         })
-        .filter(el => {
+        .filter((el: HTMLInputElement) => {
           return !el.disabled
         })
-        .map(el => {
+        .map((el: HTMLInputElement) => {
           return `<${el.name}>${el.value}</${el.name}>`
         })
         .join('\n      ')

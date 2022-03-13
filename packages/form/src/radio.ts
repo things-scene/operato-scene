@@ -29,14 +29,14 @@ const NATURE = {
     }
   ],
   'value-property': 'value'
-}
+} as ComponentNature
+
+import { Component, ComponentNature } from '@hatiolab/things-scene'
 
 import Input from './input'
 
-import { Component } from '@hatiolab/things-scene'
-
 export default class Radio extends Input {
-  get nature() {
+  get nature(): ComponentNature {
     return NATURE
   }
 
@@ -62,16 +62,22 @@ export default class Radio extends Input {
 
     this.setElementProperties(this.element)
 
-    if (this.parent.isHTMLElement && this.parent.isHTMLElement()) this.parent.element.appendChild(this.element)
-    else this.root.model_layer.overlay.appendChild(this.element)
+    //@ts-ignore
+    if (this.parent.isHTMLElement && this.parent.isHTMLElement()) {
+      this.parent.element.appendChild(this.element)
+    } else {
+      this.root.rootModel.overlay.appendChild(this.element)
+    }
 
+    //@ts-ignore
     Component.reposition(this)
+    //@ts-ignore
     this.oncreate_element && this.oncreate_element(this.element)
   }
 
-  setElementProperties(element) {
-    var eText = this.element.querySelector('text')
-    var eInput = this.element.querySelector('input')
+  setElementProperties(element: HTMLElement) {
+    var eText = this.element.querySelector('text') as SVGTextElement
+    var eInput = this.element.querySelector('input') as HTMLInputElement
 
     var { text, checked, value } = this.state
 
@@ -86,15 +92,17 @@ export default class Radio extends Input {
 
     super.setElementProperties(eInput)
   }
-  postrender(context) {
+
+  postrender(context: CanvasRenderingContext2D) {
     /* postrender() 함수는 거의 상속하지 않는다.
      * 텍스트, 효과, 애니메이션 등 컴포넌트 공통 기능에 대한 표현을 담당한다.
      */
     this.changeText(context)
   }
-  changeText(context) {
+
+  changeText(context: CanvasRenderingContext2D) {
     if (this.text && this.hasTextProperty && this.element.querySelector('p')) {
-      this.element.querySelector('p').innerText = this.text
+      ;(this.element.querySelector('p') as HTMLElement).innerText = this.text
     }
   }
 }

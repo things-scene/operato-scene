@@ -26,6 +26,8 @@ export default class Button extends HTMLOverlayElement {
     return NATURE
   }
 
+  value: any
+
   setElementProperties(button: HTMLElement) {
     this.element.textContent = this.value
   }

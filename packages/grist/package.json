@@ -27,14 +27,14 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^2.7.34",
-    "@operato/data-grist": "^0.3.28",
+    "@operato/data-grist": "^1.0.0-alpha.13",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^0.4.0",
-    "@things-factory/builder": "^4.1.2",
-    "@things-factory/operato-board": "^4.1.2",
+    "@operato/board": "^1.0.0-alpha.13",
+    "@things-factory/builder": "^5.0.0-alpha.5",
+    "@things-factory/operato-board": "^5.0.0-alpha.5",
     "@types/lodash-es": "^4.17.5",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",

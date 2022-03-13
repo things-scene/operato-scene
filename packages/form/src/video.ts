@@ -2,9 +2,10 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import Hls from '!hls.js'
-
 import { Component, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+
+//@ts-ignore
+import Hls from '!hls.js'
 
 const NATURE = {
   mutable: false,
@@ -31,7 +32,9 @@ const NATURE = {
 }
 
 export default class Video extends HTMLOverlayElement {
-  async oncreate_element(video) {
+  private _hlsSupporter?: Hls
+
+  async oncreate_element(video: HTMLVideoElement) {
     var { src, started } = this.state
 
     video.addEventListener('canplay', () => {
@@ -66,8 +69,8 @@ export default class Video extends HTMLOverlayElement {
     else video.removeAttribute('controls')
   }
 
-  onchangestarted(started) {
-    var video = this.element
+  onchangestarted(started: boolean) {
+    var video = this.element as HTMLVideoElement
 
     if (started) {
       /*
@@ -84,10 +87,10 @@ export default class Video extends HTMLOverlayElement {
     }
   }
 
-  onchangesrc(src) {
+  onchangesrc(src: string) {
     this.reset()
 
-    var video = this.element
+    var video = this.element as HTMLVideoElement
 
     if (!video) return
 

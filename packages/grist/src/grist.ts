@@ -4,8 +4,8 @@
 
 import '@operato/data-grist'
 
-import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
-import { DataGrist } from '@operato/data-grist'
+import { Component, ComponentNature, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
+import { DataGrist, FetchResult } from '@operato/data-grist'
 import { FetchOption, GristRecord } from '@operato/data-grist/dist/src/types'
 
 const NATURE: ComponentNature = {
@@ -133,17 +133,7 @@ export default class SceneGrist extends HTMLOverlayElement {
 
     this.setGristConfig(grist)
 
-    grist.fetchHandler = ({
-      page,
-      limit,
-      sorters,
-      options
-    }: FetchOption): {
-      page?: number
-      limit?: number
-      total: number
-      records: GristRecord[]
-    } => {
+    grist.fetchHandler = async ({ page, limit, sorters, options }: FetchOption): Promise<FetchResult> => {
       Object.values(this.beforeFetchFuncs).forEach((func: any) => func({ page, limit, sorters, options }))
       var { total = 0, records = [] } = grist.data || {}
 
