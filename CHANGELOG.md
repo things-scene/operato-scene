@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.2](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-03-13)
+
+
+### :bug: Bug Fix
+
+* [@operato](https://github.com/operato) 1.0.0-alpha.14 ([c124d67](https://github.com/hatiolab/operato/commit/c124d672260ac940175a2a831f702aa3b5f5c996))
+* update license ([4543dc7](https://github.com/hatiolab/operato/commit/4543dc7e0a31b0f7ff7e5cc9798dec8ab8aa0a88))
+
+
+
 ## [1.0.0-alpha.1](https://github.com/hatiolab/operato/compare/v0.1.5...v1.0.0-alpha.1) (2022-03-13)
 
 
