@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.5](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-04-03)
+
+
+### :bug: Bug Fix
+
+* upgrade lit and operato, things-factory ([f056300](https://github.com/hatiolab/operato/commit/f056300c0e2f85c41715d3178f12c39bf3110a34))
+
+
+
 ## [1.0.0-alpha.4](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-03-13)
 
 
