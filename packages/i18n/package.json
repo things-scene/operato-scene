@@ -29,7 +29,7 @@
     "@hatiolab/things-scene": "^2.7.34",
     "@operato/property-editor": "^1.0.0-alpha.17",
     "i18next": "^21.5.4",
-    "lit": "^2.0.2"
+    "lit": "^2.2.1"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
