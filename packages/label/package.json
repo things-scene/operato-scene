@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-label",
   "description": "Barcode Label component for things-scene",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "things-scene": true,
   "main": "dist/index.js",
   "module": "dist/index.js",

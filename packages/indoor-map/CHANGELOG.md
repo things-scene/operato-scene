@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.6](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-04-05)
+
+
+### :bug: Bug Fix
+
+* [@things-factory](https://github.com/things-factory) 5.0.0-alpha.28 ([459ce88](https://github.com/things-scene/operato-scene/commit/459ce884942ab11bcd1e9b9c6af7bf045b580a41))
+* add activeIndex property into indoor-map ([81ea401](https://github.com/things-scene/operato-scene/commit/81ea401ae32d2e2ddc7da862bf98974bbdf8d075))
+
+
+
 ## [1.0.0-alpha.5](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-04-03)
 
 
