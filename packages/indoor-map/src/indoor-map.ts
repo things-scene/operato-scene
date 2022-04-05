@@ -62,6 +62,14 @@ export default class IndoorMap extends Container {
     return this.components[this.get('layoutConfig').activeIndex] as Floor
   }
 
+  get activeIndex() {
+    return this.get('activeIndex')
+  }
+
+  set activeIndex(activeIndex: number) {
+    this.set('activeIndex', Number(activeIndex))
+  }
+
   ready() {
     super.ready()
 
