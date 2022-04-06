@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.7](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-04-06)
+
+
+### :bug: Bug Fix
+
+* icons path ([ce188b4](https://github.com/hatiolab/operato/commit/ce188b4b4e545ffc1ee718b8fb2cc92d189b7d6c))
+
+
+
 ## [1.0.0-alpha.6](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-04-05)
 
 

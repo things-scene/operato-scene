@@ -3,7 +3,7 @@
   "description": "Compass Component for things-scene.",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
