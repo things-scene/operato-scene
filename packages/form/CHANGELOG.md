@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.8](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-04-07)
+
+
+### :bug: Bug Fix
+
+* make input maxLength property -1 as default value ([8305508](https://github.com/things-scene/operato-scene/commit/8305508461ea7120b9f849e47f686e79754aab3f))
+
+
+
 ## [1.0.0-alpha.7](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-04-06)
 
 
