@@ -2,7 +2,7 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, ComponentNature, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
+import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -159,7 +159,7 @@ export default class Input extends HTMLOverlayElement {
       element.placeholder = placeholder
       element.disabled = disabled
       element.readOnly = readonly
-      element.maxLength = maxlength
+      element.maxLength = maxlength === undefined ? -1 : maxlength
       element.value = this.value
       autofocus && element.setAttribute('autofocus', '')
     } catch (e) {

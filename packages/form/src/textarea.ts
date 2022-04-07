@@ -2,6 +2,8 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
+import { Component, error, HTMLOverlayElement } from '@hatiolab/things-scene'
+
 const NATURE = {
   mutable: false,
   resizable: true,
@@ -41,8 +43,6 @@ const NATURE = {
   'value-property': 'text'
 }
 
-import { Component, HTMLOverlayElement, error } from '@hatiolab/things-scene'
-
 export default class TextArea extends HTMLOverlayElement {
   get nature() {
     return NATURE
@@ -76,7 +76,7 @@ export default class TextArea extends HTMLOverlayElement {
       element.placeholder = placeholder
       element.disabled = disabled
       element.readOnly = readonly
-      element.maxLength = maxlength
+      element.maxLength = maxlength === undefined ? -1 : maxlength
       element.value = this.value
     } catch (e) {
       error(e)
