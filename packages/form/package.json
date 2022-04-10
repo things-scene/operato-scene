@@ -3,7 +3,7 @@
   "description": "HTML Element component for things-scene.",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.9",
+  "version": "1.0.0-alpha.10",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
@@ -26,7 +26,7 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^2.7.34",
+    "@hatiolab/things-scene": "^2.8.1",
     "@thebespokepixel/es-tinycolor": "^3.1.0",
     "hls.js": "^1.1.5",
     "tinycolor2": "^1.4.1",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-alpha.51",
+    "@operato/board": "^1.0.0-beta.0",
     "@things-factory/builder": "^5.0.0-alpha.28",
     "@things-factory/operato-board": "^5.0.0-alpha.28",
     "@typescript-eslint/eslint-plugin": "^4.33.0",

@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-label",
   "description": "Barcode Label component for things-scene",
-  "version": "1.0.0-alpha.9",
+  "version": "1.0.0-alpha.10",
   "things-scene": true,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -26,13 +26,13 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^2.7.34",
+    "@hatiolab/things-scene": "^2.8.1",
     "@operato/input": "^1.0.0-alpha.51",
     "bwip-js": "^3.0.4"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-alpha.51",
+    "@operato/board": "^1.0.0-beta.0",
     "@things-factory/builder": "^5.0.0-alpha.28",
     "@things-factory/operato-board": "^5.0.0-alpha.28",
     "@types/codemirror": "^5.60.5",

@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-chartjs",
   "description": "Things Scene ChartJS Component",
-  "version": "1.0.0-alpha.9",
+  "version": "1.0.0-alpha.10",
   "license": "MIT",
   "author": "heartyoh",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^3.1.6",
-    "@hatiolab/things-scene": "^2.7.34",
+    "@hatiolab/things-scene": "^2.8.1",
     "@polymer/iron-icon": "^3.0.1",
     "@polymer/iron-pages": "^3.0.1",
     "@polymer/paper-button": "^3.0.1",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-alpha.51",
+    "@operato/board": "^1.0.0-beta.0",
     "@things-factory/builder": "^5.0.0-alpha.28",
     "@things-factory/operato-board": "^5.0.0-alpha.28",
     "@types/chart.js": "2.9.34",
