@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.11](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2022-04-17)
+
+
+### :bug: Bug Fix
+
+* maxlength for input element ([766ddb3](https://github.com/hatiolab/operato/commit/766ddb3a3f07d82e01f6c2f87d6b7ba0ab3b90ea))
+
+
+
 ## [1.0.0-alpha.10](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2022-04-10)
 
 **Note:** Version bump only for package root

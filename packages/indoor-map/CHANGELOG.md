@@ -3,65 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.0.0-alpha.10](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2022-04-10)
+## [1.0.0-alpha.11](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2022-04-17)
 
 **Note:** Version bump only for package @operato/scene-indoor-map
 
 
 
 
+
+## [1.0.0-alpha.10](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2022-04-10)
+
+**Note:** Version bump only for package @operato/scene-indoor-map
 
 ## [1.0.0-alpha.9](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2022-04-07)
 
 **Note:** Version bump only for package @operato/scene-indoor-map
 
-
-
-
-
 ## [1.0.0-alpha.8](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-04-07)
 
 **Note:** Version bump only for package @operato/scene-indoor-map
-
-
-
-
 
 ## [1.0.0-alpha.7](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-04-06)
 
 **Note:** Version bump only for package @operato/scene-indoor-map
 
-
-
-
-
 ## [1.0.0-alpha.6](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-04-05)
-
 
 ### :bug: Bug Fix
 
-* [@things-factory](https://github.com/things-factory) 5.0.0-alpha.28 ([459ce88](https://github.com/things-scene/operato-scene/commit/459ce884942ab11bcd1e9b9c6af7bf045b580a41))
-* add activeIndex property into indoor-map ([81ea401](https://github.com/things-scene/operato-scene/commit/81ea401ae32d2e2ddc7da862bf98974bbdf8d075))
-
-
+- [@things-factory](https://github.com/things-factory) 5.0.0-alpha.36 ([459ce88](https://github.com/things-scene/operato-scene/commit/459ce884942ab11bcd1e9b9c6af7bf045b580a41))
+- add activeIndex property into indoor-map ([81ea401](https://github.com/things-scene/operato-scene/commit/81ea401ae32d2e2ddc7da862bf98974bbdf8d075))
 
 ## [1.0.0-alpha.5](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-04-03)
 
-
 ### :bug: Bug Fix
 
-* upgrade lit and operato, things-factory ([f056300](https://github.com/things-scene/operato-scene/commit/f056300c0e2f85c41715d3178f12c39bf3110a34))
-
-
+- upgrade lit and operato, things-factory ([f056300](https://github.com/things-scene/operato-scene/commit/f056300c0e2f85c41715d3178f12c39bf3110a34))
 
 ## [1.0.0-alpha.4](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-03-13)
 
-
 ### :bug: Bug Fix
 
-* [@operato](https://github.com/operato) 1.0.0-alpha.17 ([a8a147c](https://github.com/things-scene/operato-scene/commit/a8a147c972ed571e35d210feb3bfbc7cd31f280b))
-
-
+- [@operato](https://github.com/operato) 1.0.0-alpha.17 ([a8a147c](https://github.com/things-scene/operato-scene/commit/a8a147c972ed571e35d210feb3bfbc7cd31f280b))
 
 ## [1.0.0-alpha.3](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-03-13)
 

@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-table",
   "description": "Things Scene Table Component.",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-alpha.11",
   "license": "MIT",
   "author": "heartyoh",
   "main": "dist/index.js",
@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.0",
-    "@things-factory/builder": "^5.0.0-alpha.28",
-    "@things-factory/operato-board": "^5.0.0-alpha.28",
+    "@operato/board": "^1.0.0-beta.4",
+    "@things-factory/builder": "^5.0.0-alpha.36",
+    "@things-factory/operato-board": "^5.0.0-alpha.36",
     "@types/chart.js": "2.9.34",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
