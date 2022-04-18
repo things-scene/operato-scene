@@ -26,11 +26,11 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^2.8.1"
+    "@hatiolab/things-scene": "^3.0.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.4",
+    "@operato/board": "^1.0.0-beta.5",
     "@things-factory/builder": "^5.0.0-alpha.36",
     "@things-factory/operato-board": "^5.0.0-alpha.36",
     "@types/chart.js": "2.9.34",
