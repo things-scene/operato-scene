@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.12](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2022-04-18)
+
+
+### :bug: Bug Fix
+
+* @hatiolab/things-scene 3.0.0 ([29021a5](https://github.com/things-scene/operato-scene/commit/29021a511e5dc1e91b337b155817d846883ceff7))
+
+
+
 ## [1.0.0-alpha.11](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2022-04-17)
 
 **Note:** Version bump only for package @operato/scene-label

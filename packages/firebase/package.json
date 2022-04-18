@@ -3,7 +3,7 @@
   "description": "Firebase datasource component for things-scene.",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.11",
+  "version": "1.0.0-alpha.12",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
