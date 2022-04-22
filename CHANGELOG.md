@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.1.6](https://github.com/hatiolab/operato/compare/v0.1.5...v0.1.6) (2022-04-22)
+
+
+### :rocket: New Features
+
+* migrated firebase from things-factory ([d6212ed](https://github.com/hatiolab/operato/commit/d6212edfc28b50a85c5f87f36f9ed466c1aa28b9))
+* migrating scene-form from things-factory ([0756c16](https://github.com/hatiolab/operato/commit/0756c168324398c8eac4f0a0b27dd8bc3d622769))
+
+
+### :bug: Bug Fix
+
+* @hatiolab/things-scene@2.8.2 ([1a5c8ff](https://github.com/hatiolab/operato/commit/1a5c8ff968a7e285846026ca77d5a2f92f5d5d63))
+* input in scene-form ([0ff2117](https://github.com/hatiolab/operato/commit/0ff21177db7c41548c8eab70fbc5c825e6b4691d))
+* remove scene-form ([009237d](https://github.com/hatiolab/operato/commit/009237dd52d0a94a0f3ba3c1e13739b77a35988e))
+* upgrade [@operato](https://github.com/operato) and [@things-factory](https://github.com/things-factory) ([91ce29f](https://github.com/hatiolab/operato/commit/91ce29fe9775fedb8e9ed1d3793b1208e187c7f0))
+
+
+
 ### [0.1.5](https://github.com/hatiolab/operato/compare/v0.1.4...v0.1.5) (2022-02-10)
 
 

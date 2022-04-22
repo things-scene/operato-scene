@@ -1,6 +1,6 @@
 {
   "name": "@operato/scene-news-ticker",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "News ticker Component for Things Scene.",
   "things-scene": true,
   "main": "dist/index.js",
