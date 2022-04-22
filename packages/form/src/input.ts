@@ -2,7 +2,7 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -78,10 +78,12 @@ const NATURE = {
   ],
   'value-property': 'text',
   help: 'scene/component/input'
-}
+} as ComponentNature
 
 export default class Input extends HTMLOverlayElement {
-  get nature() {
+  value: any
+
+  get nature(): ComponentNature {
     return NATURE
   }
 
@@ -157,7 +159,7 @@ export default class Input extends HTMLOverlayElement {
       element.placeholder = placeholder
       element.disabled = disabled
       element.readOnly = readonly
-      element.maxLength = maxlength
+      element.maxLength = maxlength === undefined ? 524288 : maxlength
       element.value = this.value
       autofocus && element.setAttribute('autofocus', '')
     } catch (e) {
