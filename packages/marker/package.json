@@ -3,7 +3,7 @@
   "description": "Marker UI component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.12",
+  "version": "1.0.0-alpha.13",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,

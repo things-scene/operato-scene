@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.13](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2022-04-24)
+
+
+### :bug: Bug Fix
+
+* "@hatiolab/things-scene": "^3.0.2" ([13057dd](https://github.com/hatiolab/operato/commit/13057dd2f8bbb3859abb479516c3483bcc15354b))
+* @hatiolab/things-scene 3.0.5 and [@operato](https://github.com/operato) 1.0.0-beta.7 ([bd69bf1](https://github.com/hatiolab/operato/commit/bd69bf134c1fe6789f4964f0e6525f728eee8275))
+* things-scene 3.0.1 ([288f953](https://github.com/hatiolab/operato/commit/288f953947d73ffa3f6e8743f8326570d1dace80))
+
+
+
 ## [1.0.0-alpha.12](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2022-04-18)
 
 
