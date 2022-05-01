@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.14](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2022-05-01)
+
+
+### :bug: Bug Fix
+
+* apply @hatiolab/things-scene 3.0.6 - memory free ([5778610](https://github.com/hatiolab/operato/commit/5778610aa6456709cb931a3185b189f1d3bd1ff9))
+
+
+
 ## [1.0.0-alpha.13](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2022-04-24)
 
 
