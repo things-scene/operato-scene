@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.1.7](https://github.com/hatiolab/operato/compare/v0.1.6...v0.1.7) (2022-05-13)
+
+
+### :bug: Bug Fix
+
+* missing export for 'tab-button' ([ab8fea4](https://github.com/hatiolab/operato/commit/ab8fea4c29ba7b074c2d60c747aeb06655f93872))
+
+
+
 ### [0.1.6](https://github.com/hatiolab/operato/compare/v0.1.5...v0.1.6) (2022-04-22)
 
 
