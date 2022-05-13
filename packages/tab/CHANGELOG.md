@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.15](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2022-05-13)
+
+
+### :bug: Bug Fix
+
+* add missing import - tab-button ([db9d874](https://github.com/things-scene/operato-scene/commit/db9d874c54c18bbb1711e20b3a621d9dc83950d6))
+
+
+
 ## [1.0.0-alpha.14](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2022-05-01)
 
 
