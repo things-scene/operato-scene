@@ -98,13 +98,13 @@ const NATURE: ComponentNature = {
 }
 
 export default class GristAction extends ValueHolder(RectPath(Component)) {
-  static get nature() {
-    return NATURE
-  }
-
   // grist의 fetchHandler를 사용할 때 이 컴포넌트를 판별할 ID
   private uuid = uuid.v4()
   private _data: any
+
+  get nature() {
+    return NATURE
+  }
 
   ready() {
     // 뷰어 시작시에도 action 값이 getPageInfo로 되어 있을 경우 fetchHandler를 등록하기 위해 onchange를 호출함

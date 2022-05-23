@@ -1,0 +1,15 @@
+{
+  "label.accessor": "访问器",
+  "label.accessor-item": "提取路径",
+  "label.accessor-target": "提取目标",
+  "label.duration": "持续期间",
+  "label.index-name": "索引名称",
+  "label.index-type": "索引类型",
+  "label.max-size": "最大队列大小",
+  "label.min-size": "最小队列大小",
+  "label.page-size": "单页数据行数",
+  "label.property-name": "属性名称",
+  "label.queue-propname": "队列名称",
+  "label.reducing-propname": "数据简化属性名",
+  "label.reducing-type": "数据简化方式"
+}

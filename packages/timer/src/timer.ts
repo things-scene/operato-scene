@@ -61,7 +61,7 @@ const NATURE: ComponentNature = {
 export default class Timer extends RectPath(Shape) {
   private _due?: number
 
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

@@ -243,7 +243,7 @@ export default class Barcode extends RectPath(Shape) {
   private _canvas?: HTMLCanvasElement
   private _image: any
 
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

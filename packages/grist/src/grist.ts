@@ -4,9 +4,9 @@
 
 import '@operato/data-grist'
 
-import { Component, ComponentNature, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
+import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
 import { DataGrist, FetchResult } from '@operato/data-grist'
-import { FetchOption, GristRecord } from '@operato/data-grist/dist/src/types'
+import { FetchOption } from '@operato/data-grist/dist/src/types'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -86,10 +86,6 @@ const NATURE: ComponentNature = {
 const isMobileDevice = () => false
 
 export default class SceneGrist extends HTMLOverlayElement {
-  static get nature() {
-    return NATURE
-  }
-
   public beforeFetchFuncs: any = {}
 
   private __value: any = {}
@@ -97,6 +93,10 @@ export default class SceneGrist extends HTMLOverlayElement {
   private _listener?: any
 
   public grist?: DataGrist
+
+  get nature() {
+    return NATURE
+  }
 
   ready() {
     super.ready()

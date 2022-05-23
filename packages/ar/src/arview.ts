@@ -26,7 +26,7 @@ const NATURE: ComponentNature = {
 }
 
 export default class Arview extends HTMLOverlayContainer {
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

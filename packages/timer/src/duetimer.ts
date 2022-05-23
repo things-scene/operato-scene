@@ -40,7 +40,7 @@ const NATURE: ComponentNature = {
 }
 
 export default class DueTimer extends RectPath(Shape) {
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

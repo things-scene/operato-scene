@@ -28,7 +28,7 @@ const NATURE: ComponentNature = {
 }
 
 export default class Label extends RectPath(Component) {
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

@@ -40,7 +40,7 @@ const NATURE: ComponentNature = {
 }
 
 export default class SimpleSwitch extends HTMLOverlayElement {
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

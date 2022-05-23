@@ -93,7 +93,7 @@ export default class Camera extends RectPath(Component) {
     )
   }
 
-  static get nature() {
+  get nature() {
     return NATURE
   }
 

@@ -49,10 +49,6 @@ export default class LabelPrinter extends RectPath(Shape) {
   private static _image: HTMLImageElement
   private printer?: USBPrinter | BrowserPrinter
 
-  static get nature() {
-    return NATURE
-  }
-
   static get image() {
     if (!LabelPrinter._image) {
       LabelPrinter._image = new Image()
@@ -60,6 +56,10 @@ export default class LabelPrinter extends RectPath(Shape) {
     }
 
     return LabelPrinter._image
+  }
+
+  get nature() {
+    return NATURE
   }
 
   dispose() {

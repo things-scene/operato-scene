@@ -16,7 +16,7 @@ const NATURE: ComponentNature = {
 export default class BarcodeScanner extends HTMLOverlayElement {
   private _data: any
 
-  static get nature() {
+  get nature() {
     return NATURE
   }
 
