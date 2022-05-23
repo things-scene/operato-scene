@@ -11,7 +11,7 @@ Scene Components for Operato.
 
 ## Usage
 
-The operato repo is managed as a monorepo that is composed of 26 packages.
+The operato repo is managed as a monorepo that is composed of 29 packages.
 Each service has its own `README.md` and documentation describing usage.
 
 ## Development Guide
@@ -29,7 +29,10 @@ Service developers that will be a component of Operato Platform should refer to 
 | [scene-clock](packages/scene-clock) | <a href="https://badge.fury.io/js/%40operato%2Fscene-clock"><img src="https://badge.fury.io/js/%40operato%2Fscene-clock.svg" width="200px" /></a> | Clock component for things-scene |
 | [scene-clone](packages/scene-clone) | <a href="https://badge.fury.io/js/%40operato%2Fscene-clone"><img src="https://badge.fury.io/js/%40operato%2Fscene-clone.svg" width="200px" /></a> | Thing Scene component instance auto cloner. |
 | [scene-compass](packages/scene-compass) | <a href="https://badge.fury.io/js/%40operato%2Fscene-compass"><img src="https://badge.fury.io/js/%40operato%2Fscene-compass.svg" width="200px" /></a> | Compass Component for things-scene. |
+| [scene-data-transform](packages/scene-data-transform) | <a href="https://badge.fury.io/js/%40operato%2Fscene-data-transform"><img src="https://badge.fury.io/js/%40operato%2Fscene-data-transform.svg" width="200px" /></a> | Data transformation component for things-scene |
 | [scene-excel](packages/scene-excel) | <a href="https://badge.fury.io/js/%40operato%2Fscene-excel"><img src="https://badge.fury.io/js/%40operato%2Fscene-excel.svg" width="200px" /></a> | Excel integration component for things-scene |
+| [scene-firebase](packages/scene-firebase) | <a href="https://badge.fury.io/js/%40operato%2Fscene-firebase"><img src="https://badge.fury.io/js/%40operato%2Fscene-firebase.svg" width="200px" /></a> | Firebase datasource component for things-scene. |
+| [scene-form](packages/scene-form) | <a href="https://badge.fury.io/js/%40operato%2Fscene-form"><img src="https://badge.fury.io/js/%40operato%2Fscene-form.svg" width="200px" /></a> | HTML Element component for things-scene. |
 | [scene-gauge](packages/scene-gauge) | <a href="https://badge.fury.io/js/%40operato%2Fscene-gauge"><img src="https://badge.fury.io/js/%40operato%2Fscene-gauge.svg" width="200px" /></a> | Things Scene Gauge Component |
 | [scene-graphql](packages/scene-graphql) | <a href="https://badge.fury.io/js/%40operato%2Fscene-graphql"><img src="https://badge.fury.io/js/%40operato%2Fscene-graphql.svg" width="200px" /></a> | Graphql datasource component for things-scene |
 | [scene-grist](packages/scene-grist) | <a href="https://badge.fury.io/js/%40operato%2Fscene-grist"><img src="https://badge.fury.io/js/%40operato%2Fscene-grist.svg" width="200px" /></a> | Grist UI component for things-scene |
