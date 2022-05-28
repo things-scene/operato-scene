@@ -20,7 +20,7 @@ Graphql API를 사용할 수 있는 데이타소스 컴포넌트 패미리이다
 ## properties for graphql-query/mutation
 
 - client component ID
-  - endpoint가 설정된 graphql-client의 ID를 설정한다.
+  - endpoint가 설정된 graphql-client의 ID를 설정한다. 비워두면 origin 서버의 graphql 클라이언트가 사용된다.
 - period
   - 주기적인 query/mutation 호출이 필요한 경우에 그 주기를 second 단위로 설정한다.
 - query

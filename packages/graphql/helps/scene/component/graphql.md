@@ -20,7 +20,7 @@ It is a family of data source components that can use Graphql API.
 ## properties for graphql-query/mutation
 
 - client component ID
-  - Set the ID of the graphql-client where the endpoint is configured.
+  - Set the ID of the graphql-client where the endpoint is configured. If not set, the graphql client for the origin server is used.
 - period
   - When periodic query/mutation call is needed, set the period in second unit.
 - query

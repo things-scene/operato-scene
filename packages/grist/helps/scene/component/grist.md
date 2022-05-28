@@ -8,8 +8,9 @@ This can be set with the grist mode attribute.
 
 - grist mode
   - Grid: Data grid format that organizes multi-columns in a table format
-  - list: Data list format that composes multi-column information in the form of an item block
-  - Depends on device : Depending on the current display, it is automatically selected in the form of a data grid or a data list.
+  - List: Data list format that composes multi-column information in the form of an item block
+  - Card: Data list format that composes multi-column information in the form of an item block
+  - Depends on device : Depending on the current display, it is automatically selected in the form of a Grid or a List.
 - config
   - Configuration for grist
   - It consists of column, header, record and pagination information.

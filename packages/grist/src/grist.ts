@@ -4,8 +4,9 @@
 
 import '@operato/data-grist'
 
-import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
+import { Component, ComponentNature, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
 import { DataGrist, FetchResult } from '@operato/data-grist'
+
 import { FetchOption } from '@operato/data-grist/dist/src/types'
 
 const NATURE: ComponentNature = {
@@ -26,6 +27,10 @@ const NATURE: ComponentNature = {
           {
             display: 'List',
             value: 'LIST'
+          },
+          {
+            display: 'Card',
+            value: 'CARD'
           },
           {
             display: 'Depends on device',

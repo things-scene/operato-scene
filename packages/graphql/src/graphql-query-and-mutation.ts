@@ -1,10 +1,9 @@
-import gql from 'graphql-tag'
-
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client/core'
 import { Component, ComponentNature, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
-import { buildArgs } from '@operato/graphql'
+import { buildArgs, client as localClient } from '@operato/graphql'
 
 import GraphqlClient from './graphql-client'
+import gql from 'graphql-tag'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -15,6 +14,7 @@ const NATURE: ComponentNature = {
       type: 'id-input',
       label: 'client',
       name: 'client',
+      placeholder: 'leave blank to use origin server',
       property: {
         component: 'graphql-client' // component의 type (null or undefined이면 모든 컴포넌트)
       }
@@ -41,8 +41,6 @@ const NATURE: ComponentNature = {
 }
 
 class GraphQLQuery extends DataSource(RectPath(Shape)) {
-  public client?: ApolloClient<NormalizedCacheObject>
-
   private _repeatTimer?: NodeJS.Timeout
   private _isStarted: boolean = false
 
@@ -163,19 +161,21 @@ class GraphQLQuery extends DataSource(RectPath(Shape)) {
     var query = this.query
     var variables = this.value
 
-    if (client && query) {
-      this.client = (this.root.findById(client) as GraphqlClient)?.client
+    if (query) {
+      const graphqlClient: ApolloClient<NormalizedCacheObject> =
+        (client && (this.root.findById(client) as GraphqlClient)?.client) || localClient
+
       var response
 
       if (typeof variables === 'object') {
-        response = await this.client?.query({
+        response = await graphqlClient.query({
           query: gql`
             ${query}
           `,
           variables: variables
         })
       } else {
-        response = await this.client?.query({
+        response = await graphqlClient.query({
           query: gql`
             ${query}
           `,
