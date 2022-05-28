@@ -32,7 +32,7 @@ Graphql API를 사용할 수 있는 데이타소스 컴포넌트 패미리이다
 
 - query/mutation 결과는 바로 이 컴포넌트의 data속성이 되므로, 그 결과를 데이터바인딩에 적용할 수 있다.
 - 데이타의 형태는 query에 의해서 결정된다.
-  - 예를 들어 쿼리가 다음과 같다면, boards 를 접근하기 위한 접근자(accessor)는 'data.boards' 가 된다.
+  - 예를 들어 쿼리가 다음과 같다면, items 를 접근하기 위한 접근자(accessor)는 'data.boards.items' 가 된다.
 
 ```
 query {

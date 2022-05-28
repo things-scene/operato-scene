@@ -32,7 +32,7 @@
 
 - 由于`query/mutation`结果成为该组件的数据属性，因此该结果可以应用于数据绑定。
 - 数据类型由查询确定。
-  - 比如查询如下，访问 boards 的 accessor 是'data.boards'
+  - 比如查询如下，访问 items 的 accessor 是'data.boards.items'
 
 ```
 query {

@@ -32,7 +32,7 @@ It is a family of data source components that can use Graphql API.
 
 - Since the query/mutation result becomes the data property of this component, the result can be applied to data binding.
 - The type of data is determined by query.
-  - For example, if the query is as follows, the accessor to access boards is 'data.boards'
+  - For example, if the query is as follows, the accessor to access items is 'data.boards.items'
 
 ```
 query {
