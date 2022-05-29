@@ -44,11 +44,16 @@ const NATURE = {
       label: 'submit-on-change',
       name: 'submitOnChange'
     },
-    {
-      type: 'checkbox',
-      label: 'spread-on-init',
-      name: 'spreadOnInit'
-    },
+    // {
+    //   type: 'checkbox',
+    //   label: 'spread-on-init',
+    //   name: 'spreadOnInit'
+    //   /*
+    //   spreadOnInit 은 제거되었다. (다음과 같이 대체될 수 있기 때문이다.)
+    //   - value에만 초기값이 설정되어 있으면 데이타는 전파되지 않는다.
+    //   - data에 초기값이 설정되어있으면, 처음부터 데이터는 전파된다.
+    //   */
+    // },
     {
       type: 'string',
       label: 'next-input',
@@ -105,12 +110,12 @@ export default class Input extends HTMLOverlayElement {
     /* element.property => component.property */
     this.element.onchange = e => {
       this.value = (this.element as HTMLInputElement).value
-      // this.data = this.value
     }
 
     var alltimeFocus = this.get('alltimeFocus')
     var alltimeFocusPending = this.get('alltimeFocusPending')
     var hideKeyboard = this.get('hideKeyboard')
+
     if (this.app.isViewMode) {
       this.element.addEventListener('focusout', e => {
         if (alltimeFocus) {
@@ -132,26 +137,34 @@ export default class Input extends HTMLOverlayElement {
           }, 50)
         }
       })
-    }
 
-    var nextInput = this.get('nextInput')
-    if (nextInput) {
       this.element.addEventListener('keypress', e => {
-        if (e.keyCode == 13) {
-          var n = this.root.findById(nextInput) as HTMLInputElement | undefined
-          n && n.select && n.select()
+        if (e.key == 'Enter') {
+          if (this.value === (this.element as HTMLInputElement).value) {
+            /* 
+              enter 키가 눌리면, 값이 변화가 없더라도 강제로 value를 수정해서 onchange 이벤트를 유도한다.
+              값의 변화가 있는 경우에는 input 엘리먼트가 change 이벤트를 발생시키므로 이 작업을 해서는 안된다.(중복발생방지)
+            */
+            this.value = (this.element as HTMLInputElement).value
+          }
+
+          const nextInput = this.get('nextInput')
+          if (nextInput) {
+            const n = this.root.findById(nextInput) as HTMLInputElement | undefined
+            n && n.select && n.select()
+          }
         }
       })
-    }
 
-    setTimeout(() => {
-      this.get('autofocus') && (this.element as HTMLInputElement).select()
-    }, 300)
+      setTimeout(() => {
+        this.get('autofocus') && (this.element as HTMLInputElement).select()
+      }, 300)
+    }
   }
 
   /* component.property => element.property */
   setElementProperties(element: HTMLInputElement) {
-    var { name = '', placeholder = '', disabled, readonly, maxlength, spreadOnInit, nextInput, autofocus } = this.state
+    var { name = '', placeholder = '', disabled, readonly, maxlength, autofocus } = this.state
 
     try {
       element.type = this.inputType
@@ -165,23 +178,20 @@ export default class Input extends HTMLOverlayElement {
     } catch (e) {
       error(e)
     }
-
-    // if (spreadOnInit) {
-    //   this.data = this.value
-    // }
   }
 
   onchange(after: Properties, before: Properties) {
     super.onchange(after, before)
-    var { spreadOnInit, submitOnChange } = this.state
-    const element = this.element as HTMLInputElement
 
+    const element = this.element as HTMLInputElement
     var valueProperty = this.nature['value-property']
-    if (valueProperty && valueProperty in after && this.element) {
-      element.value = after.text
-      if (!spreadOnInit) {
-        this.data = this.value
-      }
+
+    if (valueProperty && valueProperty in after && element) {
+      var { submitOnChange } = this.state
+      const value = after[valueProperty]
+
+      element.value = value
+      this.data = after[valueProperty]
 
       if (submitOnChange && element.form)
         element.form.dispatchEvent(

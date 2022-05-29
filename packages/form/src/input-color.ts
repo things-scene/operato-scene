@@ -29,12 +29,17 @@ const NATURE = {
       type: 'checkbox',
       label: 'submit-on-change',
       name: 'submitOnChange'
-    },
-    {
-      type: 'checkbox',
-      label: 'spread-on-init',
-      name: 'spreadOnInit'
     }
+    // {
+    //   type: 'checkbox',
+    //   label: 'spread-on-init',
+    //   name: 'spreadOnInit'
+    //   /*
+    //   spreadOnInit 은 제거되었다. (다음과 같이 대체될 수 있기 때문이다.)
+    //   - value에만 초기값이 설정되어 있으면 데이타는 전파되지 않는다.
+    //   - data에 초기값이 설정되어있으면, 처음부터 데이터는 전파된다.
+    //   */
+    // },
   ],
   'value-property': 'text'
 }
