@@ -26,13 +26,13 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^3.0.6",
-    "@operato/data-grist": "^1.0.0-beta.18",
+    "@hatiolab/things-scene": "^3.0.7",
+    "@operato/data-grist": "^1.0.0-beta.19",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.18",
+    "@operato/board": "^1.0.0-beta.19",
     "@things-factory/builder": "^5.0.0-alpha.48",
     "@things-factory/operato-board": "^5.0.0-alpha.48",
     "@types/lodash-es": "^4.17.5",

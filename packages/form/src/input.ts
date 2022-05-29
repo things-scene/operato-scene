@@ -112,11 +112,11 @@ export default class Input extends HTMLOverlayElement {
       this.value = (this.element as HTMLInputElement).value
     }
 
-    var alltimeFocus = this.get('alltimeFocus')
-    var alltimeFocusPending = this.get('alltimeFocusPending')
-    var hideKeyboard = this.get('hideKeyboard')
-
     if (this.app.isViewMode) {
+      var alltimeFocus = this.get('alltimeFocus')
+      var alltimeFocusPending = this.get('alltimeFocusPending')
+      var hideKeyboard = this.get('hideKeyboard')
+
       this.element.addEventListener('focusout', e => {
         if (alltimeFocus) {
           setTimeout(

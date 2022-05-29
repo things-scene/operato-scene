@@ -27,14 +27,14 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
-    "@hatiolab/things-scene": "^3.0.6",
-    "@operato/graphql": "^1.0.0-beta.18",
+    "@hatiolab/things-scene": "^3.0.7",
+    "@operato/graphql": "^1.0.0-beta.19",
     "jsonwebtoken": "^8.5.1",
     "subscriptions-transport-ws": "^0.11.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.18",
+    "@operato/board": "^1.0.0-beta.19",
     "@things-factory/builder": "^5.0.0-alpha.48",
     "@things-factory/operato-board": "^5.0.0-alpha.48",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
