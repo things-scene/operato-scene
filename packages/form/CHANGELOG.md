@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.17](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2022-05-29)
+
+
+### :bug: Bug Fix
+
+* latest things-scene & [@things-factory](https://github.com/things-factory) ([485bcce](https://github.com/things-scene/operato-scene/commit/485bccead07ccc5065088f1d458175f84083f9a5))
+* scene-form for input behavior ([2295ad0](https://github.com/things-scene/operato-scene/commit/2295ad0b7793f50e9654e113e4345e77b20bf8d3))
+* update [@operato](https://github.com/operato) [@things-factory](https://github.com/things-factory) ([8552127](https://github.com/things-scene/operato-scene/commit/8552127bdda3282ac74e86b936342caa085f6bea))
+
+
+
 ## [1.0.0-alpha.16](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2022-05-23)
 
 

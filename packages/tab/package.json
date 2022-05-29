@@ -3,7 +3,7 @@
   "description": "Tab style container for Things Scene",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.16",
+  "version": "1.0.0-alpha.17",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,

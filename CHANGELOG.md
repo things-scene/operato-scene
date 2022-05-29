@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.17](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2022-05-29)
+
+
+### :bug: Bug Fix
+
+* default client for graphql ([7d71b73](https://github.com/hatiolab/operato/commit/7d71b73d2d66171aee8d8d6a61f1b269b45f0dce))
+* default client for graphql ([d13b1e4](https://github.com/hatiolab/operato/commit/d13b1e4a7afecedd72ec0e39827c2bf8b4ef3a1f))
+* help for graphql data ([910abc1](https://github.com/hatiolab/operato/commit/910abc1395fdebfa4f50317203aed251af94f702))
+* latest things-scene & [@things-factory](https://github.com/things-factory) ([485bcce](https://github.com/hatiolab/operato/commit/485bccead07ccc5065088f1d458175f84083f9a5))
+* scene-form for input behavior ([2295ad0](https://github.com/hatiolab/operato/commit/2295ad0b7793f50e9654e113e4345e77b20bf8d3))
+* update [@operato](https://github.com/operato) [@things-factory](https://github.com/things-factory) ([8552127](https://github.com/hatiolab/operato/commit/8552127bdda3282ac74e86b936342caa085f6bea))
+
+
+
 ## [1.0.0-alpha.16](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2022-05-23)
 
 
