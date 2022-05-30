@@ -3,7 +3,7 @@
   "description": "AR Modelviewer component for things-scene",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.17",
+  "version": "1.0.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
