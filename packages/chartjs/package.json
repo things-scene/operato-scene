@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^3.1.6",
-    "@hatiolab/things-scene": "^3.0.7",
+    "@hatiolab/things-scene": "^3.0.12",
     "@polymer/iron-icon": "^3.0.1",
     "@polymer/iron-pages": "^3.0.1",
     "@polymer/paper-button": "^3.0.1",
@@ -46,9 +46,9 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.19",
-    "@things-factory/builder": "^5.0.0-alpha.48",
-    "@things-factory/operato-board": "^5.0.0-alpha.48",
+    "@operato/board": "^1.0.0-beta.20",
+    "@things-factory/builder": "^5.0.0-alpha.49",
+    "@things-factory/operato-board": "^5.0.0-alpha.49",
     "@types/chart.js": "2.9.34",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
