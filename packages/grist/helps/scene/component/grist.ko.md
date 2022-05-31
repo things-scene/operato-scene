@@ -4,6 +4,17 @@
 데이타그리드는 웹어플리케이션 UI에 적합한 형태이며, 데이타리스트는 모바일 앱에 적합한 형태이다.
 이는 grist mode 속성으로 설정할 수 있다.
 
+grist 컴포넌트의 value 속성에 다음과 같은 형태의 데이타를 바인딩하면, grist에서 데이타를 각 레코드에 렌더링하는 것을 볼 수 있다.
+
+```
+[
+  { name: "name 1", description: "record 1", ...  },
+  { name: "name 2", description: "record 2", ...  },
+  { name: "name 3", description: "record 3", ...  },
+  { name: "name 4", description: "record 4", ...  },
+]
+```
+
 ## Properties
 
 - grist mode

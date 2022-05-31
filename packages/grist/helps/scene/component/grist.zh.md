@@ -4,6 +4,17 @@
 数据网格适用于 Web 应用程序 UI，数据列表适用于移动应用程序。
 可以使用 grist 模式属性进行移动端应用设置。
 
+如果将以下类型的数据绑定到 grist 组件的 value 属性上，可以看到 grist 中的每条记录都呈现了数据。
+
+```
+[
+  { name: "name 1", description: "record 1", ...  },
+  { name: "name 2", description: "record 2", ...  },
+  { name: "name 3", description: "record 3", ...  },
+  { name: "name 4", description: "record 4", ...  },
+]
+```
+
 ## Properties
 
 - 模式

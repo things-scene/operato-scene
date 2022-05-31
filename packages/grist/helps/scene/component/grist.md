@@ -4,6 +4,17 @@ It is a component that expresses multiple record data in the form of a data grid
 Data grid is suitable for web application UI, and data list is suitable for mobile application.
 This can be set with the grist mode attribute.
 
+If you bind the following type of data to the value property of the grist component, you can see that the data is rendered in each record in grist.
+
+```
+[
+  { name: "name 1", description: "record 1", ...  },
+  { name: "name 2", description: "record 2", ...  },
+  { name: "name 3", description: "record 3", ...  },
+  { name: "name 4", description: "record 4", ...  },
+]
+```
+
 ## Properties
 
 - grist mode
