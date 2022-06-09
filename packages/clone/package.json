@@ -3,7 +3,7 @@
   "description": "Thing Scene component instance auto cloner.",
   "license": "MIT",
   "author": "heartyoh",
-  "version": "1.0.0-alpha.18",
+  "version": "1.0.0-alpha.19",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "things-scene": true,
