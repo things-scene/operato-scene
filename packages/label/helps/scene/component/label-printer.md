@@ -23,15 +23,15 @@ It is a function that utilizes [WebUSB API] (https://developer.mozilla.org/en-US
 
 ## properties
 
-- vendor id
-   - Set the ID of the printer vendor connected to the USB port.
-     -For example, Zebra's Vendor ID is '0x0A5F'.
-   - This is not a required field, and if it is not entered, the Zebra Vendor ID is used by default.
-   - You can select the target printer from the print connection list that pops up in the browser at the time of printing.
-
-- board id
-   - Select the board you want to print.
-
+- vendor id (vendorId)
+  - Set the ID of the printer vendor connected to the USB port.
+    -For example, Zebra's Vendor ID is '0x0A5F'.
+  - This is not a required field, and if it is not entered, the Zebra Vendor ID is used by default.
+  - You can select the target printer from the print connection list that pops up in the browser at the time of printing.
+- board id (boardId)
+  - Select the board you want to print.
+- copies (copies)
+  - Set how many copies to print (default value is 1)
 - value
-   - The property connected to the value of this component is 'data'.
-   - If the value is not an object or is empty, it is not printed.
+  - The property connected to the value of this component is 'data'.
+  - If the value is not an object or is empty, it is not printed.
