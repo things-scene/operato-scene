@@ -39,6 +39,11 @@ const NATURE: ComponentNature = {
       type: 'board-selector',
       label: 'board id',
       name: 'boardId'
+    },
+    {
+      type: 'number',
+      label: 'copies',
+      name: 'copies'
     }
   ],
   'value-property': 'data',
@@ -98,7 +103,7 @@ export default class LabelPrinter extends RectPath(Shape) {
       return
     }
 
-    var { directPrinter, boardId, vendorId } = this.state
+    var { directPrinter, boardId, vendorId, copies = 1 } = this.state
 
     var searchParams = new URLSearchParams()
     for (var key in data) {
@@ -126,7 +131,9 @@ export default class LabelPrinter extends RectPath(Shape) {
             : new BrowserPrinter()
       }
 
-      await this.printer.print(command)
+      for (var i = 0; i < copies; i++) {
+        await this.printer.print(command)
+      }
     } catch (err) {
       throw new Error(err as string)
     }

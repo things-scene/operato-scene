@@ -1,9 +1,10 @@
 {
-  "label.direct-printer": "[zh] direct printer",
-  "label.monochrome": "[zh] monochrome",
+  "label.direct-printer": "direct printer",
+  "label.monochrome": "单色",
   "label.symbol": "符号",
   "label.paddingwidth": "间隔-w",
   "label.paddingheight": "间隔-h",
   "label.vendor id": "供应商 id",
-  "label.board id": "看板 id"
+  "label.board id": "看板 id",
+  "label.copies": "印数"
 }
