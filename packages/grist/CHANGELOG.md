@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.20](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2022-06-10)
+
+
+### :bug: Bug Fix
+
+* remove 'uuid' dependency from scene-grist ([f09e4bb](https://github.com/things-scene/operato-scene/commit/f09e4bbb1406cc3b8c54a294182df470b788b23b))
+
+
+
 ## [1.0.0-alpha.19](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2022-06-09)
 
 
