@@ -4,8 +4,6 @@
  * grist 컴포넌트를 보조하여 grist의 각종 동작을 수행하는 컴포넌트.
  */
 
-import uuid from 'uuid'
-
 import { Component, ComponentNature, Properties, RectPath, ValueHolder } from '@hatiolab/things-scene'
 import { DataGrist } from '@operato/data-grist'
 import { GristData, GristRecord, SorterConfig } from '@operato/data-grist/src/types.js'
@@ -98,8 +96,6 @@ const NATURE: ComponentNature = {
 }
 
 export default class GristAction extends ValueHolder(RectPath(Component)) {
-  // grist의 fetchHandler를 사용할 때 이 컴포넌트를 판별할 ID
-  private uuid = uuid.v4()
   private _data: any
 
   get nature() {
@@ -132,10 +128,11 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
     // action 값이 바뀌면 getPageInfo인지 확인하고 grist에 fetchHandler를 등록하거나 폐기함
     if ('action' in after) {
       const gristComponent = this.targetGristComponent
+      const { refid } = this.state
 
       if (gristComponent) {
         if (after.action == ACTIONS.GET_PAGE_INFO) {
-          gristComponent.beforeFetchFuncs[this.uuid] = (fetchedData: {
+          gristComponent.beforeFetchFuncs[refid] = (fetchedData: {
             page: number
             limit: number
             total: number
@@ -145,7 +142,7 @@ export default class GristAction extends ValueHolder(RectPath(Component)) {
             this.doDataMap()
           }
         } else {
-          delete gristComponent.beforeFetchFuncs[this.uuid]
+          delete gristComponent.beforeFetchFuncs[refid]
         }
       }
     }
