@@ -29,3 +29,21 @@ The following barcode formats can be scanned.
 | UPC/EAN Extension 2/5 | ITF           | MaxiCode     |
 |                       |               | RSS-14       |
 |                       |               | RSS-Expanded |
+
+### properties
+
+- without enter key (withoutEnter)
+
+  When scanning barcodes using the camera, "Enter key" is not automatically added to the end of the barcode value.
+  The default is to attach the Enter key.
+  When the Enter key is pressed, a change event occurs immediately after scanning, and data spread begins.
+
+- english input only (englishOnly)
+
+  When inputting from the camera or keyboard, multi-byte (non-English characters) characters are not received, only English characters are input.
+  Even if the IME mode is in multi-byte state, it is changed to English corresponding to each key.
+  Multi-byte input is possible, but the change event occurs after the multi-byte characters are removed when the enter key occurs or when the blur event occurs.
+
+- select over change (selectOverChange)
+
+  When a change event occurs by the enter key or blur, the entire string is selected. In this case, when the next value is input, the existing value is deleted and a new value can be entered in the blank, so this operation is convenient in some cases.

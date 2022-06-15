@@ -6,5 +6,8 @@
   "label.paddingheight": "padding-h",
   "label.vendor id": "vendor id",
   "label.board id": "board id",
-  "label.copies": "copies"
+  "label.copies": "copies",
+  "label.without-enter": "without enter key",
+  "label.english-only": "english input only",
+  "label.select-over-change": "select over change"
 }
