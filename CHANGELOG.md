@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.22](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2022-06-16)
+
+
+### :bug: Bug Fix
+
+* latest @hatiolab/things-scene ([0928090](https://github.com/hatiolab/operato/commit/09280903b4b0280ee8a76a4d1c2a0bf8d0997563))
+* select-over-change => select-after-change ([ce4c0e7](https://github.com/hatiolab/operato/commit/ce4c0e7e0438c4e1a6126d8eb1053b90bd3dd3be))
+
+
+
 ## [1.0.0-alpha.21](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2022-06-16)
 
 
