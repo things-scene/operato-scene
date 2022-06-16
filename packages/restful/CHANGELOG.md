@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.21](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2022-06-16)
+
+
+### :bug: Bug Fix
+
+* latest [@operato](https://github.com/operato) ([8384a79](https://github.com/things-scene/operato-scene/commit/8384a79c616db7c5fb437a480bb8c8337b75db84))
+
+
+
 ## [1.0.0-alpha.20](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2022-06-10)
 
 **Note:** Version bump only for package @operato/scene-restful

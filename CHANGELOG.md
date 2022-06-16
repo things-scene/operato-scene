@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.21](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2022-06-16)
+
+
+### :bug: Bug Fix
+
+* latest [@operato](https://github.com/operato) ([8384a79](https://github.com/hatiolab/operato/commit/8384a79c616db7c5fb437a480bb8c8337b75db84))
+* some properties for barcode-scanner ([41a90c0](https://github.com/hatiolab/operato/commit/41a90c0255756ba3aff98d18057530457b2e7013))
+
+
+### :rocket: New Features
+
+* support english-only for input-text ([a502737](https://github.com/hatiolab/operato/commit/a5027375fef0245afed0ba9e2a85c6c4749a174a))
+
+
+
 ## [1.0.0-alpha.20](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2022-06-10)
 
 
