@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.23](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2022-06-16)
+
+
+### :bug: Bug Fix
+
+* barcode-scanner problem ([920d744](https://github.com/things-scene/operato-scene/commit/920d744c977116c85121deb2b48de841d99f3d33))
+* latest [@operato](https://github.com/operato) ([45a542f](https://github.com/things-scene/operato-scene/commit/45a542f484a4fe552533a35eb90f2b100e01249f))
+* latest [@operato](https://github.com/operato) ([d4020ee](https://github.com/things-scene/operato-scene/commit/d4020eefc797da03d43b73708dcfd8541f5b30af))
+
+
+
 ## [1.0.0-alpha.22](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2022-06-16)
 
 
