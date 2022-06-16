@@ -117,6 +117,10 @@ export default class Input extends HTMLOverlayElement {
       var alltimeFocusPending = this.get('alltimeFocusPending')
       var hideKeyboard = this.get('hideKeyboard')
 
+      this.element.onkeydown = e => {
+        this.onInputKeydown(e)
+      }
+
       this.element.addEventListener('focusout', e => {
         if (alltimeFocus) {
           setTimeout(
@@ -135,24 +139,6 @@ export default class Input extends HTMLOverlayElement {
           setTimeout(() => {
             this.element.removeAttribute('readonly')
           }, 50)
-        }
-      })
-
-      this.element.addEventListener('keypress', e => {
-        if (e.key == 'Enter') {
-          if (this.value === (this.element as HTMLInputElement).value) {
-            /* 
-              enter 키가 눌리면, 값이 변화가 없더라도 강제로 value를 수정해서 onchange 이벤트를 유도한다.
-              값의 변화가 있는 경우에는 input 엘리먼트가 change 이벤트를 발생시키므로 이 작업을 해서는 안된다.(중복발생방지)
-            */
-            this.value = (this.element as HTMLInputElement).value
-          }
-
-          const nextInput = this.get('nextInput')
-          if (nextInput) {
-            const n = this.root.findById(nextInput) as HTMLInputElement | undefined
-            n && n.select && n.select()
-          }
         }
       })
 
@@ -204,6 +190,35 @@ export default class Input extends HTMLOverlayElement {
 
   onInputChange(e: Event) {
     this.value = (this.element as HTMLInputElement).value
+  }
+
+  onInputKeydown(e: KeyboardEvent) {
+    if (e.key === 'Enter') {
+      // e.preventDefault()
+      // this.element.dispatchEvent(
+      //   new CustomEvent('change', {
+      //     bubbles: true,
+      //     composed: true,
+      //     detail: this.value || ''
+      //   })
+      // )
+      if (this.value === (this.element as HTMLInputElement).value) {
+        /*
+          enter 키가 눌리면, 값이 변화가 없더라도 강제로 value를 수정해서 onchange 이벤트를 유도한다.
+          값의 변화가 있는 경우에는 input 엘리먼트가 change 이벤트를 발생시키므로 이 작업을 해서는 안된다.(중복발생방지)
+        */
+        this.element.dispatchEvent(new CustomEvent('change'))
+        // this.value = (this.element as HTMLInputElement).value
+      }
+
+      setTimeout(() => {
+        const nextInput = this.get('nextInput')
+        if (nextInput) {
+          const n = this.root.findById(nextInput) as HTMLInputElement | undefined
+          n && n.select && n.select()
+        }
+      }, 100)
+    }
   }
 }
 

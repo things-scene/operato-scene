@@ -101,6 +101,10 @@ export default class InputText extends Input {
     return NATURE
   }
 
+  createElement() {
+    super.createElement()
+  }
+
   onInputChange(e: Event) {
     var { englishOnly, selectAfterChange } = this.state
     const element = this.element as HTMLInputElement
@@ -113,33 +117,32 @@ export default class InputText extends Input {
     }
 
     if (selectAfterChange) {
-      element.select()
+      requestAnimationFrame(() => {
+        element.select()
+      })
     }
   }
 
-  createElement() {
-    super.createElement()
+  onInputKeydown(e: KeyboardEvent) {
+    super.onInputKeydown(e)
 
-    this.element.addEventListener('keydown', e => {
-      const { englishOnly } = this.state
-      const element = this.element as HTMLInputElement
+    const { englishOnly } = this.state
+    const element = this.element as HTMLInputElement
 
-      if (englishOnly && !e.metaKey && !e.ctrlKey && !e.altKey && /^Key/.test(e.code)) {
-        e.stopPropagation()
-        e.preventDefault()
+    if (englishOnly && !e.metaKey && !e.ctrlKey && !e.altKey && /^Key/.test(e.code)) {
+      e.stopPropagation()
+      e.preventDefault()
 
-        /* englishOnly 인 경우에 문자들은 여기에서 처리한다. 멀티바이트 문자들이 대부분 알파벳의 자모음을 조합하므로, ... */
-        const key = e.shiftKey ? e.code.charAt(3) : e.code.charAt(3).toLowerCase()
-        const value = element.value
+      /* englishOnly 인 경우에 문자들은 여기에서 처리한다. 멀티바이트 문자들이 대부분 알파벳의 자모음을 조합하므로, ... */
+      const key = e.shiftKey ? e.code.charAt(3) : e.code.charAt(3).toLowerCase()
+      const value = element.value
 
-        const start = element.selectionStart || 0
-        const end = element.selectionEnd || 0
+      const start = element.selectionStart || 0
+      const end = element.selectionEnd || start
 
-        element.value = [value.substring(0, start), key, value.substring(end)].join('')
-
-        element.selectionEnd = element.selectionStart = start + 1
-      }
-    })
+      element.value = [value.substring(0, start), key, value.substring(end)].join('')
+      element.setSelectionRange(start + 1, start + 1)
+    }
   }
 }
 
