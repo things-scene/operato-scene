@@ -193,9 +193,8 @@ export default class Input extends HTMLOverlayElement {
   }
 
   onInputKeydown(e: KeyboardEvent) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.isComposing) {
       e.preventDefault()
-      e.stopPropagation()
 
       /*
         enter 키가 눌리면, 값이 변화가 없더라도 강제로 change 이벤트를 발생시킨다.
