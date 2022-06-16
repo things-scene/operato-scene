@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.35",
+    "@operato/board": "^1.0.0-beta.36",
     "@things-factory/builder": "^5.0.0-zeta.3",
     "@things-factory/operato-board": "^5.0.0-zeta.3",
     "@types/chart.js": "2.9.34",

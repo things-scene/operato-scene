@@ -27,13 +27,13 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^3.0.13",
-    "@operato/property-editor": "^1.0.0-beta.35",
+    "@operato/property-editor": "^1.0.0-beta.36",
     "i18next": "^21.5.4",
     "lit": "^2.2.1"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.35",
+    "@operato/board": "^1.0.0-beta.36",
     "@things-factory/builder": "^5.0.0-zeta.3",
     "@things-factory/operato-board": "^5.0.0-zeta.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
