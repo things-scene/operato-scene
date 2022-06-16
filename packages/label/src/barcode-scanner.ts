@@ -22,8 +22,8 @@ const NATURE: ComponentNature = {
     },
     {
       type: 'checkbox',
-      label: 'select-over-change',
-      name: 'selectOverChange'
+      label: 'select-after-change',
+      name: 'selectAfterChange'
     }
   ],
   help: 'scene/component/barcode-scanner'
@@ -71,11 +71,11 @@ export default class BarcodeScanner extends HTMLOverlayElement {
   }
 
   setElementProperties(input: OxInputBarcode) {
-    const { withoutEnter = false, englishOnly = false, selectOverChange = false } = this.state
+    const { withoutEnter = false, englishOnly = false, selectAfterChange = false } = this.state
 
     input.withoutEnter = withoutEnter
     input.englishOnly = englishOnly
-    input.selectOverChange = selectOverChange
+    input.selectAfterChange = selectAfterChange
 
     input.value = this._data = this.text
   }

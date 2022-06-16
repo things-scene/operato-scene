@@ -11,5 +11,8 @@
   "label.next-input": "下一Focus对象",
   "label.autofocus": "初始Focus",
   "label.alltime-focus": "单一Focus",
-  "label.alltime-focus-pending": "单一Focus等待时间"
+  "label.alltime-focus-pending": "单一Focus等待时间",
+  "label.without-enter": "without enter key",
+  "label.english-only": "english input only",
+  "label.select-after-change": "select over change"
 }

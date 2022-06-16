@@ -88,8 +88,8 @@ const NATURE = {
     },
     {
       type: 'checkbox',
-      label: 'select-over-change',
-      name: 'selectOverChange'
+      label: 'select-after-change',
+      name: 'selectAfterChange'
     }
   ],
   'value-property': 'text',
@@ -102,7 +102,7 @@ export default class InputText extends Input {
   }
 
   onInputChange(e: Event) {
-    var { englishOnly, selectOverChange } = this.state
+    var { englishOnly, selectAfterChange } = this.state
     const element = this.element as HTMLInputElement
 
     if (englishOnly) {
@@ -112,7 +112,7 @@ export default class InputText extends Input {
       this.value = element.value
     }
 
-    if (selectOverChange) {
+    if (selectAfterChange) {
       element.select()
     }
   }

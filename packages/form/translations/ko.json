@@ -12,5 +12,8 @@
   "label.autofocus": "시작시 포커스",
   "label.alltime-focus": "상시 포커스",
   "label.alltime-focus-pending": "상시 포커스 지연 시간",
-  "label.hide-keyboard": "키보드 숨기기(모바일)"
+  "label.hide-keyboard": "키보드 숨기기(모바일)",
+  "label.without-enter": "스캔시 엔터키 붙이지않음",
+  "label.english-only": "영어만 입력받음",
+  "label.select-after-change": "변경후 전체 선택"
 }

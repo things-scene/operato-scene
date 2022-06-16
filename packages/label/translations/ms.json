@@ -7,7 +7,7 @@
   "label.vendor id": "penjual id",
   "label.board id": "board id",
   "label.copies": "copies",
-  "label.without-enter": "without enter key",
-  "label.english-only": "english input only",
-  "label.select-over-change": "select over change"
+  "label.without-enter": "[ms] without enter key",
+  "label.english-only": "[ms] english input only",
+  "label.select-after-change": "[ms] select over change"
 }

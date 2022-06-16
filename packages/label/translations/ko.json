@@ -9,5 +9,5 @@
   "label.copies": "프린트 매수",
   "label.without-enter": "스캔시 엔터키 붙이지않음",
   "label.english-only": "영어만 입력받음",
-  "label.select-over-change": "스캔후 전체 선택"
+  "label.select-after-change": "변경후 전체 선택"
 }

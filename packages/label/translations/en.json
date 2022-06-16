@@ -9,5 +9,5 @@
   "label.copies": "copies",
   "label.without-enter": "without enter key",
   "label.english-only": "english input only",
-  "label.select-over-change": "select over change"
+  "label.select-after-change": "select over change"
 }

@@ -11,5 +11,8 @@
   "label.next-input": "next input",
   "label.autofocus": "focus on init",
   "label.alltime-focus": "alltime focus",
-  "label.alltime-focus-pending": "alltime focus pending"
+  "label.alltime-focus-pending": "alltime focus pending",
+  "label.without-enter": "without enter key",
+  "label.english-only": "english input only",
+  "label.select-after-change": "select over change"
 }

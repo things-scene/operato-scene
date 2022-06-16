@@ -7,7 +7,7 @@
   "label.vendor id": "供应商 id",
   "label.board id": "看板 id",
   "label.copies": "印数",
-  "label.without-enter": "without enter key",
-  "label.english-only": "english input only",
-  "label.select-over-change": "select over change"
+  "label.without-enter": "没有回车键",
+  "label.english-only": "仅英文输入",
+  "label.select-after-change": "选择过度变化"
 }

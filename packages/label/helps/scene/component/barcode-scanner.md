@@ -44,6 +44,6 @@ The following barcode formats can be scanned.
   Even if the IME mode is in multi-byte state, it is changed to English corresponding to each key.
   Multi-byte input is possible, but the change event occurs after the multi-byte characters are removed when the enter key occurs or when the blur event occurs.
 
-- select over change (selectOverChange)
+- select over change (selectAfterChange)
 
   When a change event occurs by the enter key or blur, the entire string is selected. In this case, when the next value is input, the existing value is deleted and a new value can be entered in the blank, so this operation is convenient in some cases.

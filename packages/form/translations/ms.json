@@ -10,5 +10,8 @@
   "label.mime-type": "[ms] MIME type",
   "label.autofocus": "[ms] focus on init",
   "label.alltime-focus": "[ms] alltime focus",
-  "label.alltime-focus-pending": "[ms] alltime focus pending"
+  "label.alltime-focus-pending": "[ms] alltime focus pending",
+  "label.without-enter": "without enter key",
+  "label.english-only": "english input only",
+  "label.select-after-change": "select over change"
 }
