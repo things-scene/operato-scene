@@ -52,14 +52,9 @@ export default class BarcodeScanner extends HTMLOverlayElement {
   ready() {
     super.ready()
     var scanInput = this.element as OxInputBarcode
-    // 엔터 키 입력 시 컴포넌트 데이터 세팅
-    scanInput.addEventListener('keyup', (e: Event) => {
-      if ((e as KeyboardEvent).key === 'Enter') {
-        e.preventDefault()
-        if (scanInput.input) {
-          this.data = scanInput.input.value
-        }
-      }
+
+    scanInput.addEventListener('change', (e: Event) => {
+      this.data = scanInput.value
     })
 
     // 스캔 시 컴포넌트 데이터 세팅
