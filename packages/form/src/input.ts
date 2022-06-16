@@ -2,7 +2,7 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, ComponentNature, HTMLOverlayElement, Properties, error } from '@hatiolab/things-scene'
+import { Component, ComponentNature, error, HTMLOverlayElement, Properties } from '@hatiolab/things-scene'
 
 const NATURE = {
   mutable: false,
@@ -109,7 +109,7 @@ export default class Input extends HTMLOverlayElement {
 
     /* element.property => component.property */
     this.element.onchange = e => {
-      this.value = (this.element as HTMLInputElement).value
+      this.onInputChange(e)
     }
 
     if (this.app.isViewMode) {
@@ -201,11 +201,13 @@ export default class Input extends HTMLOverlayElement {
         )
     }
   }
+
+  onInputChange(e: Event) {
+    this.value = (this.element as HTMLInputElement).value
+  }
 }
 
 ;[
-  'input',
-  'input-text',
   'input-password',
   'input-email',
   'input-search',

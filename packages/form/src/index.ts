@@ -17,6 +17,7 @@ export { default as Link } from './link'
 export { default as Div } from './div'
 
 export { default as Input } from './input'
+export { default as InputText } from './input-text'
 export { default as InputNumber } from './input-number'
 export { default as InputDate } from './input-date'
 export { default as InputFile } from './input-file'
