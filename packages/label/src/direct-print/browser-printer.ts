@@ -5,8 +5,14 @@ export class BrowserPrinter {
 
   async print(content: string) {
     try {
-      const defaultPrinter = await this.printer.getDefaultPrinter()
-      this.printer.setPrinter(defaultPrinter)
+      const availablePrinters = await this.printer.getAvailablePrinters()
+      if (availablePrinters && availablePrinters.length && availablePrinters[0]) {
+        var printer = availablePrinters[0]
+      } else {
+        throw new Error('There is no printer in your configuration')
+      }
+
+      this.printer.setPrinter(printer)
 
       const status = await this.printer.checkPrinterStatus()
       if (status.isReadyToPrint) {
