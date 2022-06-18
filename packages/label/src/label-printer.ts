@@ -3,9 +3,7 @@
  */
 
 import { Component, ComponentNature, Properties, RectPath, Shape } from '@hatiolab/things-scene'
-
-import { BrowserPrinter } from './direct-print/browser-printer'
-import { USBPrinter } from './direct-print/usb-printer'
+import { BrowserPrinter, USBPrinter } from '@operato/barcode'
 
 const NATURE: ComponentNature = {
   mutable: false,
