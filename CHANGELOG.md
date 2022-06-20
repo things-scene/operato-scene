@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.24](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) (2022-06-20)
+
+
+### :bug: Bug Fix
+
+* browser-printer use getAvailablePrinters ([c60b7c4](https://github.com/hatiolab/operato/commit/c60b7c426cadab4baf6583a929b6ca7057d592e8))
+* latest [@operato](https://github.com/operato) ([1a59e6f](https://github.com/hatiolab/operato/commit/1a59e6f0ced18902fee98b88933650e23f9ad420))
+* latest dependencies ([9ee4519](https://github.com/hatiolab/operato/commit/9ee4519adfe49e2eac8433f31ad5dea9257a1fca))
+* use @operato/barcode for label component ([989e254](https://github.com/hatiolab/operato/commit/989e25498b8b993a0c74d4e18db8cdcb492c2d19))
+
+
+
 ## [1.0.0-alpha.23](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2022-06-16)
 
 
