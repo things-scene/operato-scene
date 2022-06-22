@@ -26,7 +26,7 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^3.0.13",
+    "@hatiolab/things-scene": "^3.0.14",
     "@operato/property-editor": "^1.0.0-beta.38",
     "i18next": "^21.5.4",
     "lit": "^2.2.1"
