@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.27](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2022-06-22)
+
+
+### :bug: Bug Fix
+
+* latest @hatiolab/things-scene ([5f7e8b6](https://github.com/things-scene/operato-scene/commit/5f7e8b6f40e7b73ac874be1d473eff847f14afe2))
+* latest @hatiolab/things-scene ([1bb48f0](https://github.com/things-scene/operato-scene/commit/1bb48f0259044085f690c817dbe0383a44b15f9b))
+* latest @hatiolab/things-scene [@operato](https://github.com/operato) ([ed2b7b8](https://github.com/things-scene/operato-scene/commit/ed2b7b83f0fd06780e6b9841cc6a1702b834e4ac))
+
+
+
 ## [1.0.0-alpha.26](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2022-06-20)
 
 **Note:** Version bump only for package @operato/scene-grist
