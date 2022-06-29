@@ -26,14 +26,14 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^3.0.15",
-    "@operato/property-editor": "^1.0.0-beta.39",
+    "@hatiolab/things-scene": "^3.0.16",
+    "@operato/property-editor": "^1.0.0-beta.40",
     "i18next": "^21.5.4",
     "lit": "^2.2.1"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@operato/board": "^1.0.0-beta.39",
+    "@operato/board": "^1.0.0-beta.40",
     "@things-factory/builder": "^5.0.0-zeta.7",
     "@things-factory/operato-board": "^5.0.0-zeta.7",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
