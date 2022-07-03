@@ -1,9 +1,3 @@
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-pages/iron-pages'
-import '@polymer/paper-button/paper-button'
-import '@polymer/paper-icon-button/paper-icon-button'
-import '@polymer/paper-tabs/paper-tabs'
-
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 

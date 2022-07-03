@@ -1,17 +1,13 @@
-import '@polymer/iron-icon'
-import '@polymer/iron-icons'
-import '@polymer/paper-icon-button'
-import '@polymer/paper-tabs'
 import './property-editor-chartjs-hbar'
 import './property-editor-chartjs-mixed'
 import './property-editor-chartjs-pie'
 import './property-editor-chartjs-radar'
 
 import { css, html } from 'lit'
-
-import { OxPropertyEditor } from '@operato/property-editor'
-import { Properties } from '@hatiolab/things-scene'
 import { customElement } from 'lit/decorators.js'
+
+import { Properties } from '@hatiolab/things-scene'
+import { OxPropertyEditor } from '@operato/property-editor'
 
 @customElement('property-editor-chartjs')
 export default class ChartJSEditor extends OxPropertyEditor {

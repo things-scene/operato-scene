@@ -2,11 +2,13 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { Component, Properties } from '@hatiolab/things-scene'
-import { css, html } from 'lit'
+import '@polymer/paper-icon-button/paper-icon-button'
 
-import { OxPropertyEditor } from '@operato/property-editor'
+import { css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+
+import { Component, Properties } from '@hatiolab/things-scene'
+import { OxPropertyEditor } from '@operato/property-editor'
 
 @customElement('ox-property-editor-action')
 export default class ThingsEditorAction extends OxPropertyEditor {
