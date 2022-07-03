@@ -111,7 +111,6 @@ export default class BarcodeScanner extends HTMLOverlayElement {
     const { withoutEnter = false, englishOnly = false, selectAfterChange = false } = this.state
 
     input.style.setProperty('--input-font', 'initial')
-    input.style.overflow = 'initial'
 
     input.withoutEnter = withoutEnter
     input.englishOnly = englishOnly

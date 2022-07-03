@@ -224,10 +224,10 @@ export default class Input extends HTMLOverlayElement {
       const { nextInput } = this.state
 
       if (nextInput) {
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           const n = this.root.findById(nextInput) as Input
           n && n.select && n.select()
-        })
+        }, 100)
       }
     }
 
