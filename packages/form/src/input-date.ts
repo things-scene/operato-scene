@@ -3,6 +3,7 @@
  */
 
 import { Component } from '@hatiolab/things-scene'
+
 import Input from './input'
 
 const NATURE = {
@@ -61,6 +62,19 @@ export default class InputDate extends Input {
 
     element.min = min
     element.max = max
+  }
+
+  getInputValue(): any {
+    return (this.element as HTMLInputElement).valueAsDate
+  }
+
+  get text() {
+    /* ignore text formatting */
+    return this.getState('text')
+  }
+
+  set text(text) {
+    this.setState('test', text)
   }
 }
 

@@ -113,38 +113,39 @@ export default class Input extends HTMLOverlayElement {
     }
 
     if (this.app.isViewMode) {
-      var alltimeFocus = this.get('alltimeFocus')
-      var alltimeFocusPending = this.get('alltimeFocusPending')
-      var hideKeyboard = this.get('hideKeyboard')
+      const { alltimeFocus, hideKeyboard, alltimeFocusPending, autofocus } = this.state
 
       this.element.onkeydown = e => {
         this.onInputKeydown(e)
       }
 
-      this.element.addEventListener('focusout', e => {
-        if (alltimeFocus) {
+      if (alltimeFocus) {
+        this.element.addEventListener('focusout', e => {
           setTimeout(
             () => {
               ;(this.element as HTMLInputElement).select()
             },
             !alltimeFocusPending || alltimeFocusPending == 0 ? 1000 : alltimeFocusPending
           )
-        }
-      })
+        })
+      }
 
-      this.element.addEventListener('focusin', e => {
-        if (hideKeyboard) {
+      if (hideKeyboard) {
+        this.element.addEventListener('focusin', e => {
           this.element.setAttribute('readonly', '')
           ;(this.element as HTMLInputElement).select()
-          setTimeout(() => {
-            this.element.removeAttribute('readonly')
-          }, 50)
-        }
-      })
 
-      setTimeout(() => {
-        this.get('autofocus') && (this.element as HTMLInputElement).select()
-      }, 300)
+          requestAnimationFrame(() => {
+            this.element.removeAttribute('readonly')
+          })
+        })
+      }
+
+      if (autofocus) {
+        requestAnimationFrame(() => {
+          ;(this.element as HTMLInputElement).select()
+        })
+      }
     }
   }
 
@@ -188,8 +189,28 @@ export default class Input extends HTMLOverlayElement {
     }
   }
 
+  // overridable by inherited classes
+  getInputValue(): any {
+    return (this.element as HTMLInputElement).value
+  }
+
   onInputChange(e: Event) {
-    this.value = (this.element as HTMLInputElement).value
+    var { englishOnly, selectAfterChange } = this.state
+    const element = this.element as HTMLInputElement
+    const value = this.getInputValue()
+
+    if (englishOnly) {
+      /* englishOnly 인 경우에는 멀티바이트 문자들을 모두 제거한다. */
+      this.value = value?.replace(/[^\x00-\x7F]/g, '')
+    } else {
+      this.value = value
+    }
+
+    if (selectAfterChange) {
+      requestAnimationFrame(() => {
+        element.select()
+      })
+    }
   }
 
   onInputKeydown(e: KeyboardEvent) {
@@ -201,13 +222,33 @@ export default class Input extends HTMLOverlayElement {
       */
       this.element.dispatchEvent(new CustomEvent('change'))
 
-      setTimeout(() => {
-        const nextInput = this.get('nextInput')
-        if (nextInput) {
-          const n = this.root.findById(nextInput) as HTMLInputElement | undefined
-          n && n.select && n.select()
-        }
-      }, 100)
+      const { nextInput } = this.state
+
+      if (nextInput) {
+        requestAnimationFrame(() => {
+          const n = this.root.findById(nextInput)
+          const element = (n as Input)?.element as HTMLInputElement | undefined
+          element && element.select && element.select()
+        })
+      }
+    }
+
+    const { englishOnly } = this.state
+    const element = this.element as HTMLInputElement
+
+    if (englishOnly && !e.metaKey && !e.ctrlKey && !e.altKey && /^Key/.test(e.code)) {
+      e.stopPropagation()
+      e.preventDefault()
+
+      /* englishOnly 인 경우에 문자들은 여기에서 처리한다. 멀티바이트 문자들이 대부분 알파벳의 자모음을 조합하므로, ... */
+      const key = e.shiftKey ? e.code.charAt(3) : e.code.charAt(3).toLowerCase()
+      const value = element.value
+
+      const start = element.selectionStart || 0
+      const end = element.selectionEnd || start
+
+      element.value = [value.substring(0, start), key, value.substring(end)].join('')
+      element.setSelectionRange(start + 1, start + 1)
     }
   }
 }

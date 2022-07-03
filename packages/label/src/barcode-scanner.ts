@@ -68,6 +68,8 @@ export default class BarcodeScanner extends HTMLOverlayElement {
   setElementProperties(input: OxInputBarcode) {
     const { withoutEnter = false, englishOnly = false, selectAfterChange = false } = this.state
 
+    input.style.setProperty('--input-font', 'initial')
+
     input.withoutEnter = withoutEnter
     input.englishOnly = englishOnly
     input.selectAfterChange = selectAfterChange
