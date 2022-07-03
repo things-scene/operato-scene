@@ -123,7 +123,7 @@ export default class Input extends HTMLOverlayElement {
         this.element.addEventListener('focusout', e => {
           setTimeout(
             () => {
-              ;(this.element as HTMLInputElement).select()
+              this.select()
             },
             !alltimeFocusPending || alltimeFocusPending == 0 ? 1000 : alltimeFocusPending
           )
@@ -133,7 +133,7 @@ export default class Input extends HTMLOverlayElement {
       if (hideKeyboard) {
         this.element.addEventListener('focusin', e => {
           this.element.setAttribute('readonly', '')
-          ;(this.element as HTMLInputElement).select()
+          this.select()
 
           requestAnimationFrame(() => {
             this.element.removeAttribute('readonly')
@@ -143,7 +143,7 @@ export default class Input extends HTMLOverlayElement {
 
       if (autofocus) {
         requestAnimationFrame(() => {
-          ;(this.element as HTMLInputElement).select()
+          this.select()
         })
       }
     }
@@ -196,7 +196,6 @@ export default class Input extends HTMLOverlayElement {
 
   onInputChange(e: Event) {
     var { englishOnly, selectAfterChange } = this.state
-    const element = this.element as HTMLInputElement
     const value = this.getInputValue()
 
     if (englishOnly) {
@@ -208,7 +207,7 @@ export default class Input extends HTMLOverlayElement {
 
     if (selectAfterChange) {
       requestAnimationFrame(() => {
-        element.select()
+        this.select()
       })
     }
   }
@@ -226,9 +225,8 @@ export default class Input extends HTMLOverlayElement {
 
       if (nextInput) {
         requestAnimationFrame(() => {
-          const n = this.root.findById(nextInput)
-          const element = (n as Input)?.element as HTMLInputElement | undefined
-          element && element.select && element.select()
+          const n = this.root.findById(nextInput) as Input
+          n && n.select && n.select()
         })
       }
     }

@@ -24,6 +24,16 @@ const NATURE: ComponentNature = {
       type: 'checkbox',
       label: 'select-after-change',
       name: 'selectAfterChange'
+    },
+    {
+      type: 'checkbox',
+      label: 'autofocus',
+      name: 'autofocus'
+    },
+    {
+      type: 'checkbox',
+      label: 'hide-keyboard',
+      name: 'hideKeyboard'
     }
   ],
   help: 'scene/component/barcode-scanner'
@@ -43,6 +53,10 @@ export default class BarcodeScanner extends HTMLOverlayElement {
   set data(data) {
     this._data = data
     this.executeMappings() // 이전 데이터와 비교하지 않고 매핑을 실행하기 위함
+  }
+
+  select() {
+    ;(this.element as OxInputBarcode).input.select()
   }
 
   dispose() {
@@ -65,10 +79,39 @@ export default class BarcodeScanner extends HTMLOverlayElement {
       })
   }
 
+  createElement() {
+    super.createElement()
+
+    if (this.app.isViewMode) {
+      const { hideKeyboard, autofocus } = this.state
+
+      if (hideKeyboard) {
+        requestAnimationFrame(() => {
+          const input = (this.element as OxInputBarcode).input
+          input.addEventListener('focusin', e => {
+            input.setAttribute('readonly', '')
+            this.select()
+
+            requestAnimationFrame(() => {
+              input.removeAttribute('readonly')
+            })
+          })
+        })
+      }
+
+      if (autofocus) {
+        requestAnimationFrame(() => {
+          this.select()
+        })
+      }
+    }
+  }
+
   setElementProperties(input: OxInputBarcode) {
     const { withoutEnter = false, englishOnly = false, selectAfterChange = false } = this.state
 
     input.style.setProperty('--input-font', 'initial')
+    input.style.overflow = 'initial'
 
     input.withoutEnter = withoutEnter
     input.englishOnly = englishOnly
