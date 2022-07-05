@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.30](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2022-07-05)
+
+
+### :bug: Bug Fix
+
+* latest [@things-factory](https://github.com/things-factory) ([dac17fa](https://github.com/things-scene/operato-scene/commit/dac17faebadfd2bd2efb7192a3b1f3aafdac0cbd))
+
+
+
 ## [1.0.0-alpha.29](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2022-07-03)
 
 

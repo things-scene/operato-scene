@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-integration",
   "description": "Things factory integration component for things-scene",
-  "version": "1.0.0-alpha.29",
+  "version": "1.0.0-alpha.30",
   "license": "MIT",
   "author": "heartyoh",
   "main": "dist/index.js",

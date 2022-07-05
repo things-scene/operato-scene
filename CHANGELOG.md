@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.30](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2022-07-05)
+
+
+### :bug: Bug Fix
+
+* input-date ([ad4365d](https://github.com/hatiolab/operato/commit/ad4365d92e14b1a00b7e802d49b60352ced16ed8))
+* latest [@things-factory](https://github.com/things-factory) ([dac17fa](https://github.com/hatiolab/operato/commit/dac17faebadfd2bd2efb7192a3b1f3aafdac0cbd))
+
+
+
 ## [1.0.0-alpha.29](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2022-07-03)
 
 
