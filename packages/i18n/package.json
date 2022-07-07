@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^3.0.18",
-    "@operato/property-editor": "^1.0.0-beta.43",
+    "@operato/property-editor": "^1.0.0-beta.44",
     "i18next": "^21.5.4",
     "lit": "^2.2.1"
   },
