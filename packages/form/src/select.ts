@@ -47,7 +47,10 @@ const NATURE = {
     {
       type: 'options',
       label: 'options',
-      name: 'options'
+      name: 'options',
+      editor: {
+        fullwidth: true
+      }
     }
   ],
   'value-property': 'value'
@@ -153,6 +156,17 @@ export default class Select extends HTMLOverlayElement {
     const element = this.element as HTMLSelectElement
     if ('value' in after && element) {
       element.value = after.value
+      /*
+       * Important.
+       * When the value is changed externally, a 'change' event must be generated forcibly.
+       * Otherwise, the 'change' event may not occur when the user directly changes the value of the select element.
+       */
+      element.dispatchEvent(
+        new CustomEvent('change', {
+          detail: after.value
+        })
+      )
+
       if (this.get('copyValueToData')) {
         try {
           this.data = JSON.parse(after.value)
