@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.31](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2022-07-07)
+
+
+### :bug: Bug Fix
+
+* latest [@operato](https://github.com/operato) ([b35d293](https://github.com/hatiolab/operato/commit/b35d29370478f340e9f450034357697b9263fe10))
+* made options editor for select fullwidth ([6995cc3](https://github.com/hatiolab/operato/commit/6995cc3b9829df7967e775e8c1970704febcc7a7))
+
+
+
 ## [1.0.0-alpha.30](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2022-07-05)
 
 

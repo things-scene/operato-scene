@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.31](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2022-07-07)
+
+**Note:** Version bump only for package @operato/scene-gauge
+
+
+
+
+
 ## [1.0.0-alpha.30](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2022-07-05)
 
 
