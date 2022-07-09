@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.33](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2022-07-09)
+
+**Note:** Version bump only for package @operato/scene-tab
+
+
+
+
+
 ## [1.0.0-alpha.32](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2022-07-09)
 
 
