@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^3.0.18",
-    "lit": "^2.2.1"
+    "lit": "^2.2.7"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
