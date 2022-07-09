@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.32](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2022-07-09)
+
+
+### :bug: Bug Fix
+
+* latest [@things-factory](https://github.com/things-factory) ([a5ea8ba](https://github.com/things-scene/operato-scene/commit/a5ea8ba70af7ac74e7cdee77fb74a152a0079366))
+* update dependencies ([54c7169](https://github.com/things-scene/operato-scene/commit/54c7169201f1f34351a51511f62915a892c09dd0))
+
+
+
 ## [1.0.0-alpha.31](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2022-07-07)
 
 **Note:** Version bump only for package @operato/scene-legend
