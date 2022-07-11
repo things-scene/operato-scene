@@ -7,8 +7,8 @@ import '@polymer/paper-icon-button/paper-icon-button'
 import { css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { Component, Properties } from '@hatiolab/things-scene'
-import { OxPropertyEditor } from '@operato/property-editor'
+import { Component } from '@hatiolab/things-scene'
+import { OxPropertyEditor, PropertySpec } from '@operato/property-editor'
 
 @customElement('ox-property-editor-action')
 export default class ThingsEditorAction extends OxPropertyEditor {
@@ -25,8 +25,8 @@ export default class ThingsEditorAction extends OxPropertyEditor {
     `
   ]
 
-  editorTemplate(props: Properties) {
-    var property = props.property || {}
+  editorTemplate(value: any, spec: PropertySpec) {
+    var property = spec.property || {}
     var { icon, action } = property
 
     return html`

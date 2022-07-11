@@ -6,8 +6,7 @@ import './property-editor-chartjs-radar'
 import { css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { Properties } from '@hatiolab/things-scene'
-import { OxPropertyEditor } from '@operato/property-editor'
+import { OxPropertyEditor, PropertySpec } from '@operato/property-editor'
 
 @customElement('property-editor-chartjs')
 export default class ChartJSEditor extends OxPropertyEditor {
@@ -44,32 +43,32 @@ export default class ChartJSEditor extends OxPropertyEditor {
     `
   ]
 
-  editorTemplate(props: Properties) {
+  editorTemplate(value: any, spec: PropertySpec) {
     return html`
-      ${props.value
+      ${value
         ? html`
             <div id="chart-type">
               <label> <i18n-msg msgid="label.chart-type">Chart Type</i18n-msg> </label>
-              <input type="text" .value=${props.value.type} readonly />
+              <input type="text" .value=${value.type} readonly />
             </div>
           `
         : html``}
-      ${!props.value
+      ${!value
         ? html``
-        : props.value.type == 'line'
-        ? html` <property-editor-chartjs-mixed .value=${props.value} fullwidth></property-editor-chartjs-mixed> `
-        : props.value.type == 'horizontalBar'
-        ? html` <property-editor-chartjs-hbar .value=${props.value} fullwidth></property-editor-chartjs-hbar> `
-        : props.value.type == 'bar'
-        ? html` <property-editor-chartjs-mixed .value=${props.value} fullwidth></property-editor-chartjs-mixed> `
-        : props.value.type == 'pie'
-        ? html` <property-editor-chartjs-pie .value=${props.value} fullwidth></property-editor-chartjs-pie> `
-        : props.value.type == 'doughnut'
-        ? html` <property-editor-chartjs-pie .value=${props.value} fullwidth></property-editor-chartjs-pie> `
-        : props.value.type == 'polarArea'
-        ? html` <property-editor-chartjs-pie .value=${props.value} fullwidth></property-editor-chartjs-pie> `
-        : props.value.type == 'radar'
-        ? html` <property-editor-chartjs-radar .value=${props.value} fullwidth></property-editor-chartjs-radar> `
+        : value.type == 'line'
+        ? html` <property-editor-chartjs-mixed .value=${value} fullwidth></property-editor-chartjs-mixed> `
+        : value.type == 'horizontalBar'
+        ? html` <property-editor-chartjs-hbar .value=${value} fullwidth></property-editor-chartjs-hbar> `
+        : value.type == 'bar'
+        ? html` <property-editor-chartjs-mixed .value=${value} fullwidth></property-editor-chartjs-mixed> `
+        : value.type == 'pie'
+        ? html` <property-editor-chartjs-pie .value=${value} fullwidth></property-editor-chartjs-pie> `
+        : value.type == 'doughnut'
+        ? html` <property-editor-chartjs-pie .value=${value} fullwidth></property-editor-chartjs-pie> `
+        : value.type == 'polarArea'
+        ? html` <property-editor-chartjs-pie .value=${value} fullwidth></property-editor-chartjs-pie> `
+        : value.type == 'radar'
+        ? html` <property-editor-chartjs-radar .value=${value} fullwidth></property-editor-chartjs-radar> `
         : html``}
     `
   }

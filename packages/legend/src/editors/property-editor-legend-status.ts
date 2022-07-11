@@ -1,13 +1,13 @@
 import './editor-legend-status'
 
-import { OxPropertyEditor } from '@operato/property-editor'
-import { Properties } from '@hatiolab/things-scene'
-import { customElement } from 'lit/decorators.js'
 import { html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+
+import { OxPropertyEditor, PropertySpec } from '@operato/property-editor'
 
 @customElement('property-editor-legend-status')
 export class PropertyEditorLegendStatus extends OxPropertyEditor {
-  editorTemplate(props: Properties) {
-    return html` <editor-legend-status .value=${props.value} fullwidth></editor-legend-status> `
+  editorTemplate(value: any, spec: PropertySpec) {
+    return html` <editor-legend-status .value=${value} fullwidth></editor-legend-status> `
   }
 }

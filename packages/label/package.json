@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "@hatiolab/things-scene": "^3.0.18",
-    "@operato/barcode": "^1.0.0-beta.45",
-    "@operato/input": "^1.0.0-beta.45",
+    "@operato/barcode": "^1.0.0-beta.46",
+    "@operato/input": "^1.0.0-beta.46",
     "bwip-js": "^3.0.4"
   },
   "devDependencies": {
