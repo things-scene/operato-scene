@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.34](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2022-07-11)
+
+
+### :bug: Bug Fix
+
+* latest [@things-factory](https://github.com/things-factory) ([03247f1](https://github.com/hatiolab/operato/commit/03247f188183fd784721521ff06ef49c440849bf))
+* latest dependencies ([a9f062a](https://github.com/hatiolab/operato/commit/a9f062a08e4b3ffc89e7b99f3043520a5caea78b))
+
+
+
 ## [1.0.0-alpha.33](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2022-07-09)
 
 **Note:** Version bump only for package root
