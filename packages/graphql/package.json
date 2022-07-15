@@ -28,13 +28,13 @@
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@hatiolab/things-scene": "^3.0.18",
-    "@operato/graphql": "^1.0.0-beta.46",
+    "@operato/graphql": "^1.0.0-beta.47",
     "subscriptions-transport-ws": "^0.11.0"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@things-factory/builder": "^5.0.0-zeta.17",
-    "@things-factory/operato-board": "^5.0.0-zeta.17",
+    "@things-factory/builder": "^5.0.0-zeta.19",
+    "@things-factory/operato-board": "^5.0.0-zeta.19",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",
