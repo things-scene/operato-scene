@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.35](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2022-07-15)
+
+
+### :bug: Bug Fix
+
+* add draft menu for gangsters ([8460622](https://github.com/things-scene/operato-scene/commit/8460622e7cef9cd7ad47f179c59d864b091867f6))
+* latest dependencies ([f5ea226](https://github.com/things-scene/operato-scene/commit/f5ea2264cde9ee6a0e20586ce9e86e47a3d8d922))
+* latest dependencies ([7438dd3](https://github.com/things-scene/operato-scene/commit/7438dd3de9bdef939051ff72aad4c1b5608b6ab9))
+
+
+
 ## [1.0.0-alpha.34](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2022-07-11)
 
 
