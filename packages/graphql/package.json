@@ -1,7 +1,7 @@
 {
   "name": "@operato/scene-graphql",
   "description": "Graphql datasource component for things-scene",
-  "version": "1.0.0-alpha.36",
+  "version": "1.0.0-alpha.37",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",

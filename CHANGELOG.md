@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.37](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2022-07-17)
+
+
+### :bug: Bug Fix
+
+* latest dependencies ([cb2e928](https://github.com/hatiolab/operato/commit/cb2e92871da17a11ac9c68b3c4ead5df59429973))
+* prevent importing full '@apollo/client' module to avoid loading unn… ([91cad16](https://github.com/hatiolab/operato/commit/91cad1689ca726b439ddd3ff99cba5fd09219e03))
+
+
+
 ## [1.0.0-alpha.36](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2022-07-17)
 
 

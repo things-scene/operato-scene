@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.37](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2022-07-17)
+
+
+### :bug: Bug Fix
+
+* latest dependencies ([cb2e928](https://github.com/things-scene/operato-scene/commit/cb2e92871da17a11ac9c68b3c4ead5df59429973))
+
+
+
 ## [1.0.0-alpha.36](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2022-07-17)
 
 
