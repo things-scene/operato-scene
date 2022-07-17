@@ -4,8 +4,8 @@
   "description": "",
   "main": "test.js",
   "dependencies": {
-    "mqtt": "^2.11.0",
-    "serialport": "^5.0.0"
+    "mqtt-browser": "^4.2.7",
+    "serialport": "^10.4.0"
   },
   "devDependencies": {},
   "scripts": {

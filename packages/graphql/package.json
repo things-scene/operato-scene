@@ -28,18 +28,19 @@
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@hatiolab/things-scene": "^3.0.18",
-    "@operato/graphql": "^1.0.0-beta.48"
+    "@operato/graphql": "^1.0.0-beta.49"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@things-factory/builder": "^5.0.0-zeta.20",
-    "@things-factory/operato-board": "^5.0.0-zeta.20",
+    "@things-factory/builder": "^5.0.0-zeta.22",
+    "@things-factory/operato-board": "^5.0.0-zeta.22",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",
     "concurrently": "^5.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "graphql-tag": "^2.12.6",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "prettier": "^2.4.1",
