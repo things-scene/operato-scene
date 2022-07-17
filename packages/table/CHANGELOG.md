@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.36](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2022-07-17)
+
+
+### :bug: Bug Fix
+
+* integration use @operato/graphql client and subscribe ([d184eb3](https://github.com/things-scene/operato-scene/commit/d184eb35c9447ef1ecb6f5abe88ee1677345f487))
+
+
+
 ## [1.0.0-alpha.35](https://github.com/things-scene/operato-scene/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2022-07-15)
 
 
