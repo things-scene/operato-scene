@@ -1,9 +1,9 @@
 import gql from 'graphql-tag'
 
 import { Component, ComponentNature, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
+import { client } from '@operato/graphql'
 
 import { scenarios } from './client-api'
-import { getClient } from './origin-client'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -44,8 +44,6 @@ export default class ScenarioRun extends DataSource(RectPath(Shape)) {
     return ScenarioRun._image
   }
 
-  private _client: any
-
   render(context: CanvasRenderingContext2D) {
     var { left, top, width, height } = this.bounds
     context.beginPath()
@@ -54,30 +52,12 @@ export default class ScenarioRun extends DataSource(RectPath(Shape)) {
 
   ready() {
     super.ready()
-    this._initScenario()
-  }
 
-  _initScenario() {
-    if (!this.app.isViewMode) {
-      return
-    }
-    this._client = getClient()
-    if (this.state.runOnStart) {
-      this.requestData()
-    }
-  }
-
-  dispose() {
-    super.dispose()
-
-    try {
-      if (this._client) {
-        this._client.stop()
+    if (this.app.isViewMode) {
+      if (this.state.runOnStart) {
+        this.requestData()
       }
-    } catch (e) {
-      console.error(e)
     }
-    delete this._client
   }
 
   get nature() {
@@ -98,15 +78,12 @@ export default class ScenarioRun extends DataSource(RectPath(Shape)) {
     this.setState('variables', variables)
   }
 
-  get client() {
-    return this._client
-  }
-
   async requestData() {
     let { scenarioName, variables } = this.state
-    if (!scenarioName || !this.app.isViewMode) return
+    if (!scenarioName || !this.app.isViewMode) {
+      return
+    }
 
-    var client = this._client
     try {
       variables = typeof variables == 'string' ? JSON.parse(variables) : variables
     } catch (e) {

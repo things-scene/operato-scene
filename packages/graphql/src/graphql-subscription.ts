@@ -2,9 +2,9 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { SubscriptionClient } from 'subscriptions-transport-ws'
-
+import { gql } from '@apollo/client'
 import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
+import { subscribe } from '@operato/graphql'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -12,6 +12,7 @@ const NATURE: ComponentNature = {
   rotatable: true,
   properties: [
     {
+      /* origin의 subscription 만을 허용하므로, 엔드포인트 속성은 무시한다. */
       type: 'string',
       label: 'endpoint',
       name: 'endpoint'
@@ -27,7 +28,6 @@ const NATURE: ComponentNature = {
 
 export default class GraphqlSubscription extends DataSource(RectPath(Shape)) {
   private static _image: HTMLImageElement
-  private client?: SubscriptionClient
   private unsubscribe?: () => void
 
   static get image() {
@@ -43,10 +43,6 @@ export default class GraphqlSubscription extends DataSource(RectPath(Shape)) {
     if (this.unsubscribe) {
       this.unsubscribe()
     }
-    if (this.client) {
-      this.client.unsubscribeAll()
-      this.client.close(true)
-    }
 
     super.dispose()
   }
@@ -59,51 +55,36 @@ export default class GraphqlSubscription extends DataSource(RectPath(Shape)) {
   }
 
   ready() {
-    this._initGraphqlSubscription()
+    super.ready()
+
+    if (this.app.isViewMode) {
+      this.requestData()
+    }
   }
 
   get nature() {
     return NATURE
   }
 
-  _initGraphqlSubscription() {
-    if (!this.app.isViewMode) return
-
-    this.requestData()
-  }
-
   async requestData() {
-    var { endpoint, query } = this.state
-    var self = this
+    var { query } = this.state
 
-    this.client = new SubscriptionClient(endpoint, {
-      reconnect: true,
-      connectionParams: {
-        headers: {
-          /* 
-            특정 도메인의 데이타만 받고자 하는 경우에, referer 정보를 제공해서 서버에서 서브도메인 정보를 취득하도록 한다.
-            referer: location.href
-            또는, 이미 서브도메인 정보를 알고 있다면,
-            'x-things-factory-domain': '[subdomain]'
-            을 보낼 수 있다.
-            관련 정보를 보내지 않는다면, 사용자가 권한을 가진 모든 도메인의 데이타를 수신하게 된다.
-          */
-          referer: location.href
-        }
-      }
-    })
-
-    this.client.onConnected(() => {
-      const { unsubscribe } = this.client!.request({ query }).subscribe({
-        next({ data }) {
+    const { unsubscribe } = await subscribe(
+      {
+        query: gql`
+          ${query}
+        `
+      },
+      {
+        next: ({ data }: { data: any }) => {
           if (data) {
-            self.data = data
+            this.data = data
           }
         }
-      })
+      }
+    )
 
-      this.unsubscribe = unsubscribe
-    })
+    this.unsubscribe = unsubscribe
   }
 }
 

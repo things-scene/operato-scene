@@ -1,8 +1,7 @@
 import gql from 'graphql-tag'
 
 import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
-
-import { subscribe } from './origin-client'
+import { subscribe } from '@operato/graphql'
 
 const NATURE: ComponentNature = {
   mutable: false,

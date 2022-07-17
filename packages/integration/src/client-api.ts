@@ -1,9 +1,9 @@
 import gql from 'graphql-tag'
 
-import { getClient } from './origin-client'
+import { client } from '@operato/graphql'
 
 export const scenarios = async () => {
-  var response = await getClient().query({
+  var response = await client.query({
     query: gql`
       query {
         scenarios {

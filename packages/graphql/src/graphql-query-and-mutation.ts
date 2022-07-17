@@ -1,9 +1,10 @@
+import gql from 'graphql-tag'
+
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client/core'
 import { Component, ComponentNature, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
 import { buildArgs, client as localClient } from '@operato/graphql'
 
 import GraphqlClient from './graphql-client'
-import gql from 'graphql-tag'
 
 const NATURE: ComponentNature = {
   mutable: false,

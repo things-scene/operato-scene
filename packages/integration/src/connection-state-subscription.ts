@@ -1,8 +1,7 @@
 import gql from 'graphql-tag'
 
 import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
-
-import { getClient, subscribe } from './origin-client'
+import { client, subscribe } from '@operato/graphql'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -15,7 +14,7 @@ const NATURE: ComponentNature = {
       name: 'connectionName',
       property: {
         options: async () => {
-          var response = await getClient().query({
+          var response = await client.query({
             query: gql`
               query {
                 connections {

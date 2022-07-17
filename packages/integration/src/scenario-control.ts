@@ -1,9 +1,9 @@
 import gql from 'graphql-tag'
 
 import { Component, ComponentNature, DataSource, Properties, RectPath, Shape } from '@hatiolab/things-scene'
+import { client } from '@operato/graphql'
 
 import { scenarios } from './client-api'
-import { getClient } from './origin-client'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -55,8 +55,6 @@ export default class ScenarioControl extends DataSource(RectPath(Shape)) {
     return ScenarioControl._image
   }
 
-  private _client: any
-
   render(context: CanvasRenderingContext2D) {
     var { left, top, width, height } = this.bounds
     context.beginPath()
@@ -65,27 +63,10 @@ export default class ScenarioControl extends DataSource(RectPath(Shape)) {
 
   ready() {
     super.ready()
-    this._initScenario()
-  }
 
-  _initScenario() {
-    if (!this.app.isViewMode) return
-
-    this._client = getClient()
-    this.requestData()
-  }
-
-  dispose() {
-    super.dispose()
-
-    try {
-      if (this._client) {
-        this._client.stop()
-      }
-    } catch (e) {
-      console.error(e)
+    if (this.app.isViewMode) {
+      this.requestData()
     }
-    delete this._client
   }
 
   get nature() {
@@ -98,10 +79,6 @@ export default class ScenarioControl extends DataSource(RectPath(Shape)) {
     }
   }
 
-  get client() {
-    return this._client
-  }
-
   get controlType() {
     return this.getState('controlType')
   }
@@ -112,8 +89,10 @@ export default class ScenarioControl extends DataSource(RectPath(Shape)) {
 
   async requestData() {
     let { controlType, scenarioName } = this.state
-    if (!controlType || !scenarioName || !this.app.isViewMode) return
-    var client = this._client
+    if (!controlType || !scenarioName || !this.app.isViewMode) {
+      return
+    }
+
     var query = ''
     if (controlType == 'start') {
       query = `mutation{
@@ -129,15 +108,13 @@ export default class ScenarioControl extends DataSource(RectPath(Shape)) {
       }`
     }
 
-    if (client) {
-      var response = await client.query({
-        query: gql`
-          ${query}
-        `
-      })
+    var response = await client.query({
+      query: gql`
+        ${query}
+      `
+    })
 
-      this.data = response
-    }
+    this.data = response
   }
 }
 

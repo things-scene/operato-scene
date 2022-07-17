@@ -1,8 +1,7 @@
 import gql from 'graphql-tag'
 
 import { Component, ComponentNature, RectPath, Shape } from '@hatiolab/things-scene'
-
-import { getClient } from './origin-client'
+import { client } from '@operato/graphql'
 
 const NATURE: ComponentNature = {
   mutable: false,
@@ -15,7 +14,7 @@ const NATURE: ComponentNature = {
       name: 'connectionName',
       property: {
         options: async () => {
-          var response = await getClient().query({
+          var response = await client.query({
             query: gql`
               query {
                 connections {
@@ -71,44 +70,14 @@ export default class ConnectionControl extends RectPath(Shape) {
     return ConnectionControl._image
   }
 
-  private _client: any
-
   render(context: CanvasRenderingContext2D) {
     var { left, top, width, height } = this.bounds
     context.beginPath()
     this.drawImage(context, ConnectionControl.image, left, top, width, height)
   }
 
-  ready() {
-    super.ready()
-    this._init()
-  }
-
-  _init() {
-    if (!this.app.isViewMode) return
-
-    this._client = getClient()
-  }
-
-  dispose() {
-    super.dispose()
-
-    try {
-      if (this._client) {
-        this._client.stop()
-      }
-    } catch (e) {
-      console.error(e)
-    }
-    delete this._client
-  }
-
   get nature() {
     return NATURE
-  }
-
-  get client() {
-    return this._client
   }
 
   get controlType() {
@@ -135,7 +104,6 @@ export default class ConnectionControl extends RectPath(Shape) {
         controlType = 'disconnect'
     }
 
-    var client = this._client
     var query = ''
 
     query = `mutation{
