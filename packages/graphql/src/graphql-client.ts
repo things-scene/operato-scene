@@ -2,7 +2,6 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { ServerParseError } from '@apollo/client'
 import {
   ApolloClient,
   DefaultOptions,
@@ -10,7 +9,8 @@ import {
   HttpLink,
   HttpOptions,
   InMemoryCache,
-  NormalizedCacheObject
+  NormalizedCacheObject,
+  ServerParseError
 } from '@apollo/client/core'
 import { ErrorLink, onError } from '@apollo/client/link/error'
 import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'

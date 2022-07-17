@@ -2,7 +2,8 @@
  * Copyright © HatioLab Inc. All rights reserved.
  */
 
-import { gql } from '@apollo/client'
+import { gql } from 'graphql-tag'
+
 import { Component, ComponentNature, DataSource, RectPath, Shape } from '@hatiolab/things-scene'
 import { subscribe } from '@operato/graphql'
 
