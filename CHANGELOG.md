@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.38](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.37...v1.0.0-alpha.38) (2022-07-20)
+
+
+### :bug: Bug Fix
+
+* latest dependencies ([668aed1](https://github.com/hatiolab/operato/commit/668aed12552b08366230dbfab77ac2cbf4785c95))
+* latest dependencies ([8a4cf6b](https://github.com/hatiolab/operato/commit/8a4cf6bfc9eed2bdb991eb77df9dba4b42de45e7))
+
+
+
 ## [1.0.0-alpha.37](https://github.com/hatiolab/operato/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2022-07-17)
 
 
