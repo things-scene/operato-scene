@@ -26,15 +26,15 @@
     "migration": "things-factory-migration"
   },
   "dependencies": {
-    "@hatiolab/things-scene": "^3.0.18",
-    "@operato/barcode": "^1.0.0-beta.50",
-    "@operato/input": "^1.0.0-beta.50",
+    "@hatiolab/things-scene": "^3.0.19",
+    "@operato/barcode": "^1.0.0",
+    "@operato/input": "^1.0.0",
     "bwip-js": "^3.0.4"
   },
   "devDependencies": {
     "@hatiolab/prettier-config": "^1.0.0",
-    "@things-factory/builder": "^5.0.0-zeta.23",
-    "@things-factory/operato-board": "^5.0.0-zeta.23",
+    "@things-factory/builder": "^5.0.0-zeta.28",
+    "@things-factory/operato-board": "^5.0.0-zeta.28",
     "@types/codemirror": "^5.60.5",
     "@types/w3c-web-usb": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
